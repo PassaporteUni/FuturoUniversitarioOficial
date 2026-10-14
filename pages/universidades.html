@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Universidades | Futuro Universitário</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <a href="../index.html" class="logo">
+
+            <img src="../assets/logo.png" alt="Logo do Futuro Universitário">
+
+        </a>
+
+        <nav>
+
+            <a href="../index.html">
+                Início
+            </a>
+
+            <a href="descobrir.html">
+                Descobrir
+            </a>
+
+            <a href="mapa-oportunidades.html">
+                Oportunidades
+            </a>
+
+            <a href="calendario.html">
+                Calendário
+            </a>
+
+            <a href="comunidade.html">
+                Comunidade
+            </a>
+
+            <a href="contato.html">
+                Contato
+            </a>
+            <a href="desenvolvedores.html">
+                Desenvolvedores
+            </a>
+
+        </nav>
+
+        <a href="login.html" class="btn-login">
+            Entrar
+        </a>
+
+    </header>
+
+    <main class="pagina-universidades">
+
+        <section class="cabecalho-universidades">
+
+            <a href="descobrir.html" class="btn-voltar">
+                ← Voltar para Descobrir
+            </a>
+
+            <span class="etiqueta-pagina">
+                Universidades
+            </span>
+
+            <h1>
+                Encontre a instituição ideal para você.
+            </h1>
+
+            <p>
+                Pesquise universidades, conheça os cursos disponíveis
+                e filtre as opções de acordo com seus objetivos.
+            </p>
+
+        </section>
+
+        <section class="filtros-universidades">
+
+            <div class="campo-pesquisa-universidade">
+
+                <span class="icone-pesquisa">
+                    ⌕
+                </span>
+
+                <input id="pesquisa-universidade" type="search"
+                    placeholder="Pesquise por instituição, sigla ou curso..." aria-label="Pesquisar universidade">
+
+            </div>
+
+            <select id="filtro-localizacao" aria-label="Selecionar localização">
+
+                <option value="">
+                    Todas as localizações
+                </option>
+
+                <option value="capital">
+                    Cidade do Rio de Janeiro
+                </option>
+
+                <option value="baixada-fluminense">
+                    Baixada Fluminense
+                </option>
+
+                <option value="niteroi">
+                    Niterói
+                </option>
+
+                <option value="interior">
+                    Interior do estado
+                </option>
+
+            </select>
+
+            <select id="filtro-tipo" aria-label="Selecionar tipo de instituição">
+
+                <option value="">
+                    Todos os tipos
+                </option>
+
+                <option value="publica">
+                    Pública
+                </option>
+
+                <option value="privada">
+                    Privada
+                </option>
+
+                <option value="federal">
+                    Federal
+                </option>
+
+                <option value="estadual">
+                    Estadual
+                </option>
+
+                <option value="tecnologica">
+                    Educação tecnológica
+                </option>
+
+            </select>
+
+            <select id="filtro-area" aria-label="Selecionar área de interesse">
+
+                <option value="">
+                    Todas as áreas
+                </option>
+
+                <option value="tecnologia">
+                    Tecnologia
+                </option>
+
+                <option value="engenharia">
+                    Engenharia
+                </option>
+
+                <option value="saude">
+                    Saúde
+                </option>
+
+                <option value="humanas">
+                    Humanas
+                </option>
+
+                <option value="administracao">
+                    Administração
+                </option>
+
+                <option value="design">
+                    Design
+                </option>
+
+            </select>
+
+            <button id="btn-aplicar-filtros" type="button">
+                Aplicar filtros
+            </button>
+
+            <button id="btn-limpar-filtros" type="button">
+                Limpar
+            </button>
+
+        </section>
+
+        <section class="conteudo-universidades">
+
+            <div class="topo-resultados">
+
+                <div>
+
+                    <span id="contador-resultados">
+                        Carregando instituições...
+                    </span>
+
+                    <h2>
+                        Explore universidades e instituições
+                    </h2>
+
+                </div>
+
+                <select id="ordenar-universidades" aria-label="Ordenar instituições">
+
+                    <option value="relevancia">
+                        Mais relevantes
+                    </option>
+
+                    <option value="nome">
+                        Ordem alfabética
+                    </option>
+
+                    <option value="publicas-primeiro">
+                        Públicas primeiro
+                    </option>
+
+                    <option value="mais-cursos">
+                        Mais cursos cadastrados
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div id="grade-universidades" class="grade-universidades">
+                <!-- Os cards serão criados pelo JavaScript -->
+            </div>
+
+            <p id="mensagem-sem-resultados" class="mensagem-sem-resultados" hidden>
+                Nenhuma instituição foi encontrada com esses filtros.
+            </p>
+
+        </section>
+
+    </main>
+    <footer class="rodape-site">
+
+        <div class="conteudo-rodape">
+
+            <!-- MARCA -->
+            <div class="coluna-rodape coluna-marca">
+
+                <a href="../index.html" class="logo-rodape">
+                    <img src="../assets/logo.png" alt="Logo do Futuro Universitário">
+                </a>
+
+                <p>
+                    Uma plataforma criada para ajudar estudantes
+                    a encontrar cursos, universidades, bolsas,
+                    oportunidades e caminhos profissionais.
+                </p>
+
+                <div class="redes-rodape">
+
+                    <a href="https://www.instagram.com/laranjitos_/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram da equipe Laranjitos" title="Instagram" class="rede-rodape">
+                        <img src="../assets/insta.webp" alt="Instagram">
+                    </a>
+
+                    <a href="https://www.reddit.com/r/PassaporteU/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Comunidade do Futuro Universitário no Reddit" title="Reddit" class="rede-rodape">
+                        <img src="../assets/reddit.webp" alt="Reddit">
+                    </a>
+
+                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank"
+                        rel="noopener noreferrer" aria-label="Enviar e-mail para o Futuro Universitário" title="E-mail"
+                        class="rede-rodape">
+                        <img src="../assets/gmail.webp" alt="Gmail">
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- EXPLORAR -->
+            <div class="coluna-rodape">
+
+                <h3>Explorar</h3>
+
+                <a href="descobrir.html">
+                    Descobrir
+                </a>
+
+                <a href="universidades.html">
+                    Universidades
+                </a>
+
+                <a href="cursos-tecnicos.html">
+                    Cursos técnicos
+                </a>
+
+                <a href="bolsas.html">
+                    Bolsas
+                </a>
+
+            </div>
+
+            <!-- ORIENTAÇÃO -->
+            <div class="coluna-rodape">
+
+                <h3>Orientação</h3>
+
+                <a href="teste-vocacional.html">
+                    Teste vocacional
+                </a>
+
+                <a href="guia-profissional.html">
+                    Guia profissional
+                </a>
+
+                <a href="mapa-oportunidades.html">
+                    Oportunidades
+                </a>
+
+                <a href="calendario.html">
+                    Calendário
+                </a>
+
+            </div>
+
+            <!-- PROJETO -->
+            <div class="coluna-rodape">
+
+                <h3>Projeto</h3>
+
+                <a href="comunidade.html">
+                    Comunidade
+                </a>
+
+                <a href="contato.html">
+                    Contato
+                </a>
+
+                <a href="em-desenvolvimento.html">
+                    Entrar
+                </a>
+
+                <span class="versao-rodape">
+                    Versão 1.0
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="base-rodape">
+
+            <p>
+                © 2026 Futuro Universitário.
+                Todos os direitos reservados.
+            </p>
+
+            <p>
+                Conectando estudantes a novas oportunidades.
+            </p>
+
+        </div>
+
+    </footer>
+    <script src="../universidades-data.js"></script>
+    <script src="../script.js"></script>
+    <script type="module" src="../auth-ui.js"></script>
+    <script type="module" src="../universidades-firestore.js"></script>
+
+</body>
+
+</html>

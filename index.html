@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Futuro Universitário</title>
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <a href="index.html" class="logo">
+
+            <img src="assets/logo.png" alt="Logo da equipe">
+
+        </a>
+
+        <nav>
+
+            <a href="index.html">
+                Início
+            </a>
+
+            <a href="pages/descobrir.html">
+                Descobrir
+            </a>
+
+            <a href="pages/mapa-oportunidades.html">
+                Oportunidades
+            </a>
+
+            <a href="pages/calendario.html">
+                Calendário
+            </a>
+
+            <a href="pages/comunidade.html">
+                Comunidade
+            </a>
+
+            <a href="pages/contato.html">
+                Contato
+            </a>
+            <a href="pages/desenvolvedores.html">
+                Desenvolvedores
+            </a>
+        </nav>
+
+        <a href="pages/login.html" class="btn-login">
+            Entrar
+        </a>
+
+    </header>
+
+    <!-- CARROSSEL DE BANNERS -->
+
+    <section class="carrossel-banner" id="carrossel-banner" aria-label="Destaques acadêmicos" tabindex="0">
+        <div class="trilho-banner">
+
+            <article class="slide-banner">
+                <img src="./assets/UERJ banner.webp" alt="Destaque acadêmico da UERJ" width="200px">
+
+            </article>
+
+            <article class="slide-banner">
+                <img src="./assets/PUC banner.webp" alt="Vestibular da PUC-Rio">
+            </article>
+
+            <article class="slide-banner">
+                <img src="./assets/UNIFASE-banner.webp" alt="Vestibular UNIFASE">
+            </article>
+
+            <article class="slide-banner">
+                <img src="./assets/INSPER-banner.webp" alt="Vestibular INSPER">
+            </article>
+
+            <article class="slide-banner">
+                <img src="./assets/CEDERJ-banner.png" alt="Vestibular INSPER">
+            </article>
+
+
+            <article class="slide-banner">
+                <img src="./assets/FVG banner.png" alt="Processo seletivo FGV">
+            </article>
+
+        </div>
+
+        <button type="button" class="seta-banner seta-banner-anterior" id="banner-anterior"
+            aria-label="Banner anterior">
+            ‹
+        </button>
+
+        <button type="button" class="seta-banner seta-banner-proximo" id="banner-proximo" aria-label="Próximo banner">
+            ›
+        </button>
+
+        <div class="indicadores-banner" id="indicadores-banner" aria-label="Selecionar banner"></div>
+
+    </section>
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-text">
+                <span class="etiqueta-hero">
+                    Portal de orientação acadêmica
+                </span>
+                <h1>
+                    Transformando ideias em inovação.
+                </h1>
+
+                <p>
+                    O Futuro Universitário nasceu para conectar jovens às oportunidades que podem transformar seu
+                    futuro. Em um só lugar, reunimos bolsas de estudo, intercâmbios, estágios, cursos, pesquisas e
+                    competições, com recomendações personalizadas para cada estudante. Acreditamos que talento existe em
+                    todo lugar — o que muitas vezes falta é acesso. Por isso, queremos ser a ponte entre os jovens e
+                    essas oportunidades.
+                </p>
+
+                <a href="#explorar" class="btn-principal" id="btn-explorar">
+                    Comece a explorar →
+                </a>
+                <div class="atalhos-hero">
+
+                    <a href="pages/universidades.html">
+                        <span>🎓</span>
+                        Universidades
+                    </a>
+
+                    <a href="pages/cursos-tecnicos.html">
+                        <span>📚</span>
+                        Cursos
+                    </a>
+
+                    <a href="pages/mapa-oportunidades.html">
+                        <span>🧭</span>
+                        Oportunidades
+                    </a>
+
+                    <a href="pages/calendario.html">
+                        <span>📅</span>
+                        Calendário
+                    </a>
+
+                    <a href="pages/comunidade.html">
+                        <span>💬</span>
+                        Comunidade
+                    </a>
+
+                </div>
+            </div>
+
+        </section>
+
+        <section id="explorar" class="explorar">
+
+            <div class="titulo-secao">
+
+                <span>
+                    Explore a plataforma
+                </span>
+
+                <h2>
+                    Encontre tudo o que precisa para construir seu futuro.
+                </h2>
+
+                <p>
+                    Descubra oportunidades, acompanhe eventos,
+                    participe da comunidade e explore diferentes
+                    caminhos para sua vida acadêmica e profissional.
+                </p>
+
+                <a href="pages/descobrir.html" class="btn-explorar-pagina">
+                    Explorar a plataforma →
+                </a>
+
+            </div>
+
+        </section>
+        </section>
+
+        <!-- ==================================================
+             MODAL DE OPORTUNIDADES
+        ================================================== -->
+
+        <div class="modal-oportunidades" id="modal-oportunidades" aria-hidden="true">
+            <!-- Fundo escurecido -->
+            <div class="modal-oportunidades-fundo" data-fechar-modal-oportunidades></div>
+
+            <!-- Conteúdo principal -->
+            <section class="modal-oportunidades-conteudo" role="dialog" aria-modal="true"
+                aria-labelledby="titulo-modal-oportunidades" tabindex="-1">
+                <!-- Cabeçalho -->
+                <header class="modal-oportunidades-topo">
+                    <div class="modal-oportunidades-titulos">
+                        <span class="modal-oportunidades-etiqueta">
+                            Oportunidades da região
+                        </span>
+
+                        <h2 id="titulo-modal-oportunidades">
+                            Região selecionada
+                        </h2>
+
+                        <p id="descricao-modal-oportunidades">
+                            Confira instituições, cursos e formas de ingresso
+                            disponíveis nesta região.
+                        </p>
+                    </div>
+
+                    <button type="button" class="modal-oportunidades-fechar" id="fechar-modal-oportunidades"
+                        aria-label="Fechar janela de oportunidades">
+                        ×
+                    </button>
+                </header>
+
+                <!-- Filtros -->
+                <div class="modal-oportunidades-filtros" role="group" aria-label="Filtrar oportunidades">
+                    <button type="button" class="filtro-oportunidades ativo" data-filtro-oportunidades="todas">
+                        Todas
+                    </button>
+
+                    <button type="button" class="filtro-oportunidades" data-filtro-oportunidades="superior">
+                        Ensino superior
+                    </button>
+
+                    <button type="button" class="filtro-oportunidades" data-filtro-oportunidades="tecnico">
+                        Cursos técnicos
+                    </button>
+
+                    <button type="button" class="filtro-oportunidades" data-filtro-oportunidades="bolsa">
+                        Bolsas e auxílios
+                    </button>
+                </div>
+
+                <!-- Resumo -->
+                <div class="modal-oportunidades-resumo">
+                    <strong id="quantidade-oportunidades-modal">
+                        0 oportunidades encontradas
+                    </strong>
+
+                    <span>
+                        Organizadas por facilidade de acesso,
+                        relevância e variedade de opções.
+                    </span>
+                </div>
+
+                <!-- Cards criados pelo JavaScript -->
+                <div class="lista-oportunidades-modal" id="lista-oportunidades-modal" aria-live="polite"></div>
+
+                <!-- Aviso -->
+                <footer class="modal-oportunidades-aviso">
+                    <span aria-hidden="true">ℹ️</span>
+
+                    <p>
+                        Consulte o site oficial da instituição antes de realizar
+                        uma inscrição. Cursos, editais, bolsas e datas podem
+                        sofrer alterações.
+                    </p>
+                </footer>
+            </section>
+        </div>
+
+    </main>
+    </main>
+    <footer class="rodape-site">
+
+        <div class="conteudo-rodape">
+
+            <!-- MARCA -->
+            <div class="coluna-rodape coluna-marca">
+
+                <a href="index.html" class="logo-rodape">
+                    <img src="assets/logo.png" alt="Logo do Futuro Universitário">
+                </a>
+
+                <p>
+                    Uma plataforma criada para ajudar estudantes
+                    a encontrar cursos, universidades, bolsas,
+                    oportunidades e caminhos profissionais.
+                </p>
+
+                <div class="redes-rodape">
+
+                    <a href="https://www.instagram.com/laranjitos_/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram da equipe Laranjitos" title="Instagram" class="rede-rodape">
+                        <img src="assets/insta.webp" alt="Instagram" width="60" weight="50">
+                    </a>
+
+                    <a href="https://www.reddit.com/r/PassaporteU/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Comunidade do Futuro Universitário no Reddit" title="Reddit" class="rede-rodape">
+                        <img src="assets/reddit.webp" alt="Reddit" width="60" weight="50">
+                    </a>
+
+                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank"
+                        rel="noopener noreferrer" aria-label="Enviar e-mail para o Futuro Universitário" title="E-mail"
+                        class="rede-rodape">
+                        <img src="assets/gmail.webp" alt="Gmail" width="45" weight="50">
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- EXPLORAR -->
+            <div class="coluna-rodape">
+
+                <h3>Explorar</h3>
+
+                <a href="pages/descobrir.html">
+                    Descobrir
+                </a>
+
+                <a href="pages/universidades.html">
+                    Universidades
+                </a>
+
+                <a href="pages/cursos-tecnicos.html">
+                    Cursos técnicos
+                </a>
+
+                <a href="pages/bolsas.html">
+                    Bolsas
+                </a>
+
+            </div>
+
+            <!-- ORIENTAÇÃO -->
+            <div class="coluna-rodape">
+
+                <h3>Orientação</h3>
+
+                <a href="pages/teste-vocacional.html">
+                    Teste vocacional
+                </a>
+
+                <a href="pages/guia-profissional.html">
+                    Guia profissional
+                </a>
+
+                <a href="pages/mapa-oportunidades.html">
+                    Oportunidades
+                </a>
+
+                <a href="pages/calendario.html">
+                    Calendário
+                </a>
+
+            </div>
+
+            <!-- PROJETO -->
+            <div class="coluna-rodape">
+
+                <h3>Projeto</h3>
+
+                <a href="pages/comunidade.html">
+                    Comunidade
+                </a>
+
+                <a href="pages/contato.html">
+                    Contato
+                </a>
+
+                <a href="pages/em-desenvolvimento.html">
+                    Entrar
+                </a>
+
+                <span class="versao-rodape">
+                    Versão 1.0
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="base-rodape">
+
+            <p>
+                © 2026 Futuro Universitário.
+                Todos os direitos reservados.
+            </p>
+
+            <p>
+                Conectando estudantes a novas oportunidades.
+            </p>
+
+        </div>
+
+    </footer>
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

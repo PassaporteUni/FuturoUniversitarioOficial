@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Guia Profissional | Futuro Universitário</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <a href="../index.html" class="logo">
+
+            <img src="../assets/logo.png" alt="Logo do Futuro Universitário">
+
+        </a>
+
+        <nav>
+
+            <a href="../index.html">
+                Início
+            </a>
+
+            <a href="descobrir.html">
+                Descobrir
+            </a>
+
+            <a href="mapa-oportunidades.html">
+                Oportunidades
+            </a>
+
+            <a href="calendario.html">
+                Calendário
+            </a>
+
+            <a href="comunidade.html">
+                Comunidade
+            </a>
+
+            <a href="contato.html">
+                Contato
+            </a>
+            <a href="desenvolvedores.html">
+                Desenvolvedores
+            </a>
+
+        </nav>
+
+        <a href="login.html" class="btn-login">
+            Entrar
+        </a>
+
+    </header>
+
+    <main class="pagina-guia-profissional">
+
+        <!-- CABEÇALHO -->
+
+        <section class="cabecalho-guia-profissional">
+
+            <a href="descobrir.html" class="btn-voltar">
+                ← Voltar para Descobrir
+            </a>
+
+            <span class="etiqueta-pagina">
+                Guia profissional
+            </span>
+
+            <h1>
+                Conheça profissões e encontre novos caminhos.
+            </h1>
+
+            <p>
+                Explore diferentes carreiras, descubra formações,
+                salários, habilidades importantes e áreas de atuação
+                para planejar melhor o seu futuro profissional.
+            </p>
+
+        </section>
+
+        <!-- PESQUISA E FILTROS -->
+
+        <section class="filtros-guia-profissional">
+
+            <div class="campo-pesquisa-profissao">
+
+                <span class="icone-pesquisa">
+                    ⌕
+                </span>
+
+                <input id="pesquisa-profissao" type="search" placeholder="Pesquise por profissão, área ou habilidade..."
+                    aria-label="Pesquisar profissão" autocomplete="off">
+
+            </div>
+
+            <select id="filtro-area-profissao" aria-label="Selecionar área profissional">
+
+                <option value="">
+                    Todas as áreas
+                </option>
+
+                <option value="tecnologia">
+                    Tecnologia
+                </option>
+
+                <option value="engenharia">
+                    Engenharia
+                </option>
+
+                <option value="saude">
+                    Saúde
+                </option>
+
+                <option value="humanas">
+                    Humanas
+                </option>
+
+                <option value="administracao">
+                    Administração
+                </option>
+
+                <option value="design">
+                    Design
+                </option>
+
+            </select>
+
+            <select id="filtro-salario-profissao" aria-label="Selecionar faixa salarial">
+
+                <option value="">
+                    Todas as faixas salariais
+                </option>
+
+                <option value="ate-3000">
+                    Até R$ 3 mil
+                </option>
+
+                <option value="3000-6000">
+                    De R$ 3 mil a R$ 6 mil
+                </option>
+
+                <option value="6000-10000">
+                    De R$ 6 mil a R$ 10 mil
+                </option>
+
+                <option value="acima-10000">
+                    Acima de R$ 10 mil
+                </option>
+
+            </select>
+
+            <button id="btn-aplicar-filtros-profissao" type="button">
+                Aplicar filtros
+            </button>
+
+        </section>
+
+        <!-- RESULTADOS -->
+
+        <section class="conteudo-guia-profissional">
+
+            <div class="topo-resultados">
+
+                <div>
+
+                    <span id="contador-profissoes">
+                        Carregando profissões...
+                    </span>
+
+                    <h2>
+                        Explore diferentes possibilidades
+                    </h2>
+
+                </div>
+
+                <select id="ordenar-profissoes" aria-label="Ordenar profissões">
+
+                    <option value="relevancia">
+                        Mais relevantes
+                    </option>
+
+                    <option value="nome">
+                        Ordem alfabética
+                    </option>
+
+                    <option value="salario">
+                        Maior salário
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div id="grade-profissoes" class="grade-profissoes" aria-live="polite">
+
+                <p class="estado-carregamento-profissoes">
+                    Carregando profissões...
+                </p>
+
+            </div>
+
+            <p id="mensagem-sem-profissoes" class="mensagem-sem-resultados" hidden>
+                Nenhuma profissão foi encontrada com esses filtros.
+            </p>
+
+        </section>
+
+    </main>
+    <!-- MODAL DE DETALHES DA PROFISSÃO -->
+
+    <div id="modal-profissao" class="modal-profissao" hidden aria-hidden="true">
+
+        <div class="fundo-modal-profissao" data-fechar-modal-profissao></div>
+
+        <section class="conteudo-modal-profissao" role="dialog" aria-modal="true"
+            aria-labelledby="modal-profissao-titulo">
+
+            <button class="btn-fechar-modal-profissao" type="button" data-fechar-modal-profissao
+                aria-label="Fechar detalhes da profissão">
+                ×
+            </button>
+
+            <!-- CABEÇALHO -->
+
+            <header class="cabecalho-modal-profissao">
+
+                <div id="modal-profissao-simbolo" class="simbolo-modal-profissao">
+                    💼
+                </div>
+
+                <div>
+
+                    <span id="modal-profissao-area" class="area-modal-profissao">
+                        Área profissional
+                    </span>
+
+                    <h2 id="modal-profissao-titulo">
+                        Profissão
+                    </h2>
+
+                    <p id="modal-profissao-resumo">
+                        Informações sobre a profissão.
+                    </p>
+
+                </div>
+
+            </header>
+
+            <!-- INFORMAÇÕES PRINCIPAIS -->
+
+            <div class="resumo-modal-profissao">
+
+                <div>
+                    <span>💰 Salário médio</span>
+
+                    <strong id="modal-profissao-salario">
+                        Não informado
+                    </strong>
+                </div>
+
+                <div>
+                    <span>🎓 Formação recomendada</span>
+
+                    <strong id="modal-profissao-formacao">
+                        Não informada
+                    </strong>
+                </div>
+
+                <div>
+                    <span>⌛ Duração média</span>
+
+                    <strong id="modal-profissao-duracao">
+                        Não informada
+                    </strong>
+                </div>
+
+            </div>
+
+            <!-- SOBRE A PROFISSÃO -->
+
+            <section class="bloco-modal-profissao">
+
+                <h3>
+                    👤 Sobre a profissão
+                </h3>
+
+                <p id="modal-profissao-sobre"></p>
+
+            </section>
+
+            <!-- DETALHES -->
+
+            <div class="grade-detalhes-modal-profissao">
+
+                <section id="secao-modal-profissao-atividades" class="bloco-modal-profissao">
+
+                    <h3>
+                        📋 Atividades do dia a dia
+                    </h3>
+
+                    <div id="modal-profissao-atividades" class="lista-atividades-modal-profissao"></div>
+
+                </section>
+
+                <section id="secao-modal-profissao-areas" class="bloco-modal-profissao">
+
+                    <h3>
+                        🏢 Áreas de atuação
+                    </h3>
+
+                    <div id="modal-profissao-areas" class="etiquetas-modal-profissao"></div>
+
+                </section>
+
+                <section id="secao-modal-profissao-mercado" class="bloco-modal-profissao">
+
+                    <h3>
+                        📈 Mercado de trabalho
+                    </h3>
+
+                    <p id="modal-profissao-mercado"></p>
+
+                </section>
+
+                <section id="secao-modal-profissao-habilidades" class="bloco-modal-profissao">
+
+                    <h3>
+                        ✨ Habilidades importantes
+                    </h3>
+
+                    <div id="modal-profissao-habilidades"
+                        class="etiquetas-modal-profissao etiquetas-habilidades-modal-profissao"></div>
+
+                </section>
+
+            </div>
+
+            <!-- BOTÕES -->
+
+            <footer class="acoes-modal-profissao">
+
+                <a id="modal-profissao-link" href="#" class="btn-modal-profissao btn-modal-profissao-principal"
+                    target="_blank" rel="noopener noreferrer" hidden>
+                    Página com mais informações ↗
+                </a>
+
+                <a href="universidades.html" class="btn-modal-profissao">
+                    Ver universidades →
+                </a>
+
+                <a href="teste-vocacional.html" class="btn-modal-profissao">
+                    Fazer teste vocacional
+                </a>
+
+            </footer>
+
+        </section>
+
+    </div>
+    <footer class="rodape-site">
+
+        <div class="conteudo-rodape">
+
+            <!-- MARCA -->
+            <div class="coluna-rodape coluna-marca">
+
+                <a href="../index.html" class="logo-rodape">
+                    <img src="../assets/logo.png" alt="Logo do Futuro Universitário">
+                </a>
+
+                <p>
+                    Uma plataforma criada para ajudar estudantes
+                    a encontrar cursos, universidades, bolsas,
+                    oportunidades e caminhos profissionais.
+                </p>
+
+                <div class="redes-rodape">
+
+                    <a href="https://www.instagram.com/laranjitos_/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram da equipe Laranjitos" title="Instagram" class="rede-rodape">
+                        <img src="../assets/insta.webp" alt="Instagram">
+                    </a>
+
+                    <a href="https://www.reddit.com/r/PassaporteU/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Comunidade do Futuro Universitário no Reddit" title="Reddit" class="rede-rodape">
+                        <img src="../assets/reddit.webp" alt="Reddit">
+                    </a>
+
+                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank"
+                        rel="noopener noreferrer" aria-label="Enviar e-mail para o Futuro Universitário" title="E-mail"
+                        class="rede-rodape">
+                        <img src="../assets/gmail.webp" alt="Gmail">
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- EXPLORAR -->
+            <div class="coluna-rodape">
+
+                <h3>Explorar</h3>
+
+                <a href="descobrir.html">
+                    Descobrir
+                </a>
+
+                <a href="universidades.html">
+                    Universidades
+                </a>
+
+                <a href="cursos-tecnicos.html">
+                    Cursos técnicos
+                </a>
+
+                <a href="bolsas.html">
+                    Bolsas
+                </a>
+
+            </div>
+
+            <!-- ORIENTAÇÃO -->
+            <div class="coluna-rodape">
+
+                <h3>Orientação</h3>
+
+                <a href="teste-vocacional.html">
+                    Teste vocacional
+                </a>
+
+                <a href="guia-profissional.html">
+                    Guia profissional
+                </a>
+
+                <a href="mapa-oportunidades.html">
+                    Oportunidades
+                </a>
+
+                <a href="calendario.html">
+                    Calendário
+                </a>
+
+            </div>
+
+            <!-- PROJETO -->
+            <div class="coluna-rodape">
+
+                <h3>Projeto</h3>
+
+                <a href="comunidade.html">
+                    Comunidade
+                </a>
+
+                <a href="contato.html">
+                    Contato
+                </a>
+
+                <a href="login.html">
+                    Entrar
+                </a>
+                <span class="versao-rodape">
+                    Versão 1.0
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="base-rodape">
+
+            <p>
+                © 2026 Futuro Universitário.
+                Todos os direitos reservados.
+            </p>
+
+            <p>
+                Conectando estudantes a novas oportunidades.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script src="../script.js"></script>
+    <script type="module" src="../auth-ui.js"></script>
+    <script type="module" src="../profissoes-firestore.js"></script>
+</body>
+
+</html>

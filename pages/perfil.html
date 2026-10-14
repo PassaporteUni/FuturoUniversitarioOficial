@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Gerencie seu perfil no Futuro Universitário.">
+
+    <title>Meu perfil | Futuro Universitário</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link rel="stylesheet" href="../perfil.css">
+</head>
+
+<body class="corpo-perfil">
+
+    <header>
+
+        <a href="../index.html" class="logo">
+            <img src="../assets/logo.png" alt="Logo do Futuro Universitário">
+        </a>
+
+        <nav>
+
+            <a href="../index.html">
+                Início
+            </a>
+
+            <a href="descobrir.html">
+                Descobrir
+            </a>
+
+            <a href="mapa-oportunidades.html">
+                Oportunidades
+            </a>
+
+            <a href="calendario.html">
+                Calendário
+            </a>
+
+            <a href="comunidade.html">
+                Comunidade
+            </a>
+
+            <a href="contato.html">
+                Contato
+            </a>
+
+            <a href="desenvolvedores.html">
+                Desenvolvedores
+            </a>
+
+        </nav>
+
+        <a href="login.html" class="btn-login">
+            Entrar
+        </a>
+
+    </header>
+
+
+    <main class="pagina-perfil">
+
+        <div class="perfil-container">
+
+            <!-- CABEÇALHO DA PÁGINA -->
+
+            <section class="cabecalho-pagina-perfil">
+
+                <a href="../index.html" class="link-voltar-perfil">
+                    <span aria-hidden="true">←</span>
+                    Voltar ao início
+                </a>
+
+                <span class="etiqueta-pagina-perfil">
+                    Minha conta
+                </span>
+
+                <h1>
+                    Seu perfil
+                </h1>
+
+                <p>
+                    Personalize como você aparece no Futuro
+                    Universitário e mantenha seus dados atualizados.
+                </p>
+
+            </section>
+
+
+            <!-- MENSAGENS -->
+
+            <div id="mensagem-perfil" class="mensagem-perfil" role="status" aria-live="polite" hidden></div>
+
+
+            <!-- CONTEÚDO PRINCIPAL -->
+
+            <div class="grade-perfil">
+
+                <!-- RESUMO DO USUÁRIO -->
+
+                <aside class="cartao-resumo-perfil" aria-labelledby="titulo-resumo-perfil">
+
+                    <div class="area-avatar-perfil">
+
+                        <div id="avatar-perfil" class="avatar-perfil" aria-hidden="true">
+                            US
+                        </div>
+
+                        <span class="status-avatar-perfil" aria-label="Conta conectada" title="Conta conectada">
+                            ✓
+                        </span>
+
+                    </div>
+
+                    <span class="etiqueta-conta-perfil">
+                        Conta conectada
+                    </span>
+
+                    <h2 id="titulo-resumo-perfil">
+                        Carregando...
+                    </h2>
+
+                    <p id="email-resumo-perfil">
+                        Aguarde um momento
+                    </p>
+
+                    <div class="separador-resumo-perfil"></div>
+
+                    <div class="area-foto-perfil">
+
+                        <strong>
+                            Foto do perfil
+                        </strong>
+
+                        <p>
+                            Atualmente utilizamos sua foto do Google
+                            ou suas iniciais.
+                        </p>
+
+                        <button type="button" id="btn-escolher-foto-perfil" class="btn-secundario-perfil" disabled>
+                            Escolher foto da galeria
+                        </button>
+
+                        <small>
+                            O envio de imagens será ativado após
+                            configurarmos o armazenamento.
+                        </small>
+
+                    </div>
+
+                </aside>
+
+
+                <!-- FORMULÁRIO -->
+
+                <section class="cartao-edicao-perfil" aria-labelledby="titulo-edicao-perfil">
+
+                    <div class="cabecalho-edicao-perfil">
+
+                        <div class="icone-edicao-perfil" aria-hidden="true">
+                            ✦
+                        </div>
+
+                        <div>
+
+                            <h2 id="titulo-edicao-perfil">
+                                Informações pessoais
+                            </h2>
+
+                            <p>
+                                Escolha o nome que será mostrado
+                                nas páginas do site.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <form id="form-perfil" novalidate>
+
+                        <div class="grupo-campo-perfil">
+
+                            <label for="nome-exibicao-perfil">
+                                Nome de exibição
+                            </label>
+
+                            <div class="campo-perfil">
+
+                                <span aria-hidden="true">
+                                    👤
+                                </span>
+
+                                <input type="text" id="nome-exibicao-perfil" name="nomeExibicao"
+                                    placeholder="Como podemos chamar você?" autocomplete="name" minlength="2"
+                                    maxlength="60" disabled required>
+
+                            </div>
+
+                            <small>
+                                Esse nome pode ser diferente do nome
+                                utilizado na sua conta Google.
+                            </small>
+
+                        </div>
+
+
+                        <div class="grupo-campo-perfil">
+
+                            <label for="email-perfil">
+                                E-mail da conta
+                            </label>
+
+                            <div class="campo-perfil campo-perfil-bloqueado">
+
+                                <span aria-hidden="true">
+                                    @
+                                </span>
+
+                                <input type="email" id="email-perfil" name="email" value=""
+                                    placeholder="Carregando e-mail..." readonly>
+
+                                <span class="cadeado-campo-perfil">
+                                    🔒
+                                </span>
+
+                            </div>
+
+                            <small>
+                                O e-mail não poderá ser alterado
+                                nesta primeira versão.
+                            </small>
+
+                        </div>
+
+
+                        <div class="grupo-campo-perfil">
+
+                            <span class="titulo-provedor-perfil">
+                                Forma de acesso
+                            </span>
+
+                            <div class="informacao-provedor-perfil">
+
+                                <span class="icone-provedor-perfil" aria-hidden="true">
+                                    G
+                                </span>
+
+                                <div>
+
+                                    <strong id="nome-provedor-perfil">
+                                        Verificando...
+                                    </strong>
+
+                                    <small>
+                                        Método utilizado para entrar
+                                        nesta conta.
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="acoes-formulario-perfil">
+
+                            <button type="button" id="btn-cancelar-perfil" class="btn-cancelar-perfil" disabled>
+                                Descartar alterações
+                            </button>
+
+                            <button type="submit" id="btn-salvar-perfil" class="btn-salvar-perfil" disabled>
+                                <span>
+                                    Salvar alterações
+                                </span>
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer class="rodape-site">
+
+        <div class="conteudo-rodape">
+
+            <div class="coluna-rodape coluna-marca">
+
+                <a href="../index.html" class="logo-rodape">
+
+                    <img src="../assets/logo.png" alt="Logo do Futuro Universitário">
+
+                </a>
+
+                <p>
+                    Uma plataforma criada para ajudar estudantes
+                    a encontrar cursos, universidades, bolsas,
+                    oportunidades e caminhos profissionais.
+                </p>
+
+                <div class="redes-rodape">
+
+                    <a href="https://www.instagram.com/laranjitos_/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram da equipe Laranjitos" title="Instagram" class="rede-rodape">
+                        <img src="../assets/insta.webp" alt="Instagram">
+                    </a>
+
+                    <a href="https://www.reddit.com/r/PassaporteU/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Comunidade do Futuro Universitário no Reddit" title="Reddit" class="rede-rodape">
+                        <img src="../assets/reddit.webp" alt="Reddit">
+                    </a>
+
+                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank"
+                        rel="noopener noreferrer" aria-label="Enviar e-mail para o Futuro Universitário" title="E-mail"
+                        class="rede-rodape">
+                        <img src="../assets/gmail.webp" alt="Gmail">
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="coluna-rodape">
+
+                <h3>Explorar</h3>
+
+                <a href="descobrir.html">
+                    Descobrir
+                </a>
+
+                <a href="universidades.html">
+                    Universidades
+                </a>
+
+                <a href="cursos-tecnicos.html">
+                    Cursos técnicos
+                </a>
+
+                <a href="bolsas.html">
+                    Bolsas
+                </a>
+
+            </div>
+
+
+            <div class="coluna-rodape">
+
+                <h3>Orientação</h3>
+
+                <a href="teste-vocacional.html">
+                    Teste vocacional
+                </a>
+
+                <a href="guia-profissional.html">
+                    Guia profissional
+                </a>
+
+                <a href="mapa-oportunidades.html">
+                    Oportunidades
+                </a>
+
+                <a href="calendario.html">
+                    Calendário
+                </a>
+
+            </div>
+
+
+            <div class="coluna-rodape">
+
+                <h3>Projeto</h3>
+
+                <a href="comunidade.html">
+                    Comunidade
+                </a>
+
+                <a href="contato.html">
+                    Contato
+                </a>
+
+                <a href="login.html">
+                    Entrar
+                </a>
+
+                <span class="versao-rodape">
+                    Versão 1.0
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="base-rodape">
+
+            <p>
+                © 2026 Futuro Universitário.
+                Todos os direitos reservados.
+            </p>
+
+            <p>
+                Conectando estudantes a novas oportunidades.
+            </p>
+
+        </div>
+
+    </footer>
+    <script src="../script.js"></script>
+
+    <script type="module" src="../perfil.js"></script>
+
+</body>
+
+</html>

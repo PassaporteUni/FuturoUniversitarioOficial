@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Acompanhe os eventos e prazos acadêmicos que você escolheu receber como lembrete.">
+
+    <title>Minhas notificações | Futuro Universitário</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link rel="stylesheet" href="../favoritos.css">
+
+    <link rel="stylesheet" href="../notificacoes.css">
+</head>
+
+<body class="corpo-favoritos">
+
+    <header>
+
+        <a href="../index.html" class="logo">
+            <img src="../assets/logo.png" alt="Logo do Futuro Universitário">
+        </a>
+
+        <nav>
+
+            <a href="../index.html">
+                Início
+            </a>
+
+            <a href="descobrir.html">
+                Descobrir
+            </a>
+
+            <a href="mapa-oportunidades.html">
+                Oportunidades
+            </a>
+
+            <a href="calendario.html">
+                Calendário
+            </a>
+
+            <a href="comunidade.html">
+                Comunidade
+            </a>
+
+            <a href="contato.html">
+                Contato
+            </a>
+
+            <a href="desenvolvedores.html">
+                Desenvolvedores
+            </a>
+
+        </nav>
+
+        <a href="login.html" class="btn-login">
+            Entrar
+        </a>
+
+    </header>
+
+
+    <main class="pagina-favoritos pagina-notificacoes">
+
+        <div class="favoritos-container notificacoes-container">
+
+            <!-- CABEÇALHO DA PÁGINA -->
+
+            <section class="cabecalho-pagina-favoritos">
+
+                <a href="calendario.html" class="link-voltar-favoritos">
+                    <span aria-hidden="true">←</span>
+                    Voltar ao calendário
+                </a>
+
+                <span class="etiqueta-pagina-favoritos">
+                    Minha conta
+                </span>
+
+                <h1>
+                    Suas notificações
+                </h1>
+
+                <p>
+                    Acompanhe os eventos e prazos acadêmicos
+                    que você escolheu receber como lembrete.
+                </p>
+
+            </section>
+
+
+            <!-- MENSAGENS -->
+
+            <div id="mensagem-notificacoes" class="mensagem-favoritos" role="status" aria-live="polite" hidden></div>
+
+
+            <!-- PAINEL PRINCIPAL -->
+
+            <section class="painel-favoritos painel-notificacoes" aria-labelledby="titulo-lista-notificacoes">
+
+                <div class="barra-superior-favoritos">
+
+                    <div class="titulo-painel-favoritos">
+
+                        <span class="icone-titulo-favoritos" aria-hidden="true">
+                            🔔
+                        </span>
+
+                        <div>
+
+                            <h2 id="titulo-lista-notificacoes">
+                                Lembretes do calendário
+                            </h2>
+
+                            <p id="resumo-notificacoes">
+                                Carregando seus lembretes...
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="filtro-favoritos">
+
+                        <label for="filtro-notificacoes">
+                            Mostrar
+                        </label>
+
+                        <select id="filtro-notificacoes">
+
+                            <option value="todos">
+                                Todos os lembretes
+                            </option>
+
+                            <option value="proximos">
+                                Próximos eventos
+                            </option>
+
+                            <option value="hoje">
+                                Eventos de hoje
+                            </option>
+
+                            <option value="encerrados">
+                                Eventos encerrados
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="separador-painel-favoritos"></div>
+
+
+                <!-- CARREGAMENTO -->
+
+                <div id="estado-carregando-notificacoes" class="estado-favoritos" role="status">
+
+                    <span class="indicador-carregamento-favoritos" aria-hidden="true"></span>
+
+                    <strong>
+                        Carregando seus lembretes
+                    </strong>
+
+                    <p>
+                        Aguarde só um momento.
+                    </p>
+
+                </div>
+
+
+                <!-- LISTA VAZIA -->
+
+                <div id="estado-vazio-notificacoes" class="estado-favoritos" hidden>
+
+                    <span class="icone-estado-vazio-favoritos" aria-hidden="true">
+                        🔕
+                    </span>
+
+                    <h3>
+                        Nenhum lembrete ativado
+                    </h3>
+
+                    <p>
+                        Abra o calendário e escolha os eventos
+                        importantes que você deseja acompanhar.
+                    </p>
+
+                    <a href="calendario.html" class="link-explorar-favoritos">
+                        Abrir calendário
+                    </a>
+
+                </div>
+
+
+                <!-- CARDS CRIADOS PELO JAVASCRIPT -->
+
+                <div id="grade-notificacoes" class="grade-notificacoes" aria-live="polite"></div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <footer class="rodape-site">
+
+        <div class="conteudo-rodape">
+
+            <div class="coluna-rodape coluna-marca">
+
+                <a href="../index.html" class="logo-rodape">
+
+                    <img src="../assets/logo.png" alt="Logo do Futuro Universitário">
+
+                </a>
+
+                <p>
+                    Uma plataforma criada para ajudar estudantes
+                    a encontrar cursos, universidades, bolsas,
+                    oportunidades e caminhos profissionais.
+                </p>
+
+                <div class="redes-rodape">
+
+                    <a href="https://www.instagram.com/laranjitos_/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram da equipe Laranjitos" title="Instagram" class="rede-rodape">
+                        <img src="../assets/insta.webp" alt="Instagram">
+                    </a>
+
+                    <a href="https://www.reddit.com/r/PassaporteU/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Comunidade do Futuro Universitário no Reddit" title="Reddit" class="rede-rodape">
+                        <img src="../assets/reddit.webp" alt="Reddit">
+                    </a>
+
+                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank"
+                        rel="noopener noreferrer" aria-label="Enviar e-mail para o Futuro Universitário" title="E-mail"
+                        class="rede-rodape">
+                        <img src="../assets/gmail.webp" alt="Gmail">
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="coluna-rodape">
+
+                <h3>Explorar</h3>
+
+                <a href="descobrir.html">
+                    Descobrir
+                </a>
+
+                <a href="universidades.html">
+                    Universidades
+                </a>
+
+                <a href="cursos-tecnicos.html">
+                    Cursos técnicos
+                </a>
+
+                <a href="bolsas.html">
+                    Bolsas
+                </a>
+
+            </div>
+
+
+            <div class="coluna-rodape">
+
+                <h3>Orientação</h3>
+
+                <a href="teste-vocacional.html">
+                    Teste vocacional
+                </a>
+
+                <a href="guia-profissional.html">
+                    Guia profissional
+                </a>
+
+                <a href="mapa-oportunidades.html">
+                    Oportunidades
+                </a>
+
+                <a href="calendario.html">
+                    Calendário
+                </a>
+
+            </div>
+
+
+            <div class="coluna-rodape">
+
+                <h3>Projeto</h3>
+
+                <a href="comunidade.html">
+                    Comunidade
+                </a>
+
+                <a href="contato.html">
+                    Contato
+                </a>
+
+                <a href="login.html">
+                    Entrar
+                </a>
+
+                <span class="versao-rodape">
+                    Versão 1.0
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="base-rodape">
+
+            <p>
+                © 2026 Futuro Universitário.
+                Todos os direitos reservados.
+            </p>
+
+            <p>
+                Conectando estudantes a novas oportunidades.
+            </p>
+
+        </div>
+
+    </footer>
+    <script src="../script.js"></script>
+    <script type="module" src="../auth-ui.js"></script>
+    <script type="module" src="../notificacoes.js"></script>
+</body>
+
+</html>

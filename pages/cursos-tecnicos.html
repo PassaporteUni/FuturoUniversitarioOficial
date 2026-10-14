@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cursos Técnicos | Futuro Universitário</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <a href="../index.html" class="logo">
+
+            <img src="../assets/logo.png" alt="Logo do Futuro Universitário">
+
+        </a>
+
+        <nav>
+
+            <a href="../index.html">
+                Início
+            </a>
+
+            <a href="descobrir.html">
+                Descobrir
+            </a>
+
+            <a href="mapa-oportunidades.html">
+                Oportunidades
+            </a>
+
+            <a href="calendario.html">
+                Calendário
+            </a>
+
+            <a href="comunidade.html">
+                Comunidade
+            </a>
+
+            <a href="contato.html">
+                Contato
+            </a>
+            <a href="desenvolvedores.html">
+                Desenvolvedores
+            </a>
+
+        </nav>
+
+        <a href="login.html" class="btn-login">
+            Entrar
+        </a>
+
+    </header>
+
+    <main class="pagina-cursos-tecnicos">
+
+        <section class="cabecalho-cursos-tecnicos">
+
+            <a href="descobrir.html" class="btn-voltar">
+                ← Voltar para Descobrir
+            </a>
+
+            <span class="etiqueta-pagina">
+                Cursos técnicos
+            </span>
+
+            <h1>
+                Encontre uma formação para começar sua carreira.
+            </h1>
+
+            <p>
+                Explore cursos técnicos e profissionalizantes,
+                filtre por área, modalidade e localização e encontre
+                uma opção que combine com os seus objetivos.
+            </p>
+
+        </section>
+
+        <section class="filtros-cursos-tecnicos">
+
+            <div class="campo-pesquisa-curso">
+
+                <span class="icone-pesquisa">
+                    ⌕
+                </span>
+
+                <input id="pesquisa-curso" type="search" placeholder="Pesquise por curso, área ou instituição..."
+                    aria-label="Pesquisar curso técnico">
+
+            </div>
+
+            <select id="filtro-area-curso" aria-label="Selecionar área">
+
+                <option value="">
+                    Todas as áreas
+                </option>
+
+                <option value="tecnologia">
+                    Tecnologia
+                </option>
+
+                <option value="administracao">
+                    Administração
+                </option>
+
+                <option value="saude">
+                    Saúde
+                </option>
+
+                <option value="industria">
+                    Indústria
+                </option>
+
+            </select>
+
+            <select id="filtro-modalidade-curso" aria-label="Selecionar modalidade">
+
+                <option value="">
+                    Todas as modalidades
+                </option>
+
+                <option value="presencial">
+                    Presencial
+                </option>
+
+                <option value="online">
+                    Online
+                </option>
+
+                <option value="hibrido">
+                    Híbrido
+                </option>
+
+            </select>
+
+            <button id="btn-aplicar-filtros-curso" type="button">
+                Aplicar filtros
+            </button>
+
+        </section>
+
+        <section class="conteudo-cursos-tecnicos">
+
+            <div class="topo-resultados">
+
+                <div>
+
+                    <span id="contador-cursos">
+                        6 cursos encontrados
+                    </span>
+
+                    <h2>
+                        Explore formações disponíveis
+                    </h2>
+
+                </div>
+
+                <select id="ordenar-cursos" aria-label="Ordenar cursos">
+
+                    <option value="relevancia">
+                        Mais relevantes
+                    </option>
+
+                    <option value="nome">
+                        Ordem alfabética
+                    </option>
+
+                    <option value="duracao">
+                        Menor duração
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="grade-cursos-tecnicos" aria-live="polite">
+
+                <p class="mensagem-sem-resultados">
+                    Carregando cursos...
+                </p>
+
+            </div>
+
+            <p id="mensagem-sem-cursos" class="mensagem-sem-resultados" hidden>
+                Nenhum curso foi encontrado com esses filtros.
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- =========================================
+     MODAL - DETALHES DO CURSO TÉCNICO
+========================================= -->
+
+    <div class="modal-curso-tecnico" id="modal-curso-tecnico" aria-hidden="true">
+        <div class="overlay-modal-curso"></div>
+
+        <div class="conteudo-modal-curso" role="dialog" aria-modal="true" aria-labelledby="titulo-modal-curso">
+            <button type="button" class="fechar-modal-curso" id="fechar-modal-curso" aria-label="Fechar detalhes">
+                ×
+            </button>
+
+            <div class="cabecalho-modal-curso">
+                <span class="area-modal-curso" id="area-modal-curso">
+                    Tecnologia
+                </span>
+
+                <h2 id="titulo-modal-curso">
+                    Desenvolvimento de Sistemas
+                </h2>
+
+                <p class="instituicao-modal-curso" id="instituicao-modal-curso">
+                    Firjan SENAI • Maracanã
+                </p>
+
+                <p class="aviso-oferta-modal">
+                    Esta é uma das instituições e unidades que oferecem
+                    esta formação no estado do Rio de Janeiro.
+                </p>
+            </div>
+
+            <div class="grade-informacoes-modal">
+                <div class="item-info-modal">
+                    <span>📍 Local</span>
+                    <strong id="local-modal-curso">
+                        Maracanã, Rio de Janeiro — RJ
+                    </strong>
+                </div>
+
+                <div class="item-info-modal">
+                    <span>⏱️ Carga horária</span>
+                    <strong id="duracao-modal-curso">
+                        1.200 horas
+                    </strong>
+                </div>
+
+                <div class="item-info-modal">
+                    <span>🏫 Modalidade</span>
+                    <strong id="modalidade-modal-curso">
+                        Presencial
+                    </strong>
+                </div>
+
+                <div class="item-info-modal">
+                    <span>🌙 Turno</span>
+                    <strong id="turno-modal-curso">
+                        Noturno
+                    </strong>
+                </div>
+            </div>
+
+            <div class="bloco-processo-seletivo">
+                <div class="topo-processo-seletivo">
+                    <div>
+                        <span class="etiqueta-processo">
+                            Processo seletivo
+                        </span>
+
+                        <h3 id="titulo-processo-modal">
+                            Turma 2026.2
+                        </h3>
+                    </div>
+
+                    <span class="status-processo status-encerrado" id="status-processo-modal">
+                        Processo encerrado
+                    </span>
+                </div>
+
+                <p class="aviso-status-processo" id="aviso-status-processo">
+                    Informações sobre o processo seletivo.
+                </p>
+
+                <div class="datas-processo-modal">
+
+                    <div>
+                        <span id="rotulo-processo-1">Edital</span>
+                        <strong id="valor-processo-1">—</strong>
+                    </div>
+
+                    <div>
+                        <span id="rotulo-processo-2">Inscrições</span>
+                        <strong id="valor-processo-2">—</strong>
+                    </div>
+
+                    <div>
+                        <span id="rotulo-processo-3">Seleção</span>
+                        <strong id="valor-processo-3">—</strong>
+                    </div>
+
+                    <div>
+                        <span id="rotulo-processo-4">Data</span>
+                        <strong id="valor-processo-4">—</strong>
+                    </div>
+
+                    <div>
+                        <span id="rotulo-processo-5">Vagas</span>
+                        <strong id="valor-processo-5">—</strong>
+                    </div>
+
+                    <div>
+                        <span id="rotulo-processo-6">Taxa</span>
+                        <strong id="valor-processo-6">—</strong>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="observacao-modal-curso">
+                <strong>Sobre esta oferta</strong>
+
+                <p id="texto-oferta-modal">
+                    Informações sobre esta oferta.
+                </p>
+
+                <p class="data-verificacao-modal" id="verificacao-modal-curso">
+                    Informações verificadas recentemente.
+                </p>
+            </div>
+
+            <div class="acoes-modal-curso">
+                <a href="https://www.firjan.com.br/noticias/firjan-senai-abre-quase-4-mil-vagas-gratuitas-em-cursos-tecnicos-de-nivel-medio.htm"
+                    target="_blank" rel="noopener noreferrer" class="btn-edital-curso" id="btn-processo-curso">
+                    Fonte oficial do processo
+                </a>
+
+                <a href="https://www.firjan.com.br/unidades/firjan-senai-maracana-firjan.htm" target="_blank"
+                    rel="noopener noreferrer" class="btn-site-curso" id="btn-instituicao-curso">
+                    Conhecer a instituição
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="rodape-site">
+
+        <div class="conteudo-rodape">
+
+            <!-- MARCA -->
+            <div class="coluna-rodape coluna-marca">
+
+                <a href="../index.html" class="logo-rodape">
+                    <img src="../assets/logo.png" alt="Logo do Futuro Universitário">
+                </a>
+
+                <p>
+                    Uma plataforma criada para ajudar estudantes
+                    a encontrar cursos, universidades, bolsas,
+                    oportunidades e caminhos profissionais.
+                </p>
+
+                <div class="redes-rodape">
+
+                    <a href="https://www.instagram.com/laranjitos_/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram da equipe Laranjitos" title="Instagram" class="rede-rodape">
+                        <img src="../assets/insta.webp" alt="Instagram">
+                    </a>
+
+                    <a href="https://www.reddit.com/r/PassaporteU/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Comunidade do Futuro Universitário no Reddit" title="Reddit" class="rede-rodape">
+                        <img src="../assets/reddit.webp" alt="Reddit">
+                    </a>
+
+                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank"
+                        rel="noopener noreferrer" aria-label="Enviar e-mail para o Futuro Universitário" title="E-mail"
+                        class="rede-rodape">
+                        <img src="../assets/gmail.webp" alt="Gmail">
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- EXPLORAR -->
+            <div class="coluna-rodape">
+
+                <h3>Explorar</h3>
+
+                <a href="descobrir.html">
+                    Descobrir
+                </a>
+
+                <a href="universidades.html">
+                    Universidades
+                </a>
+
+                <a href="cursos-tecnicos.html">
+                    Cursos técnicos
+                </a>
+
+                <a href="bolsas.html">
+                    Bolsas
+                </a>
+
+            </div>
+
+            <!-- ORIENTAÇÃO -->
+            <div class="coluna-rodape">
+
+                <h3>Orientação</h3>
+
+                <a href="teste-vocacional.html">
+                    Teste vocacional
+                </a>
+
+                <a href="guia-profissional.html">
+                    Guia profissional
+                </a>
+
+                <a href="mapa-oportunidades.html">
+                    Oportunidades
+                </a>
+
+                <a href="calendario.html">
+                    Calendário
+                </a>
+
+            </div>
+
+            <!-- PROJETO -->
+            <div class="coluna-rodape">
+
+                <h3>Projeto</h3>
+
+                <a href="comunidade.html">
+                    Comunidade
+                </a>
+
+                <a href="contato.html">
+                    Contato
+                </a>
+
+                <a href="login.html">
+                    Entrar
+                </a>
+
+                <span class="versao-rodape">
+                    Versão 1.0
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="base-rodape">
+
+            <p>
+                © 2026 Futuro Universitário.
+                Todos os direitos reservados.
+            </p>
+
+            <p>
+                Conectando estudantes a novas oportunidades.
+            </p>
+
+        </div>
+
+    </footer>
+    <script src="../script.js"></script>
+    <script type="module" src="../auth-ui.js"></script>
+    <script type="module" src="../cursos-tecnicos-firestore.js"></script>
+
+</body>
+
+</html>

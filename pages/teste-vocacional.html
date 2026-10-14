@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teste Vocacional | Futuro Universitário</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <a href="../index.html" class="logo">
+
+            <img src="../assets/logo.png" alt="Logo Futuro Universitário">
+
+        </a>
+
+        <nav>
+
+            <a href="../index.html">
+                Início
+            </a>
+
+            <a href="descobrir.html">
+                Descobrir
+            </a>
+
+            <a href="mapa-oportunidades.html">
+                Oportunidades
+            </a>
+
+            <a href="calendario.html">
+                Calendário
+            </a>
+
+            <a href="comunidade.html">
+                Comunidade
+            </a>
+
+            <a href="contato.html">
+                Contato
+            </a>
+            <a href="desenvolvedores.html">
+                Desenvolvedores
+            </a>
+
+        </nav>
+<a href="login.html" class="btn-login">
+    Entrar
+</a>
+
+    </header>
+
+    <main class="pagina-teste-vocacional">
+
+        <!-- APRESENTAÇÃO -->
+
+        <section class="hero-teste-vocacional">
+
+            <a href="descobrir.html" class="btn-voltar">
+                ← Voltar para Descobrir
+            </a>
+
+            <span class="etiqueta-pagina">
+                Teste vocacional
+            </span>
+
+            <h1>
+                Descubra quais caminhos combinam mais com você.
+            </h1>
+
+            <p>
+                Responda algumas perguntas sobre seus interesses,
+                habilidades e preferências. No final, você receberá
+                uma análise com as áreas profissionais mais compatíveis
+                com o seu perfil.
+            </p>
+
+        </section>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+
+        <section class="container-teste-vocacional">
+
+            <!-- TELA INICIAL -->
+
+            <div id="tela-inicial-teste" class="card-teste tela-teste ativa">
+
+                <div class="icone-teste-principal">
+                    🧭
+                </div>
+
+                <span class="subtitulo-card-teste">
+                    Encontre sua direção
+                </span>
+
+                <h2>
+                    Pronto para conhecer melhor o seu perfil?
+                </h2>
+
+                <p>
+                    O teste possui 12 perguntas e leva apenas alguns
+                    minutos. Não existem respostas certas ou erradas:
+                    escolha sempre a alternativa que mais combina com você.
+                </p>
+
+                <div class="informacoes-iniciais-teste">
+
+                    <div>
+
+                        <span class="icone-informacao-teste">
+                            📝
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                12 perguntas
+                            </strong>
+
+                            <small>
+                                Uma pergunta por vez
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                    <div>
+
+                        <span class="icone-informacao-teste">
+                            ⏱️
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Cerca de 3 minutos
+                            </strong>
+
+                            <small>
+                                Rápido e simples
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                    <div>
+
+                        <span class="icone-informacao-teste">
+                            📊
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Resultado personalizado
+                            </strong>
+
+                            <small>
+                                Ranking com seis áreas
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <button id="btn-comecar-teste" class="btn-principal-teste" type="button">
+                    Começar o teste →
+                </button>
+
+                <small class="aviso-teste">
+                    Este teste serve como orientação inicial e não substitui
+                    o acompanhamento de um orientador profissional.
+                </small>
+
+            </div>
+
+            <!-- TELA DAS PERGUNTAS -->
+
+            <div id="tela-perguntas-teste" class="card-teste tela-teste" hidden>
+
+                <div class="topo-pergunta-teste">
+
+                    <div>
+
+                        <span id="numero-pergunta">
+                            Pergunta 1 de 12
+                        </span>
+
+                        <h2 id="titulo-pergunta">
+                            Pergunta do teste
+                        </h2>
+
+                    </div>
+
+                    <span id="porcentagem-progresso" class="porcentagem-progresso">
+                        8%
+                    </span>
+
+                </div>
+
+                <div class="barra-progresso-teste" aria-hidden="true">
+
+                    <div id="preenchimento-progresso" class="preenchimento-progresso"></div>
+
+                </div>
+
+                <p id="descricao-pergunta" class="descricao-pergunta">
+                    Escolha a alternativa que mais representa você.
+                </p>
+
+                <div id="alternativas-teste" class="alternativas-teste" role="radiogroup"
+                    aria-label="Alternativas da pergunta">
+
+                    <!-- As alternativas serão criadas pelo JavaScript -->
+
+                </div>
+
+                <div class="navegacao-teste">
+
+                    <button id="btn-voltar-pergunta" class="btn-secundario-teste" type="button">
+                        ← Voltar
+                    </button>
+
+                    <button id="btn-avancar-pergunta" class="btn-principal-teste" type="button" disabled>
+                        Próxima pergunta →
+                    </button>
+
+                </div>
+
+            </div>
+            <!-- ==================================================
+     TELA DE PREFERÊNCIAS
+================================================== -->
+
+            <section id="tela-preferencias-teste" class="tela-teste tela-preferencias-teste" hidden>
+
+                <div class="cabecalho-preferencias-teste">
+
+                    <span class="etiqueta-teste">
+                        Última etapa
+                    </span>
+
+                    <h2>
+                        Agora vamos encontrar as melhores opções para você.
+                    </h2>
+
+                    <p>
+                        Essas respostas não alteram seu perfil vocacional.
+                        Elas servem apenas para filtrar universidades,
+                        cursos e oportunidades mais próximas dos seus objetivos.
+                    </p>
+
+                </div>
+
+                <form id="form-preferencias-teste">
+
+                    <div class="grupo-preferencia">
+
+                        <label for="preferencia-localizacao">
+                            Onde você prefere estudar?
+                        </label>
+
+                        <select id="preferencia-localizacao" required>
+
+                            <option value="">
+                                Selecione uma opção
+                            </option>
+
+                            <option value="capital">
+                                Cidade do Rio de Janeiro
+                            </option>
+
+                            <option value="baixada-fluminense">
+                                Baixada Fluminense
+                            </option>
+
+                            <option value="niteroi">
+                                Niterói
+                            </option>
+
+                            <option value="interior">
+                                Interior do estado
+                            </option>
+
+                            <option value="qualquer">
+                                Qualquer região do Rio de Janeiro
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="grupo-preferencia">
+
+                        <span class="titulo-grupo-preferencia">
+                            Qual tipo de instituição você prefere?
+                        </span>
+
+                        <div class="opcoes-preferencia">
+
+                            <label class="opcao-preferencia">
+
+                                <input type="radio" name="tipo-instituicao" value="publica">
+
+                                <span>
+                                    Público
+                                </span>
+
+                            </label>
+
+                            <label class="opcao-preferencia">
+
+                                <input type="radio" name="tipo-instituicao" value="privada">
+
+                                <span>
+                                    Privada
+                                </span>
+
+                            </label>
+
+                            <label class="opcao-preferencia">
+
+                                <input type="radio" name="tipo-instituicao" value="hibrido">
+
+                                <span>
+                                    Híbrido
+                                </span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <div class="grupo-preferencia">
+
+                        <span class="titulo-grupo-preferencia">
+                            Qual modalidade você prefere?
+                        </span>
+
+                        <div class="opcoes-preferencia">
+
+                            <label class="opcao-preferencia">
+
+                                <input type="radio" name="modalidade" value="presencial" required>
+
+                                <span>
+                                    Presencial
+                                </span>
+
+                            </label>
+
+                            <label class="opcao-preferencia">
+
+                                <input type="radio" name="modalidade" value="ead">
+
+                                <span>
+                                    EAD
+                                </span>
+
+                            </label>
+
+                            <label class="opcao-preferencia">
+
+                                <input type="radio" name="modalidade" value="qualquer">
+
+                                <span>
+                                    Híbrido
+                                </span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <div class="grupo-preferencia">
+
+                        <span class="titulo-grupo-preferencia">
+                            Você busca bolsas ou auxílio estudantil?
+                        </span>
+
+                        <div class="opcoes-preferencia">
+
+                            <label class="opcao-preferencia">
+
+                                <input type="radio" name="busca-bolsa" value="sim" required>
+
+                                <span>
+                                    Sim
+                                </span>
+
+                            </label>
+
+                            <label class="opcao-preferencia">
+
+                                <input type="radio" name="busca-bolsa" value="nao">
+
+                                <span>
+                                    Não é prioridade
+                                </span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <div class="grupo-preferencia">
+
+                        <span class="titulo-grupo-preferencia">
+                            Você aceitaria estudar em outra região?
+                        </span>
+
+                        <div class="opcoes-preferencia">
+
+                            <label class="opcao-preferencia">
+
+                                <input type="radio" name="aceita-outra-regiao" value="sim" required>
+
+                                <span>
+                                    Sim
+                                </span>
+
+                            </label>
+
+                            <label class="opcao-preferencia">
+
+                                <input type="radio" name="aceita-outra-regiao" value="nao">
+
+                                <span>
+                                    Não
+                                </span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <div class="acoes-preferencias-teste">
+
+                        <button id="btn-voltar-preferencias" type="button" class="btn-secundario-teste">
+                            ← Voltar
+                        </button>
+
+                        <button id="btn-gerar-resultado" type="submit" class="btn-principal-teste">
+                            Gerar meu resultado →
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+            <!-- TELA DE CARREGAMENTO -->
+
+            <div id="tela-carregamento-resultado" class="card-teste tela-teste tela-carregamento-teste" hidden>
+
+                <div class="carregando-teste">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+                <h2>
+                    Analisando suas respostas...
+                </h2>
+
+                <p>
+                    Estamos comparando seus interesses com diferentes
+                    áreas profissionais.
+                </p>
+
+            </div>
+
+            <!-- TELA DO RESULTADO -->
+
+            <div id="tela-resultado-teste" class="card-teste tela-teste" hidden>
+
+                <div class="cabecalho-resultado-teste">
+
+                    <span class="etiqueta-resultado">
+                        Seu resultado
+                    </span>
+
+                    <h2>
+                        Seu perfil principal é:
+                    </h2>
+
+                    <div class="perfil-principal-teste">
+
+                        <div id="icone-area-principal" class="icone-area-principal">
+                            💻
+                        </div>
+
+                        <div>
+
+                            <strong id="nome-area-principal">
+                                Tecnologia
+                            </strong>
+
+                            <span id="porcentagem-area-principal">
+                                88% de compatibilidade
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <p id="descricao-area-principal">
+                        Descrição do perfil principal do usuário.
+                    </p>
+
+                </div>
+
+                <div class="secao-ranking-areas">
+
+                    <div class="titulo-secao-resultado">
+
+                        <div>
+
+                            <span>
+                                Compatibilidade
+                            </span>
+
+                            <h3>
+                                Ranking das áreas
+                            </h3>
+
+                        </div>
+
+                        <small>
+                            Baseado nas suas respostas
+                        </small>
+
+                    </div>
+
+                    <div id="ranking-areas" class="ranking-areas">
+
+                        <!-- O ranking será criado pelo JavaScript -->
+
+                    </div>
+
+                </div>
+
+                <div class="grade-recomendacoes-teste">
+
+                    <article class="card-recomendacao-teste">
+
+                        <span class="icone-recomendacao">
+                            💼
+                        </span>
+
+                        <h3>
+                            Profissões recomendadas
+                        </h3>
+
+                        <ul id="lista-profissoes-recomendadas">
+
+                            <li>
+                                Profissão recomendada
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+                    <article class="card-recomendacao-teste">
+
+                        <span class="icone-recomendacao">
+                            🎓
+                        </span>
+
+                        <h3>
+                            Cursos sugeridos
+                        </h3>
+
+                        <ul id="lista-cursos-recomendados">
+
+                            <li>
+                                Curso recomendado
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+                    <article class="card-recomendacao-teste">
+
+                        <span class="icone-recomendacao">
+                            ⭐
+                        </span>
+
+                        <h3>
+                            Pontos fortes do perfil
+                        </h3>
+
+                        <ul id="lista-pontos-fortes">
+
+                            <li>
+                                Característica principal
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+                </div>
+
+                <!-- UNIVERSIDADES RECOMENDADAS -->
+
+                <section class="resultado-universidades-teste">
+
+                    <div class="cabecalho-secao-resultado">
+
+                        <div>
+
+                            <span class="etiqueta-resultado">
+                                Próximos passos
+                            </span>
+
+                            <h3>
+                                Universidades compatíveis com seu perfil
+                            </h3>
+
+                        </div>
+
+                        <a href="universidades.html" class="link-ver-todas-universidades">
+                            Ver todas →
+                        </a>
+
+                    </div>
+
+                    <p id="texto-recomendacoes-universidades">
+                        Consideramos seu perfil vocacional e suas preferências
+                        para encontrar opções compatíveis.
+                    </p>
+
+                    <div id="lista-universidades-recomendadas" class="lista-universidades-recomendadas">
+                        <!-- Criado pelo JavaScript -->
+                    </div>
+
+                </section>
+
+                <div class="acoes-resultado-teste">
+
+                    <button id="btn-refazer-teste" class="btn-secundario-teste" type="button">
+                        ↻ Refazer teste
+                    </button>
+
+                    <a id="btn-explorar-guia" href="guia-profissional.html" class="btn-principal-teste">
+                        Explorar Guia Profissional →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- COMO FUNCIONA -->
+
+        <section class="como-funciona-teste">
+
+            <div class="titulo-como-funciona">
+
+                <span>
+                    Como funciona
+                </span>
+
+                <h2>
+                    Um resultado construído a partir das suas preferências.
+                </h2>
+
+            </div>
+
+            <div class="etapas-como-funciona">
+
+                <article>
+
+                    <span>
+                        01
+                    </span>
+
+                    <h3>
+                        Você responde
+                    </h3>
+
+                    <p>
+                        Escolha as alternativas que mais combinam
+                        com seus interesses e seu jeito de trabalhar.
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <span>
+                        02
+                    </span>
+
+                    <h3>
+                        O sistema analisa
+                    </h3>
+
+                    <p>
+                        Cada resposta soma pontos para diferentes áreas
+                        profissionais e cria um perfil personalizado.
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <span>
+                        03
+                    </span>
+
+                    <h3>
+                        Você recebe sugestões
+                    </h3>
+
+                    <p>
+                        No final, mostramos áreas, profissões, cursos
+                        e características que podem combinar com você.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+   <footer class="rodape-site">
+
+    <div class="conteudo-rodape">
+
+        <!-- MARCA -->
+        <div class="coluna-rodape coluna-marca">
+
+            <a href="../index.html" class="logo-rodape">
+                <img
+                    src="../assets/logo.png"
+                    alt="Logo do Futuro Universitário"
+                >
+            </a>
+
+            <p>
+                Uma plataforma criada para ajudar estudantes
+                a encontrar cursos, universidades, bolsas,
+                oportunidades e caminhos profissionais.
+            </p>
+
+            <div class="redes-rodape">
+
+                <a
+                    href="https://www.instagram.com/laranjitos_/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram da equipe Laranjitos"
+                    title="Instagram"
+                    class="rede-rodape"
+                >
+                    <img
+                        src="../assets/insta.webp"
+                        alt="Instagram"
+                    >
+                </a>
+
+                <a
+                    href="https://www.reddit.com/r/PassaporteU/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Comunidade do Futuro Universitário no Reddit"
+                    title="Reddit"
+                    class="rede-rodape"
+                >
+                    <img
+                        src="../assets/reddit.webp"
+                        alt="Reddit"
+                    >
+                </a>
+
+                <a
+                    href="https://mail.google.com/mail/u/0/#inbox?compose=new"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Enviar e-mail para o Futuro Universitário"
+                    title="E-mail"
+                    class="rede-rodape"
+                >
+                    <img
+                        src="../assets/gmail.webp"
+                        alt="Gmail"
+                    >
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- EXPLORAR -->
+        <div class="coluna-rodape">
+
+            <h3>Explorar</h3>
+
+            <a href="descobrir.html">
+                Descobrir
+            </a>
+
+            <a href="universidades.html">
+                Universidades
+            </a>
+
+            <a href="cursos-tecnicos.html">
+                Cursos técnicos
+            </a>
+
+            <a href="bolsas.html">
+                Bolsas
+            </a>
+
+        </div>
+
+        <!-- ORIENTAÇÃO -->
+        <div class="coluna-rodape">
+
+            <h3>Orientação</h3>
+
+            <a href="teste-vocacional.html">
+                Teste vocacional
+            </a>
+
+            <a href="guia-profissional.html">
+                Guia profissional
+            </a>
+
+            <a href="mapa-oportunidades.html">
+                Oportunidades
+            </a>
+
+            <a href="calendario.html">
+                Calendário
+            </a>
+
+        </div>
+
+        <!-- PROJETO -->
+        <div class="coluna-rodape">
+
+            <h3>Projeto</h3>
+
+            <a href="comunidade.html">
+                Comunidade
+            </a>
+
+            <a href="contato.html">
+                Contato
+            </a>
+
+            <a href="em-desenvolvimento.html">
+                Entrar
+            </a>
+
+            <span class="versao-rodape">
+                Versão 1.0
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="base-rodape">
+
+        <p>
+            © 2026 Futuro Universitário.
+            Todos os direitos reservados.
+        </p>
+
+        <p>
+            Conectando estudantes a novas oportunidades.
+        </p>
+
+    </div>
+
+</footer>
+    <script src="../universidades-data.js"></script>
+    <script src="../script.js"></script>
+
+</body>
+
+</html>

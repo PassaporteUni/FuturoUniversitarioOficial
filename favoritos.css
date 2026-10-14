@@ -1,0 +1,1171 @@
+/* ==================================================
+   PÁGINA DE FAVORITOS
+================================================== */
+
+.corpo-favoritos {
+    min-height: 100vh;
+
+    color: #17365d;
+    background: #f5f7fb;
+}
+
+
+.pagina-favoritos {
+    position: relative;
+
+    min-height: calc(100vh - 100px);
+
+    padding: 65px 35px 90px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 8% 10%,
+            rgba(245, 158, 11, 0.11),
+            transparent 24%
+        ),
+        radial-gradient(
+            circle at 92% 5%,
+            rgba(23, 54, 93, 0.08),
+            transparent 25%
+        ),
+        linear-gradient(
+            145deg,
+            #fffdf8,
+            #f5f8fc
+        );
+}
+
+
+.favoritos-container {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 1120px;
+
+    margin: 0 auto;
+}
+
+
+/* ==================================================
+   CABEÇALHO
+================================================== */
+
+.cabecalho-pagina-favoritos {
+    max-width: 760px;
+
+    margin-bottom: 34px;
+}
+
+
+.link-voltar-favoritos {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 22px;
+
+    color: #5f7088;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+        color 180ms ease,
+        transform 180ms ease;
+}
+
+
+.link-voltar-favoritos:hover {
+    color: #d97706;
+
+    transform: translateX(-3px);
+}
+
+
+.link-voltar-favoritos span {
+    font-size: 1rem;
+}
+
+
+.etiqueta-pagina-favoritos {
+    display: table;
+
+    margin-bottom: 12px;
+    padding: 7px 13px;
+
+    color: #c96e00;
+    background: #fff4df;
+
+    border:
+        1px solid rgba(245, 158, 11, 0.34);
+
+    border-radius: 999px;
+
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+
+.cabecalho-pagina-favoritos h1 {
+    margin: 0 0 12px;
+
+    color: #17365d;
+
+    font-size:
+        clamp(
+            2.2rem,
+            5vw,
+            3.25rem
+        );
+
+    line-height: 1.08;
+    letter-spacing: -0.045em;
+}
+
+
+.cabecalho-pagina-favoritos p {
+    max-width: 690px;
+
+    margin: 0;
+
+    color: #65758b;
+
+    font-size: 0.96rem;
+    line-height: 1.75;
+}
+
+
+/* ==================================================
+   MENSAGENS
+================================================== */
+
+.mensagem-favoritos {
+    margin-bottom: 22px;
+    padding: 14px 17px;
+
+    border: 1px solid transparent;
+    border-radius: 13px;
+
+    font-size: 0.86rem;
+    font-weight: 600;
+    line-height: 1.55;
+}
+
+
+.mensagem-favoritos.sucesso {
+    color: #176534;
+    background: #effcf3;
+
+    border-color:
+        rgba(34, 197, 94, 0.28);
+}
+
+
+.mensagem-favoritos.erro {
+    color: #b42323;
+    background: #fff1f1;
+
+    border-color:
+        rgba(239, 68, 68, 0.27);
+}
+
+
+.mensagem-favoritos.informacao {
+    color: #17365d;
+    background: #eff5fc;
+
+    border-color:
+        rgba(23, 54, 93, 0.16);
+}
+
+
+.mensagem-favoritos[hidden] {
+    display: none;
+}
+
+
+/* ==================================================
+   PAINEL PRINCIPAL
+================================================== */
+
+.painel-favoritos {
+    padding: 30px;
+
+    background: #ffffff;
+
+    border:
+        1px solid rgba(23, 54, 93, 0.12);
+
+    border-top:
+        4px solid #f59e0b;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 20px 50px rgba(11, 35, 64, 0.1);
+
+    animation:
+        entrada-painel-favoritos
+        440ms
+        cubic-bezier(.22, 1, .36, 1)
+        both;
+}
+
+
+.barra-superior-favoritos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+
+.titulo-painel-favoritos {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+
+.icone-titulo-favoritos {
+    flex-shrink: 0;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+    background:
+        linear-gradient(
+            135deg,
+            #17365d,
+            #0e2a4b
+        );
+
+    border:
+        3px solid #fff4df;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 8px 18px rgba(23, 54, 93, 0.17);
+
+    font-size: 1.05rem;
+}
+
+
+.titulo-painel-favoritos h2 {
+    margin: 0 0 4px;
+
+    color: #17365d;
+
+    font-size: 1.25rem;
+    line-height: 1.25;
+}
+
+
+.titulo-painel-favoritos p {
+    margin: 0;
+
+    color: #758398;
+
+    font-size: 0.84rem;
+    line-height: 1.5;
+}
+
+
+/* ==================================================
+   FILTRO
+================================================== */
+
+.filtro-favoritos {
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.filtro-favoritos label {
+    color: #5f7088;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+
+.filtro-favoritos select {
+    min-width: 215px;
+
+    padding: 11px 38px 11px 13px;
+
+    color: #17365d;
+    background: #f7f9fc;
+
+    border:
+        1px solid rgba(23, 54, 93, 0.15);
+
+    border-radius: 11px;
+
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 180ms ease,
+        border-color 180ms ease,
+        box-shadow 180ms ease;
+}
+
+
+.filtro-favoritos select:hover {
+    background: #ffffff;
+
+    border-color:
+        rgba(245, 158, 11, 0.5);
+}
+
+
+.filtro-favoritos select:focus {
+    outline: none;
+
+    background: #ffffff;
+
+    border-color: #f59e0b;
+
+    box-shadow:
+        0 0 0 3px rgba(245, 158, 11, 0.16);
+}
+
+
+.separador-painel-favoritos {
+    width: 100%;
+    height: 1px;
+
+    margin: 25px 0;
+
+    background:
+        rgba(23, 54, 93, 0.09);
+}
+
+
+/* ==================================================
+   ESTADOS DE CARREGAMENTO E LISTA VAZIA
+================================================== */
+
+.estado-favoritos {
+    min-height: 290px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 36px 20px;
+
+    text-align: center;
+}
+
+
+.estado-favoritos[hidden] {
+    display: none;
+}
+
+
+.estado-favoritos strong,
+.estado-favoritos h3 {
+    margin: 0 0 8px;
+
+    color: #17365d;
+
+    font-size: 1.15rem;
+    line-height: 1.35;
+}
+
+
+.estado-favoritos p {
+    max-width: 480px;
+
+    margin: 0;
+
+    color: #758398;
+
+    font-size: 0.86rem;
+    line-height: 1.7;
+}
+
+
+.indicador-carregamento-favoritos {
+    width: 42px;
+    height: 42px;
+
+    margin-bottom: 18px;
+
+    border:
+        4px solid rgba(23, 54, 93, 0.12);
+
+    border-top-color: #f59e0b;
+    border-radius: 50%;
+
+    animation:
+        girar-carregamento-favoritos
+        750ms
+        linear
+        infinite;
+}
+
+
+.icone-estado-vazio-favoritos {
+    width: 74px;
+    height: 74px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 19px;
+
+    color: #d97706;
+    background: #fff7e8;
+
+    border:
+        1px solid rgba(245, 158, 11, 0.27);
+
+    border-radius: 22px;
+
+    font-size: 2rem;
+
+    box-shadow:
+        0 12px 26px rgba(245, 158, 11, 0.12);
+}
+
+
+.link-explorar-favoritos {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 20px;
+    padding: 12px 20px;
+
+    color: #ffffff;
+    background:
+        linear-gradient(
+            135deg,
+            #f59e0b,
+            #e88700
+        );
+
+    border:
+        1px solid #f59e0b;
+
+    border-radius: 11px;
+
+    box-shadow:
+        0 9px 20px rgba(245, 158, 11, 0.21);
+
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition:
+        color 180ms ease,
+        background 180ms ease,
+        box-shadow 180ms ease,
+        transform 180ms ease;
+}
+
+
+.link-explorar-favoritos:hover {
+    color: #d97706;
+    background: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(245, 158, 11, 0.25);
+}
+
+
+/* ==================================================
+   GRADE DE FAVORITOS
+================================================== */
+
+.grade-favoritos {
+    display: grid;
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap: 18px;
+}
+
+
+.grade-favoritos:empty {
+    display: none;
+}
+
+
+/* ==================================================
+   CARD DE FAVORITO
+================================================== */
+
+.cartao-favorito {
+    --indice-favorito: 0;
+
+    position: relative;
+
+    min-width: 0;
+
+    display: grid;
+    grid-template-columns:
+        76px
+        minmax(0, 1fr);
+
+    align-items: start;
+    gap: 17px;
+
+    padding: 20px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #fbfcff
+        );
+
+    border:
+        1px solid rgba(23, 54, 93, 0.12);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 25px rgba(11, 35, 64, 0.07);
+
+    transition:
+        border-color 180ms ease,
+        box-shadow 180ms ease,
+        transform 180ms ease;
+
+    animation:
+        entrada-card-favorito
+        380ms
+        calc(var(--indice-favorito) * 45ms)
+        cubic-bezier(.22, 1, .36, 1)
+        both;
+}
+
+
+.cartao-favorito::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f59e0b,
+            rgba(245, 158, 11, 0.18)
+        );
+}
+
+
+.cartao-favorito:hover {
+    border-color:
+        rgba(245, 158, 11, 0.38);
+
+    box-shadow:
+        0 16px 34px rgba(11, 35, 64, 0.11);
+
+    transform: translateY(-3px);
+}
+
+
+/* ==================================================
+   IMAGEM DO FAVORITO
+================================================== */
+
+.imagem-favorito {
+    width: 76px;
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 9px;
+
+    overflow: hidden;
+
+    color: #ffffff;
+    background:
+        linear-gradient(
+            135deg,
+            #17365d,
+            #0e2a4b
+        );
+
+    border:
+        1px solid rgba(23, 54, 93, 0.12);
+
+    border-radius: 15px;
+
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+
+.imagem-favorito img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    border-radius: 8px;
+}
+
+
+.fallback-imagem-favorito {
+    letter-spacing: 0.04em;
+}
+
+
+/* ==================================================
+   CONTEÚDO DO CARD
+================================================== */
+
+.conteudo-favorito {
+    min-width: 0;
+}
+
+
+.cabecalho-card-favorito {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+
+    margin-bottom: 8px;
+}
+
+
+.tipo-favorito {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 5px 9px;
+
+    color: #2968c8;
+    background: #edf4ff;
+
+    border:
+        1px solid rgba(41, 104, 200, 0.14);
+
+    border-radius: 999px;
+
+    font-size: 0.64rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+
+.btn-remover-favorito {
+    flex-shrink: 0;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    color: #c62828;
+    background: #fff3f3;
+
+    border:
+        1px solid rgba(239, 68, 68, 0.2);
+
+    border-radius: 10px;
+
+    font-family: inherit;
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition:
+        color 180ms ease,
+        background 180ms ease,
+        border-color 180ms ease,
+        transform 180ms ease;
+}
+
+
+.btn-remover-favorito:hover {
+    color: #ffffff;
+    background: #dc3434;
+
+    border-color: #dc3434;
+
+    transform: scale(1.05);
+}
+
+
+.btn-remover-favorito:disabled {
+    opacity: 0.55;
+
+    cursor: wait;
+    transform: none;
+}
+
+
+.conteudo-favorito h3 {
+    overflow: hidden;
+
+    margin: 0 0 5px;
+
+    color: #17365d;
+
+    font-size: 1rem;
+    line-height: 1.4;
+
+    text-overflow: ellipsis;
+}
+
+
+.subtitulo-favorito {
+    margin: 0 0 10px;
+
+    color: #d97706;
+
+    font-size: 0.74rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+
+.descricao-favorito {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+
+    margin: 0;
+
+    color: #6e7e92;
+
+    font-size: 0.79rem;
+    line-height: 1.65;
+}
+
+
+/* ==================================================
+   AÇÕES DO CARD
+================================================== */
+
+.acoes-favorito {
+    grid-column: 1 / -1;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 9px;
+
+    padding-top: 16px;
+
+    border-top:
+        1px solid rgba(23, 54, 93, 0.08);
+}
+
+
+.link-card-favorito {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 38px;
+    padding: 9px 14px;
+
+    border-radius: 10px;
+
+    font-size: 0.73rem;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition:
+        color 180ms ease,
+        background 180ms ease,
+        border-color 180ms ease,
+        transform 180ms ease;
+}
+
+
+.link-card-favorito.secundario {
+    color: #17365d;
+    background: #ffffff;
+
+    border:
+        1px solid rgba(23, 54, 93, 0.16);
+}
+
+
+.link-card-favorito.secundario:hover {
+    color: #d97706;
+    background: #fff8eb;
+
+    border-color:
+        rgba(245, 158, 11, 0.48);
+
+    transform: translateY(-1px);
+}
+
+
+.link-card-favorito.principal {
+    color: #ffffff;
+    background: #17365d;
+
+    border:
+        1px solid #17365d;
+}
+
+
+.link-card-favorito.principal:hover {
+    color: #17365d;
+    background: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+
+/* ==================================================
+   FOCO ACESSÍVEL
+================================================== */
+
+.link-voltar-favoritos:focus-visible,
+.link-explorar-favoritos:focus-visible,
+.btn-remover-favorito:focus-visible,
+.link-card-favorito:focus-visible {
+    outline:
+        3px solid rgba(245, 158, 11, 0.34);
+
+    outline-offset: 3px;
+}
+
+
+/* ==================================================
+   ANIMAÇÕES
+================================================== */
+
+@keyframes entrada-painel-favoritos {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(12px)
+            scale(0.99);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+@keyframes entrada-card-favorito {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(9px)
+            scale(0.985);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+@keyframes girar-carregamento-favoritos {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ==================================================
+   RESPONSIVIDADE
+================================================== */
+
+@media (max-width: 900px) {
+
+    .pagina-favoritos {
+        padding:
+            55px 25px 80px;
+    }
+
+    .grade-favoritos {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .barra-superior-favoritos {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .filtro-favoritos {
+        width: 100%;
+    }
+
+    .filtro-favoritos select {
+        flex: 1;
+
+        min-width: 0;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .pagina-favoritos {
+        padding:
+            42px 16px 65px;
+    }
+
+    .cabecalho-pagina-favoritos {
+        margin-bottom: 26px;
+    }
+
+    .cabecalho-pagina-favoritos h1 {
+        font-size: 2.25rem;
+    }
+
+    .painel-favoritos {
+        padding: 22px 17px;
+
+        border-radius: 20px;
+    }
+
+    .titulo-painel-favoritos {
+        align-items: flex-start;
+    }
+
+    .icone-titulo-favoritos {
+        width: 43px;
+        height: 43px;
+    }
+
+    .filtro-favoritos {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .filtro-favoritos select {
+        width: 100%;
+    }
+
+    .estado-favoritos {
+        min-height: 270px;
+
+        padding:
+            30px 10px;
+    }
+
+    .cartao-favorito {
+        grid-template-columns:
+            60px
+            minmax(0, 1fr);
+
+        gap: 13px;
+
+        padding: 17px;
+    }
+
+    .imagem-favorito {
+        width: 60px;
+        height: 60px;
+
+        padding: 7px;
+
+        border-radius: 13px;
+    }
+
+    .cabecalho-card-favorito {
+        gap: 8px;
+    }
+
+    .acoes-favorito {
+        justify-content: stretch;
+    }
+
+    .link-card-favorito {
+        flex: 1;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .cartao-favorito {
+        grid-template-columns: 1fr;
+    }
+
+    .imagem-favorito {
+        width: 68px;
+        height: 68px;
+    }
+
+    .acoes-favorito {
+        grid-column: 1;
+        flex-direction: column;
+    }
+
+    .link-card-favorito {
+        width: 100%;
+    }
+
+}
+
+
+/* ==================================================
+   MOVIMENTO REDUZIDO
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .painel-favoritos,
+    .cartao-favorito {
+        animation:
+            entrada-favoritos-reduzida
+            130ms
+            ease
+            both;
+    }
+
+    .indicador-carregamento-favoritos {
+        animation-duration: 1.4s;
+    }
+
+    .link-voltar-favoritos,
+    .link-explorar-favoritos,
+    .cartao-favorito,
+    .btn-remover-favorito,
+    .link-card-favorito {
+        transition: none;
+    }
+
+}
+
+
+@keyframes entrada-favoritos-reduzida {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+/* Ajustes de leitura e ações dos favoritos em telas pequenas. */
+@media (max-width: 600px) {
+    .pagina-favoritos {
+        padding: 32px 16px 56px;
+    }
+
+    .cabecalho-pagina-favoritos h1 {
+        font-size: clamp(1.85rem, 8vw, 2.2rem);
+        line-height: 1.2;
+    }
+
+    .painel-favoritos {
+        padding: 18px 15px;
+    }
+
+    .cartao-favorito {
+        min-width: 0;
+        padding: 15px;
+    }
+
+    .conteudo-favorito {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .filtro-favoritos select {
+        min-height: 46px;
+        font-size: 16px;
+    }
+
+    .link-card-favorito {
+        min-height: 44px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .cartao-favorito {
+        grid-template-columns: 54px minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .imagem-favorito {
+        width: 54px;
+        height: 54px;
+    }
+
+    .acoes-favorito {
+        grid-column: 1 / -1;
+    }
+}

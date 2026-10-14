@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calendário | Futuro Universitário</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header>
+
+        <a href="../index.html" class="logo">
+
+            <img src="../assets/logo.png" alt="Logo do Futuro Universitário">
+
+        </a>
+
+        <nav>
+
+            <a href="../index.html">
+                Início
+            </a>
+
+            <a href="descobrir.html">
+                Descobrir
+            </a>
+
+            <a href="mapa-oportunidades.html">
+                Oportunidades
+            </a>
+
+            <a href="calendario.html">
+                Calendário
+            </a>
+
+            <a href="comunidade.html">
+                Comunidade
+            </a>
+
+            <a href="contato.html">
+                Contato
+            </a>
+
+            <a href="desenvolvedores.html">
+                Desenvolvedores
+            </a>
+
+        </nav>
+
+        <a href="login.html" class="btn-login">
+            Entrar
+        </a>
+
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+
+    <main class="pagina-calendario">
+
+        <!-- APRESENTAÇÃO -->
+
+        <section class="cabecalho-calendario">
+
+            <div class="texto-cabecalho-calendario">
+
+                <span class="etiqueta-calendario">
+                    Organize seu futuro
+                </span>
+
+                <h1>
+                    Calendário acadêmico
+                </h1>
+
+                <p>
+                    Acompanhe datas de inscrições, vestibulares,
+                    provas, bolsas e oportunidades importantes
+                    para sua vida acadêmica.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- RESUMO -->
+
+        <section class="resumo-calendario">
+
+            <article class="card-resumo-calendario">
+
+                <div class="icone-resumo-calendario">
+                    📅
+                </div>
+
+                <div>
+
+                    <strong id="quantidade-eventos-mes">
+                        5
+                    </strong>
+
+                    <span>
+                        eventos neste mês
+                    </span>
+
+                </div>
+
+            </article>
+
+            <article class="card-resumo-calendario">
+
+                <div class="icone-resumo-calendario">
+                    ⏳
+                </div>
+
+                <div>
+
+                    <strong id="quantidade-prazos">
+                        3
+                    </strong>
+
+                    <span>
+                        prazos se aproximando
+                    </span>
+
+                </div>
+
+            </article>
+
+            <article class="card-resumo-calendario">
+
+                <div class="icone-resumo-calendario">
+                    ✅
+                </div>
+
+                <div>
+
+                    <strong>
+                        Oficiais
+                    </strong>
+
+                    <span>
+                        fontes verificadas
+                    </span>
+
+                </div>
+
+            </article>
+
+        </section>
+
+        <!-- FILTROS -->
+
+        <section class="area-filtros-calendario">
+
+            <div class="filtros-calendario">
+
+                <button type="button" class="filtro-calendario filtro-ativo" data-categoria="todos">
+                    Todos
+                </button>
+
+                <button type="button" class="filtro-calendario" data-categoria="vestibular">
+                    Vestibulares
+                </button>
+
+                <button type="button" class="filtro-calendario" data-categoria="enem">
+                    ENEM
+                </button>
+
+                <button type="button" class="filtro-calendario" data-categoria="bolsa">
+                    Bolsas
+                </button>
+
+                <button type="button" class="filtro-calendario" data-categoria="curso-tecnico">
+                    Cursos técnicos
+                </button>
+
+                <button type="button" class="filtro-calendario" data-categoria="evento">
+                    Eventos
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- CALENDÁRIO E EVENTOS -->
+
+        <section class="conteudo-principal-calendario">
+
+            <!-- CALENDÁRIO MENSAL -->
+
+            <div class="card-calendario-mensal">
+
+                <div class="controle-mes-calendario">
+
+                    <button type="button" class="btn-trocar-mes" id="mes-anterior" aria-label="Mês anterior">
+                        ‹
+                    </button>
+
+                    <div class="mes-atual-calendario">
+
+                        <h2 id="titulo-mes-calendario">
+                            Julho de 2026
+                        </h2>
+
+                        <span>
+                            Selecione uma data para visualizar os eventos
+                        </span>
+
+                    </div>
+
+                    <button type="button" class="btn-trocar-mes" id="proximo-mes" aria-label="Próximo mês">
+                        ›
+                    </button>
+
+                </div>
+
+                <div class="dias-semana-calendario">
+
+                    <span>Dom</span>
+                    <span>Seg</span>
+                    <span>Ter</span>
+                    <span>Qua</span>
+                    <span>Qui</span>
+                    <span>Sex</span>
+                    <span>Sáb</span>
+
+                </div>
+
+                <div class="grade-calendario" id="grade-calendario">
+                    <!-- O JavaScript cria os dias aqui -->
+                </div>
+
+                <div class="legenda-calendario">
+
+                    <div>
+                        <span class="cor-legenda vestibular"></span>
+                        Vestibular
+                    </div>
+
+                    <div>
+                        <span class="cor-legenda enem"></span>
+                        ENEM
+                    </div>
+
+                    <div>
+                        <span class="cor-legenda bolsa"></span>
+                        Bolsa
+                    </div>
+
+                    <div>
+                        <span class="cor-legenda curso-tecnico"></span>
+                        Curso técnico
+                    </div>
+
+                    <div>
+                        <span class="cor-legenda evento"></span>
+                        Evento
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PRÓXIMOS EVENTOS -->
+
+            <aside class="card-proximos-eventos">
+
+                <div class="titulo-proximos-eventos">
+
+                    <div>
+
+                        <span class="etiqueta-secao-calendario">
+                            Não perca os prazos
+                        </span>
+
+                        <h2>
+                            Próximos eventos
+                        </h2>
+
+                    </div>
+
+                    <button type="button" class="btn-ver-todos-eventos" id="btn-ver-todos-eventos">
+                        Ver todos
+                    </button>
+
+                </div>
+
+                <div class="lista-proximos-eventos" id="lista-proximos-eventos">
+
+                    <!-- EVENTO 1 -->
+
+                    <article class="item-evento-calendario" data-categoria="enem">
+
+                        <div class="data-evento-calendario">
+
+                            <strong>30</strong>
+                            <span>JUL</span>
+
+                        </div>
+
+                        <div class="informacoes-evento-calendario">
+
+                            <span class="categoria-evento categoria-enem">
+                                ENEM
+                            </span>
+
+                            <h3>
+                                Inscrições para o ENEM 2026
+                            </h3>
+
+                            <p>
+                                Último dia para realizar a inscrição.
+                            </p>
+
+                            <button type="button" class="btn-detalhes-evento" data-evento="enem-inscricoes">
+                                Ver detalhes
+                            </button>
+
+                        </div>
+
+                        <span class="status-evento status-andamento">
+                            Em andamento
+                        </span>
+
+                    </article>
+
+                    <!-- EVENTO 2 -->
+
+                    <article class="item-evento-calendario" data-categoria="vestibular">
+
+                        <div class="data-evento-calendario">
+
+                            <strong>05</strong>
+                            <span>AGO</span>
+
+                        </div>
+
+                        <div class="informacoes-evento-calendario">
+
+                            <span class="categoria-evento categoria-vestibular">
+                                Vestibular
+                            </span>
+
+                            <h3>
+                                Processo seletivo IFRJ
+                            </h3>
+
+                            <p>
+                                Abertura das inscrições para novos alunos.
+                            </p>
+
+                            <button type="button" class="btn-detalhes-evento" data-evento="ifrj-processo">
+                                Ver detalhes
+                            </button>
+
+                        </div>
+
+                        <span class="status-evento status-em-breve">
+                            Em breve
+                        </span>
+
+                    </article>
+
+                    <!-- EVENTO 3 -->
+
+                    <article class="item-evento-calendario" data-categoria="vestibular">
+
+                        <div class="data-evento-calendario">
+
+                            <strong>10</strong>
+                            <span>AGO</span>
+
+                        </div>
+
+                        <div class="informacoes-evento-calendario">
+
+                            <span class="categoria-evento categoria-vestibular">
+                                Vestibular
+                            </span>
+
+                            <h3>
+                                Vestibular UERJ
+                            </h3>
+
+                            <p>
+                                Início do período de inscrições.
+                            </p>
+
+                            <button type="button" class="btn-detalhes-evento" data-evento="uerj-vestibular">
+                                Ver detalhes
+                            </button>
+
+                        </div>
+
+                        <span class="status-evento status-em-breve">
+                            Em breve
+                        </span>
+
+                    </article>
+
+                    <!-- EVENTO 4 -->
+
+                    <article class="item-evento-calendario" data-categoria="bolsa">
+
+                        <div class="data-evento-calendario">
+
+                            <strong>15</strong>
+                            <span>AGO</span>
+
+                        </div>
+
+                        <div class="informacoes-evento-calendario">
+
+                            <span class="categoria-evento categoria-bolsa">
+                                Bolsa
+                            </span>
+
+                            <h3>
+                                Programa de bolsas estudantis
+                            </h3>
+
+                            <p>
+                                Prazo final para envio da documentação.
+                            </p>
+
+                            <button type="button" class="btn-detalhes-evento" data-evento="bolsas-estudantis">
+                                Ver detalhes
+                            </button>
+
+                        </div>
+
+                        <span class="status-evento status-andamento">
+                            Em andamento
+                        </span>
+
+                    </article>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+        <!-- DESTAQUES INFERIORES -->
+
+        <section class="destaques-calendario">
+
+            <article class="card-destaque-calendario">
+
+                <div class="icone-destaque-calendario">
+                    🔔
+                </div>
+
+                <div>
+
+                    <h2>
+                        Acompanhe os prazos
+                    </h2>
+
+                    <p>
+                        Consulte datas importantes de inscrições,
+                        provas e outros processos acadêmicos.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <article class="card-destaque-calendario">
+
+                <div class="icone-destaque-calendario">
+                    🎓
+                </div>
+
+                <div>
+
+                    <h2>
+                        Encontre oportunidades
+                    </h2>
+
+                    <p>
+                        Veja processos seletivos, bolsas e eventos
+                        acadêmicos reunidos em um só lugar.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <article class="card-destaque-calendario">
+
+                <div class="icone-destaque-calendario">
+                    ✅
+                </div>
+
+                <div>
+
+                    <h2>
+                        Organize seus planos
+                    </h2>
+
+                    <p>
+                        Use o calendário para planejar cada etapa
+                        do seu caminho acadêmico.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- MODAL DE DETALHES DO EVENTO -->
+
+    <div class="modal-calendario" id="modal-evento-calendario" aria-hidden="true">
+
+        <div class="fundo-modal-calendario"></div>
+
+        <div class="conteudo-modal-calendario" role="dialog" aria-modal="true" aria-labelledby="titulo-modal-evento">
+
+            <button type="button" class="btn-fechar-modal-calendario" id="btn-fechar-modal-calendario"
+                aria-label="Fechar detalhes">
+                ×
+            </button>
+
+            <span class="categoria-modal-evento" id="categoria-modal-evento">
+                Evento
+            </span>
+
+            <h2 id="titulo-modal-evento">
+                Título do evento
+            </h2>
+
+            <p class="descricao-modal-evento" id="descricao-modal-evento">
+                Informações do evento aparecerão aqui.
+            </p>
+
+            <div class="detalhes-modal-evento">
+
+                <div>
+
+                    <span>
+                        Data
+                    </span>
+
+                    <strong id="data-modal-evento">
+                        Data não informada
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Instituição
+                    </span>
+
+                    <strong id="instituicao-modal-evento">
+                        Não informada
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Status
+                    </span>
+
+                    <strong id="status-modal-evento">
+                        Em breve
+                    </strong>
+
+                </div>
+
+            </div>
+            <div class="area-lembrete-evento">
+
+                <button type="button" class="btn-lembrete-evento" id="btn-lembrete-evento" aria-pressed="false"
+                    aria-describedby="ajuda-lembrete-evento">
+                    <span class="icone-btn-lembrete-evento" aria-hidden="true">
+                        🔔
+                    </span>
+
+                    <span class="texto-btn-lembrete-evento">
+                        Receber lembrete
+                    </span>
+                </button>
+
+                <p class="ajuda-lembrete-evento" id="ajuda-lembrete-evento">
+                    Este evento aparecerá na sua área de notificações.
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer class="rodape-site">
+
+        <div class="conteudo-rodape">
+
+            <!-- MARCA -->
+
+            <div class="coluna-rodape coluna-marca">
+
+                <a href="../index.html" class="logo-rodape">
+
+                    <img src="../assets/logo.png" alt="Logo do Futuro Universitário">
+
+                </a>
+
+                <p>
+                    Uma plataforma criada para ajudar estudantes
+                    a encontrar cursos, universidades, bolsas,
+                    oportunidades e caminhos profissionais.
+                </p>
+
+                <div class="redes-rodape">
+
+                    <a href="https://www.instagram.com/laranjitos_/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram da equipe Laranjitos" title="Instagram" class="rede-rodape">
+
+                        <img src="../assets/insta.webp" alt="Instagram">
+
+                    </a>
+
+                    <a href="https://www.reddit.com/r/PassaporteU/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Comunidade do Futuro Universitário no Reddit" title="Reddit" class="rede-rodape">
+
+                        <img src="../assets/reddit.webp" alt="Reddit">
+
+                    </a>
+
+                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank"
+                        rel="noopener noreferrer" aria-label="Enviar e-mail para o Futuro Universitário" title="E-mail"
+                        class="rede-rodape">
+
+                        <img src="../assets/gmail.webp" alt="Gmail">
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- EXPLORAR -->
+
+            <div class="coluna-rodape">
+
+                <h3>Explorar</h3>
+
+                <a href="descobrir.html">
+                    Descobrir
+                </a>
+
+                <a href="universidades.html">
+                    Universidades
+                </a>
+
+                <a href="cursos-tecnicos.html">
+                    Cursos técnicos
+                </a>
+
+                <a href="bolsas.html">
+                    Bolsas
+                </a>
+
+            </div>
+
+            <!-- ORIENTAÇÃO -->
+
+            <div class="coluna-rodape">
+
+                <h3>Orientação</h3>
+
+                <a href="teste-vocacional.html">
+                    Teste vocacional
+                </a>
+
+                <a href="guia-profissional.html">
+                    Guia profissional
+                </a>
+
+                <a href="mapa-oportunidades.html">
+                    Oportunidades
+                </a>
+
+                <a href="calendario.html">
+                    Calendário
+                </a>
+
+            </div>
+
+            <!-- PROJETO -->
+
+            <div class="coluna-rodape">
+
+                <h3>Projeto</h3>
+
+                <a href="comunidade.html">
+                    Comunidade
+                </a>
+
+                <a href="contato.html">
+                    Contato
+                </a>
+
+                <a href="login.html">
+
+                    <span class="versao-rodape">
+                        Versão 1.0
+                    </span>
+
+            </div>
+
+        </div>
+
+        <div class="base-rodape">
+
+            <p>
+                © 2026 Futuro Universitário.
+                Todos os direitos reservados.
+            </p>
+
+            <p>
+                Conectando estudantes a novas oportunidades.
+            </p>
+
+        </div>
+
+    </footer>
+    <script src="../script.js"></script>
+    <script type="module" src="../auth-ui.js"></script>
+    <script type="module" src="../calendario-lembretes.js"></script>
+    <script type="module" src="../calendario-firestore.js"></script>
+</body>
+
+</html>

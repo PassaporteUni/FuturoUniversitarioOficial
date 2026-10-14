@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Descobrir | Futuro Universitário</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <a href="../index.html" class="logo">
+
+            <img
+                src="../assets/logo.png"
+                alt="Logo do Futuro Universitário"
+            >
+
+        </a>
+
+        <nav>
+
+            <a href="../index.html">
+                Início
+            </a>
+
+            <a
+                href="descobrir.html"
+                
+            >
+                Descobrir
+            </a>
+
+            <a href="mapa-oportunidades.html">
+                Oportunidades
+            </a>
+
+            <a href="calendario.html">
+                Calendário
+            </a>
+
+            <a href="comunidade.html">
+                Comunidade
+            </a>
+
+            <a href="contato.html">
+                Contato
+            </a>
+            <a href="desenvolvedores.html">
+                Desenvolvedores
+            </a>
+
+        </nav>
+
+<a href="login.html" class="btn-login">
+    Entrar
+</a>
+
+    </header>
+
+    <main class="pagina-descobrir">
+
+        <section class="cabecalho-pagina">
+
+            <span>
+                Descobrir
+            </span>
+
+            <h1>
+                Encontre caminhos para o seu futuro.
+            </h1>
+
+            <p>
+                Explore universidades, cursos técnicos, bolsas de estudo,
+                profissões e oportunidades que combinam com seus interesses.
+            </p>
+
+        </section>
+
+        <!-- BARRA DE PESQUISA GERAL -->
+
+        <section class="barra-pesquisa">
+
+            <input
+                id="pesquisa-descobrir"
+                type="search"
+                placeholder="O que você procura?"
+                aria-label="Pesquisar na plataforma"
+                autocomplete="off"
+            >
+
+            <button
+                id="btn-pesquisar-descobrir"
+                type="button"
+            >
+                Pesquisar
+            </button>
+
+        </section>
+
+        <p
+            id="mensagem-pesquisa-descobrir"
+            class="mensagem-pesquisa-descobrir"
+            hidden
+        >
+            Não encontramos essa opção. Tente pesquisar por universidade,
+            curso técnico, bolsa, profissão, mapa ou teste vocacional.
+        </p>
+
+        <!-- CARDS PRINCIPAIS -->
+
+        <section class="grade-descobrir">
+
+            <!-- UNIVERSIDADES -->
+
+            <article class="card-descobrir">
+
+                <div class="icone-card">
+                    🎓
+                </div>
+
+                <h2>
+                    Universidades
+                </h2>
+
+                <p>
+                    Conheça instituições de ensino, cursos disponíveis,
+                    formas de ingresso e informações importantes.
+                </p>
+
+                <a href="universidades.html">
+                    Explorar universidades →
+                </a>
+
+            </article>
+
+            <!-- CURSOS TÉCNICOS -->
+
+            <article class="card-descobrir">
+
+                <div class="icone-card">
+                    🧰
+                </div>
+
+                <h2>
+                    Cursos técnicos
+                </h2>
+
+                <p>
+                    Descubra cursos profissionalizantes e técnicos
+                    próximos de você.
+                </p>
+
+                <a href="cursos-tecnicos.html">
+                    Ver cursos técnicos →
+                </a>
+
+            </article>
+
+            <!-- BOLSAS -->
+
+            <article class="card-descobrir">
+
+                <div class="icone-card">
+                    💰
+                </div>
+
+                <h2>
+                    Bolsas de estudo
+                </h2>
+
+                <p>
+                    Veja programas de bolsas, auxílios e oportunidades
+                    para continuar estudando.
+                </p>
+
+                <a href="bolsas.html">
+                    Buscar bolsas →
+                </a>
+
+            </article>
+
+            <!-- GUIA PROFISSIONAL -->
+
+            <article class="card-descobrir">
+
+                <div class="icone-card">
+                    🧠
+                </div>
+
+                <h2>
+                    Guia profissional
+                </h2>
+
+                <p>
+                    Conheça profissões, áreas de atuação, salários
+                    e caminhos de formação.
+                </p>
+
+                <a href="guia-profissional.html">
+                    Explorar profissões →
+                </a>
+
+            </article>
+
+            <!-- MAPA -->
+
+            <article class="card-descobrir">
+
+                <div class="icone-card">
+                    📍
+                </div>
+
+                <h2>
+                    Mapa de oportunidades
+                </h2>
+
+                <p>
+                    Encontre instituições, eventos, cursos e projetos
+                    perto da sua região.
+                </p>
+
+                <a href="mapa-oportunidades.html">
+                    Abrir mapa →
+                </a>
+
+            </article>
+
+            <!-- TESTE VOCACIONAL -->
+
+            <article class="card-descobrir">
+
+                <div class="icone-card">
+                    🧭
+                </div>
+
+                <h2>
+                    Teste vocacional
+                </h2>
+
+                <p>
+                    Responda algumas perguntas e receba sugestões
+                    de áreas que combinam com você.
+                </p>
+
+                <a href="teste-vocacional.html">
+                    Fazer teste →
+                </a>
+
+            </article>
+
+        </section>
+
+    </main>
+    <footer class="rodape-site">
+
+    <div class="conteudo-rodape">
+
+        <!-- MARCA -->
+        <div class="coluna-rodape coluna-marca">
+
+            <a href="../index.html" class="logo-rodape">
+                <img
+                    src="../assets/logo.png"
+                    alt="Logo do Futuro Universitário"
+                >
+            </a>
+
+            <p>
+                Uma plataforma criada para ajudar estudantes
+                a encontrar cursos, universidades, bolsas,
+                oportunidades e caminhos profissionais.
+            </p>
+
+            <div class="redes-rodape">
+
+                <a
+                    href="https://www.instagram.com/laranjitos_/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram da equipe Laranjitos"
+                    title="Instagram"
+                    class="rede-rodape"
+                >
+                    <img
+                        src="../assets/insta.webp"
+                        alt="Instagram"
+                    >
+                </a>
+
+                <a
+                    href="https://www.reddit.com/r/PassaporteU/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Comunidade do Futuro Universitário no Reddit"
+                    title="Reddit"
+                    class="rede-rodape"
+                >
+                    <img
+                        src="../assets/reddit.webp"
+                        alt="Reddit"
+                    >
+                </a>
+
+                <a
+                    href="https://mail.google.com/mail/u/0/#inbox?compose=new"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Enviar e-mail para o Futuro Universitário"
+                    title="E-mail"
+                    class="rede-rodape"
+                >
+                    <img
+                        src="../assets/gmail.webp"
+                        alt="Gmail"
+                    >
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- EXPLORAR -->
+        <div class="coluna-rodape">
+
+            <h3>Explorar</h3>
+
+            <a href="descobrir.html">
+                Descobrir
+            </a>
+
+            <a href="universidades.html">
+                Universidades
+            </a>
+
+            <a href="cursos-tecnicos.html">
+                Cursos técnicos
+            </a>
+
+            <a href="bolsas.html">
+                Bolsas
+            </a>
+
+        </div>
+
+        <!-- ORIENTAÇÃO -->
+        <div class="coluna-rodape">
+
+            <h3>Orientação</h3>
+
+            <a href="teste-vocacional.html">
+                Teste vocacional
+            </a>
+
+            <a href="guia-profissional.html">
+                Guia profissional
+            </a>
+
+            <a href="mapa-oportunidades.html">
+                Oportunidades
+            </a>
+
+            <a href="calendario.html">
+                Calendário
+            </a>
+
+        </div>
+
+        <!-- PROJETO -->
+        <div class="coluna-rodape">
+
+            <h3>Projeto</h3>
+
+            <a href="comunidade.html">
+                Comunidade
+            </a>
+
+            <a href="contato.html">
+                Contato
+            </a>
+
+            <a href="em-desenvolvimento.html">
+                Entrar
+            </a>
+
+            <span class="versao-rodape">
+                Versão 1.0
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="base-rodape">
+
+        <p>
+            © 2026 Futuro Universitário.
+            Todos os direitos reservados.
+        </p>
+
+        <p>
+            Conectando estudantes a novas oportunidades.
+        </p>
+
+    </div>
+
+</footer>
+    <script src="../script.js"></script>
+
+</body>
+
+</html>

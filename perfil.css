@@ -1,0 +1,1031 @@
+/* ==================================================
+   PÁGINA DE PERFIL
+================================================== */
+
+.corpo-perfil {
+    min-height: 100vh;
+
+    color: #17365d;
+    background: #f5f7fb;
+}
+
+
+.pagina-perfil {
+    position: relative;
+
+    min-height: calc(100vh - 100px);
+
+    padding: 65px 35px 90px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 8% 10%,
+            rgba(245, 158, 11, 0.11),
+            transparent 24%
+        ),
+        radial-gradient(
+            circle at 92% 5%,
+            rgba(23, 54, 93, 0.08),
+            transparent 25%
+        ),
+        linear-gradient(
+            145deg,
+            #fffdf8,
+            #f5f8fc
+        );
+}
+
+
+.perfil-container {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 1120px;
+
+    margin: 0 auto;
+}
+
+
+/* ==================================================
+   CABEÇALHO DA PÁGINA
+================================================== */
+
+.cabecalho-pagina-perfil {
+    max-width: 760px;
+
+    margin-bottom: 34px;
+}
+
+
+.link-voltar-perfil {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 22px;
+
+    color: #5f7088;
+
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+        color 180ms ease,
+        transform 180ms ease;
+}
+
+
+.link-voltar-perfil:hover {
+    color: #d97706;
+
+    transform: translateX(-3px);
+}
+
+
+.link-voltar-perfil span {
+    font-size: 1rem;
+}
+
+
+.etiqueta-pagina-perfil {
+    display: table;
+
+    margin-bottom: 12px;
+    padding: 7px 13px;
+
+    color: #c96e00;
+    background: #fff4df;
+
+    border:
+        1px solid rgba(245, 158, 11, 0.34);
+
+    border-radius: 999px;
+
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+
+.cabecalho-pagina-perfil h1 {
+    margin: 0 0 12px;
+
+    color: #17365d;
+
+    font-size:
+        clamp(
+            2.2rem,
+            5vw,
+            3.25rem
+        );
+
+    line-height: 1.08;
+    letter-spacing: -0.045em;
+}
+
+
+.cabecalho-pagina-perfil p {
+    max-width: 650px;
+
+    margin: 0;
+
+    color: #65758b;
+
+    font-size: 0.96rem;
+    line-height: 1.75;
+}
+
+
+/* ==================================================
+   MENSAGENS DO PERFIL
+================================================== */
+
+.mensagem-perfil {
+    margin-bottom: 22px;
+    padding: 14px 17px;
+
+    border: 1px solid transparent;
+    border-radius: 13px;
+
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1.55;
+}
+
+
+.mensagem-perfil.sucesso {
+    color: #176534;
+    background: #effcf3;
+
+    border-color:
+        rgba(34, 197, 94, 0.28);
+}
+
+
+.mensagem-perfil.erro {
+    color: #b42323;
+    background: #fff1f1;
+
+    border-color:
+        rgba(239, 68, 68, 0.27);
+}
+
+
+.mensagem-perfil.informacao {
+    color: #17365d;
+    background: #eff5fc;
+
+    border-color:
+        rgba(23, 54, 93, 0.16);
+}
+
+
+/* ==================================================
+   GRADE PRINCIPAL
+================================================== */
+
+.grade-perfil {
+    display: grid;
+    grid-template-columns:
+        minmax(285px, 340px)
+        minmax(0, 1fr);
+
+    align-items: start;
+    gap: 28px;
+}
+
+
+/* ==================================================
+   CARD DE RESUMO
+================================================== */
+
+.cartao-resumo-perfil {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 34px 28px 30px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            150deg,
+            #ffffff,
+            #fffdf8
+        );
+
+    border:
+        1px solid rgba(23, 54, 93, 0.12);
+
+    border-top:
+        4px solid #f59e0b;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 20px 50px rgba(11, 35, 64, 0.12);
+
+    text-align: center;
+
+    animation:
+        entrada-card-perfil
+        420ms
+        cubic-bezier(.22, 1, .36, 1)
+        both;
+}
+
+
+.area-avatar-perfil {
+    position: relative;
+
+    margin-bottom: 17px;
+}
+
+
+.avatar-perfil {
+    width: 108px;
+    height: 108px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #17365d,
+            #0d2848
+        );
+
+    border: 4px solid #ffffff;
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 3px #f59e0b,
+        0 13px 28px rgba(13, 40, 72, 0.22);
+
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+}
+
+
+.avatar-perfil img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.status-avatar-perfil {
+    position: absolute;
+    right: -1px;
+    bottom: 5px;
+
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+    background: #22a45a;
+
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+
+    font-size: 0.72rem;
+    font-weight: 800;
+}
+
+
+.etiqueta-conta-perfil {
+    margin-bottom: 10px;
+    padding: 6px 11px;
+
+    color: #17713d;
+    background: #edfff3;
+
+    border:
+        1px solid rgba(34, 197, 94, 0.28);
+
+    border-radius: 999px;
+
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+
+.cartao-resumo-perfil h2 {
+    overflow: hidden;
+
+    width: 100%;
+    margin: 0 0 5px;
+
+    color: #17365d;
+
+    font-size: 1.35rem;
+    line-height: 1.3;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+#email-resumo-perfil {
+    overflow: hidden;
+
+    width: 100%;
+    margin: 0;
+
+    color: #758398;
+
+    font-size: 0.76rem;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.separador-resumo-perfil {
+    width: 100%;
+    height: 1px;
+
+    margin: 25px 0;
+
+    background:
+        rgba(23, 54, 93, 0.1);
+}
+
+
+/* ==================================================
+   ÁREA DA FOTO
+================================================== */
+
+.area-foto-perfil {
+    width: 100%;
+
+    text-align: left;
+}
+
+
+.area-foto-perfil strong {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #17365d;
+
+    font-size: 0.84rem;
+}
+
+
+.area-foto-perfil p {
+    margin: 0 0 14px;
+
+    color: #718096;
+
+    font-size: 0.7rem;
+    line-height: 1.55;
+}
+
+
+.area-foto-perfil small {
+    display: block;
+
+    margin-top: 10px;
+
+    color: #8793a5;
+
+    font-size: 0.61rem;
+    line-height: 1.5;
+}
+
+
+.btn-secundario-perfil {
+    width: 100%;
+
+    padding: 11px 14px;
+
+    color: #17365d;
+    background: #ffffff;
+
+    border:
+        1px solid rgba(23, 54, 93, 0.18);
+
+    border-radius: 11px;
+
+    font-family: inherit;
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        color 180ms ease,
+        background 180ms ease,
+        border-color 180ms ease,
+        transform 180ms ease;
+}
+
+
+.btn-secundario-perfil:not(:disabled):hover {
+    color: #d97706;
+    background: #fff8eb;
+
+    border-color:
+        rgba(245, 158, 11, 0.6);
+
+    transform: translateY(-1px);
+}
+
+
+.btn-secundario-perfil:disabled {
+    color: #8793a5;
+    background: #f4f6f9;
+
+    cursor: not-allowed;
+}
+
+
+/* ==================================================
+   CARD DE EDIÇÃO
+================================================== */
+
+.cartao-edicao-perfil {
+    padding: 32px;
+
+    background: #ffffff;
+
+    border:
+        1px solid rgba(23, 54, 93, 0.12);
+
+    border-top:
+        4px solid #f59e0b;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 20px 50px rgba(11, 35, 64, 0.1);
+
+    animation:
+        entrada-card-perfil
+        480ms
+        60ms
+        cubic-bezier(.22, 1, .36, 1)
+        both;
+}
+
+
+.cabecalho-edicao-perfil {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    margin-bottom: 30px;
+    padding-bottom: 23px;
+
+    border-bottom:
+        1px solid rgba(23, 54, 93, 0.09);
+}
+
+
+.icone-edicao-perfil {
+    flex-shrink: 0;
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #17365d;
+    background: #fff3dc;
+
+    border:
+        1px solid rgba(245, 158, 11, 0.36);
+
+    border-radius: 14px;
+
+    font-size: 1.1rem;
+}
+
+
+.cabecalho-edicao-perfil h2 {
+    margin: 0 0 4px;
+
+    color: #17365d;
+
+    font-size: 1.12rem;
+}
+
+
+.cabecalho-edicao-perfil p {
+    margin: 0;
+
+    color: #758398;
+
+    font-size: 0.72rem;
+    line-height: 1.5;
+}
+
+
+/* ==================================================
+   FORMULÁRIO
+================================================== */
+
+#form-perfil {
+    display: grid;
+    gap: 24px;
+}
+
+
+.grupo-campo-perfil label,
+.titulo-provedor-perfil {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #17365d;
+
+    font-size: 0.73rem;
+    font-weight: 700;
+}
+
+
+.campo-perfil {
+    min-height: 52px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 0 14px;
+
+    background: #f7f9fc;
+
+    border:
+        1px solid rgba(23, 54, 93, 0.16);
+
+    border-radius: 12px;
+
+    transition:
+        background 180ms ease,
+        border-color 180ms ease,
+        box-shadow 180ms ease;
+}
+
+
+.campo-perfil:focus-within {
+    background: #ffffff;
+
+    border-color: #f59e0b;
+
+    box-shadow:
+        0 0 0 3px rgba(245, 158, 11, 0.12);
+}
+
+
+.campo-perfil > span:first-child {
+    flex-shrink: 0;
+
+    color: #627289;
+
+    font-size: 0.88rem;
+}
+
+
+.campo-perfil input {
+    flex: 1;
+
+    min-width: 0;
+    height: 50px;
+
+    color: #17365d;
+    background: transparent;
+
+    border: none;
+    outline: none;
+
+    font-family: inherit;
+    font-size: 0.78rem;
+    font-weight: 500;
+}
+
+
+.campo-perfil input::placeholder {
+    color: #9aa5b5;
+}
+
+
+.campo-perfil input:disabled {
+    color: #7d899a;
+
+    cursor: wait;
+}
+
+
+.campo-perfil-bloqueado {
+    background: #f1f4f8;
+}
+
+
+.campo-perfil-bloqueado input {
+    color: #65758b;
+
+    cursor: default;
+}
+
+
+.cadeado-campo-perfil {
+    flex-shrink: 0;
+
+    color: #7a8799;
+
+    font-size: 0.72rem;
+}
+
+
+.grupo-campo-perfil > small {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #8490a1;
+
+    font-size: 0.63rem;
+    line-height: 1.5;
+}
+
+
+/* ==================================================
+   FORMA DE ACESSO
+================================================== */
+
+.informacao-provedor-perfil {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 13px 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7f9fc,
+            #f2f6fb
+        );
+
+    border:
+        1px solid rgba(23, 54, 93, 0.12);
+
+    border-radius: 13px;
+}
+
+
+.icone-provedor-perfil {
+    flex-shrink: 0;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #2563eb;
+    background: #ffffff;
+
+    border:
+        1px solid rgba(23, 54, 93, 0.12);
+
+    border-radius: 50%;
+
+    font-size: 0.84rem;
+    font-weight: 800;
+}
+
+
+.informacao-provedor-perfil div {
+    min-width: 0;
+}
+
+
+.informacao-provedor-perfil strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #17365d;
+
+    font-size: 0.76rem;
+}
+
+
+.informacao-provedor-perfil small {
+    display: block;
+
+    color: #8490a1;
+
+    font-size: 0.62rem;
+}
+
+
+/* ==================================================
+   BOTÕES DO FORMULÁRIO
+================================================== */
+
+.acoes-formulario-perfil {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+
+    margin-top: 5px;
+    padding-top: 24px;
+
+    border-top:
+        1px solid rgba(23, 54, 93, 0.09);
+}
+
+
+.btn-cancelar-perfil,
+.btn-salvar-perfil {
+    min-height: 46px;
+
+    padding: 11px 20px;
+
+    border-radius: 11px;
+
+    font-family: inherit;
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        color 180ms ease,
+        background 180ms ease,
+        border-color 180ms ease,
+        box-shadow 180ms ease,
+        transform 180ms ease;
+}
+
+
+.btn-cancelar-perfil {
+    color: #596a80;
+    background: #ffffff;
+
+    border:
+        1px solid rgba(23, 54, 93, 0.17);
+}
+
+
+.btn-cancelar-perfil:not(:disabled):hover {
+    color: #17365d;
+    background: #f2f5f9;
+
+    transform: translateY(-1px);
+}
+
+
+.btn-salvar-perfil {
+    min-width: 170px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f59e0b,
+            #e98500
+        );
+
+    border: 1px solid #f59e0b;
+
+    box-shadow:
+        0 9px 20px rgba(245, 158, 11, 0.22);
+}
+
+
+.btn-salvar-perfil:not(:disabled):hover {
+    background:
+        linear-gradient(
+            135deg,
+            #f8a918,
+            #e27d00
+        );
+
+    box-shadow:
+        0 12px 25px rgba(245, 158, 11, 0.3);
+
+    transform: translateY(-2px);
+}
+
+
+.btn-cancelar-perfil:disabled,
+.btn-salvar-perfil:disabled {
+    opacity: 0.53;
+
+    cursor: wait;
+
+    box-shadow: none;
+}
+
+
+/* ==================================================
+   FOCO ACESSÍVEL
+================================================== */
+
+.btn-secundario-perfil:focus-visible,
+.btn-cancelar-perfil:focus-visible,
+.btn-salvar-perfil:focus-visible,
+.link-voltar-perfil:focus-visible {
+    outline:
+        3px solid rgba(245, 158, 11, 0.34);
+
+    outline-offset: 3px;
+}
+
+
+/* ==================================================
+   ANIMAÇÃO
+================================================== */
+
+@keyframes entrada-card-perfil {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(12px)
+            scale(0.985);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* ==================================================
+   RESPONSIVIDADE
+================================================== */
+
+@media (max-width: 900px) {
+
+    .pagina-perfil {
+        padding:
+            55px 25px 80px;
+    }
+
+    .grade-perfil {
+        grid-template-columns: 1fr;
+    }
+
+    .cartao-resumo-perfil {
+        width: 100%;
+        max-width: 540px;
+
+        margin: 0 auto;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .pagina-perfil {
+        padding:
+            42px 16px 65px;
+    }
+
+    .cabecalho-pagina-perfil {
+        margin-bottom: 26px;
+    }
+
+    .cabecalho-pagina-perfil h1 {
+        font-size: 2.25rem;
+    }
+
+    .cartao-resumo-perfil {
+        padding:
+            29px 21px 25px;
+
+        border-radius: 20px;
+    }
+
+    .cartao-edicao-perfil {
+        padding: 24px 19px;
+
+        border-radius: 20px;
+    }
+
+    .cabecalho-edicao-perfil {
+        align-items: flex-start;
+
+        margin-bottom: 25px;
+    }
+
+    .acoes-formulario-perfil {
+        flex-direction: column-reverse;
+    }
+
+    .btn-cancelar-perfil,
+    .btn-salvar-perfil {
+        width: 100%;
+    }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .cartao-resumo-perfil,
+    .cartao-edicao-perfil {
+        animation:
+            entrada-perfil-reduzida
+            130ms
+            ease
+            both;
+    }
+
+    .link-voltar-perfil,
+    .btn-secundario-perfil,
+    .campo-perfil,
+    .btn-cancelar-perfil,
+    .btn-salvar-perfil {
+        transition: none;
+    }
+
+}
+
+
+@keyframes entrada-perfil-reduzida {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+/* Ajustes de respiro, leitura e formulário para celular. */
+@media (max-width: 600px) {
+    .pagina-perfil {
+        padding: 32px 16px 56px;
+    }
+
+    .cabecalho-pagina-perfil h1 {
+        font-size: clamp(1.85rem, 8vw, 2.2rem);
+        line-height: 1.2;
+    }
+
+    .cartao-resumo-perfil,
+    .cartao-edicao-perfil {
+        min-width: 0;
+        padding: 21px 17px;
+    }
+
+    .campo-perfil,
+    .grupo-campo-perfil {
+        min-width: 0;
+    }
+
+    .campo-perfil input {
+        min-width: 0;
+        font-size: 16px;
+    }
+
+    .btn-cancelar-perfil,
+    .btn-salvar-perfil,
+    .btn-secundario-perfil {
+        min-height: 44px;
+    }
+}

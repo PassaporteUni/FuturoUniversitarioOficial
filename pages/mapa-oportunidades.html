@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mapa de Oportunidades | Futuro Universitário</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <a href="../index.html" class="logo">
+
+            <img src="../assets/logo.png" alt="Logo Futuro Universitário">
+
+        </a>
+
+        <nav>
+
+            <a href="../index.html">
+                Início
+            </a>
+
+            <a href="descobrir.html">
+                Descobrir
+            </a>
+
+            <a href="mapa-oportunidades.html">
+                Oportunidades
+            </a>
+
+            <a href="calendario.html">
+                Calendário
+            </a>
+
+            <a href="comunidade.html">
+                Comunidade
+            </a>
+
+            <a href="contato.html">
+                Contato
+            </a>
+            <a href="desenvolvedores.html">
+                Desenvolvedores
+            </a>
+
+        </nav>
+
+        <a href="login.html" class="btn-login">
+            Entrar
+        </a>
+
+    </header>
+
+    <main class="pagina-mapa-oportunidades">
+
+        <section class="hero-mapa">
+
+            <a href="descobrir.html" class="btn-voltar">
+                ← Voltar para Descobrir
+            </a>
+
+            <span class="etiqueta-pagina">
+
+                Mapa de oportunidades
+
+            </span>
+
+            <h1>
+
+                Descubra oportunidades em todo o Rio de Janeiro.
+
+            </h1>
+
+            <p>
+
+                Pesquise uma região do Rio de Janeiro para conhecer
+                universidades, cursos técnicos, bolsas,
+                instituições e áreas profissionais em destaque.
+
+            </p>
+
+        </section>
+
+        <section class="pesquisa-mapa">
+
+            <div class="campo-pesquisa-mapa">
+
+                <span>
+
+                    🔎
+
+                </span>
+
+                <input type="search" id="pesquisa-regiao" placeholder="Pesquise uma região..." autocomplete="off">
+
+            </div>
+
+        </section>
+
+        <section class="conteudo-mapa">
+
+            <div class="area-mapa">
+
+                <div class="mapa-interativo-container">
+
+                    <div class="topo-mapa-interativo">
+
+                        <div>
+                            <span class="mapa-subtitulo">
+                                Cidade do Rio de Janeiro e Baixada
+                            </span>
+
+                            <h2>
+                                Selecione uma região
+                            </h2>
+                        </div>
+
+                        <p id="instrucao-mapa">
+                            Clique em uma região para visualizar as oportunidades.
+                        </p>
+
+                    </div>
+
+                    <div class="mapa-brasil-wrapper">
+
+                        <div class="painel-regioes-rio">
+
+                            <div class="cabecalho-regioes-rio">
+
+                                <span class="etiqueta-regioes-rio">
+                                    Cidade do Rio de Janeiro e Baixada
+                                </span>
+
+                                <h2>
+                                    Explore oportunidades perto de você
+                                </h2>
+
+                                <p>
+                                    Escolha uma região para visualizar
+                                    universidades, cursos, bolsas e instituições
+                                    disponíveis naquela área.
+                                </p>
+
+                            </div>
+
+                            <div id="grade-regioes-rio" class="grade-regioes-rio" aria-live="polite">
+
+                                <p class="estado-carregamento-mapa">
+                                    Carregando regiões...
+                                </p>
+
+                            </div>
+                            <small class="aviso-dados-mapa">
+                                Os números representam as principais oportunidades catalogadas
+                                e podem variar conforme novos cursos, unidades e editais.
+                            </small>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="legenda-mapa">
+
+                        <span>
+                            <i class="legenda-cor legenda-normal"></i>
+                            Região disponível
+                        </span>
+
+                        <span>
+                            <i class="legenda-cor legenda-selecionado"></i>
+                            Região selecionada
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <aside class="painel-estado">
+
+                <span class="estado-label">
+
+                    Região selecionada
+
+                </span>
+
+                <h2 id="nome-estado">
+
+                    Nenhuma região selecionada
+
+                </h2>
+
+                <p id="descricao-estado">
+
+                    Escolha uma região para visualizar
+                    suas oportunidades.
+
+                </p>
+
+                <div class="estatisticas-estado">
+
+                    <div class="card-estatistica">
+
+                        <span>🏫</span>
+
+                        <strong id="total-universidades">
+
+                            —
+
+                        </strong>
+
+                        <small>
+
+                            Universidades
+
+                        </small>
+
+                    </div>
+
+                    <div class="card-estatistica">
+
+                        <span>🎓</span>
+
+                        <strong id="total-cursos">
+
+                            —
+
+                        </strong>
+
+                        <small>
+
+                            Cursos Técnicos
+
+                        </small>
+
+                    </div>
+
+                    <div class="card-estatistica">
+
+                        <span>💰</span>
+
+                        <strong id="total-bolsas">
+
+                            —
+
+                        </strong>
+
+                        <small>
+
+                            Bolsas
+
+                        </small>
+
+                    </div>
+
+                    <div class="card-estatistica">
+
+                        <span>🏢</span>
+
+                        <strong id="total-instituicoes">
+
+                            —
+
+                        </strong>
+
+                        <small>
+
+                            Instituições
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <div class="areas-destaque">
+
+                    <h3>
+
+                        Áreas em destaque
+
+                    </h3>
+
+                    <ul id="lista-areas">
+
+                        <li>
+
+                            Nenhuma informação disponível.
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <button id="btn-explorar-estado" type="button">
+
+                    Explorar oportunidades →
+
+                </button>
+
+            </aside>
+
+        </section>
+        <!-- MODAL DE OPORTUNIDADES -->
+
+        <div class="modal-oportunidades" id="modal-oportunidades" aria-hidden="true">
+            <div class="modal-oportunidades-fundo" data-fechar-modal-oportunidades></div>
+
+            <section class="modal-oportunidades-conteudo" role="dialog" aria-modal="true"
+                aria-labelledby="titulo-modal-oportunidades" tabindex="-1">
+                <header class="modal-oportunidades-topo">
+
+                    <div class="modal-oportunidades-titulos">
+
+                        <span class="modal-oportunidades-etiqueta">
+                            Oportunidades da região
+                        </span>
+
+                        <h2 id="titulo-modal-oportunidades">
+                            Região selecionada
+                        </h2>
+
+                        <p id="descricao-modal-oportunidades">
+                            Confira as oportunidades disponíveis.
+                        </p>
+
+                    </div>
+
+                    <button type="button" class="modal-oportunidades-fechar" id="fechar-modal-oportunidades"
+                        aria-label="Fechar">
+                        ×
+                    </button>
+
+                </header>
+
+                <div class="modal-oportunidades-filtros">
+
+                    <button type="button" class="filtro-oportunidades ativo" data-filtro-oportunidades="todas">
+                        Todas
+                    </button>
+
+                    <button type="button" class="filtro-oportunidades" data-filtro-oportunidades="superior">
+                        Ensino superior
+                    </button>
+
+                    <button type="button" class="filtro-oportunidades" data-filtro-oportunidades="tecnico">
+                        Cursos técnicos
+                    </button>
+
+                    <button type="button" class="filtro-oportunidades" data-filtro-oportunidades="bolsa">
+                        Bolsas e auxílios
+                    </button>
+
+                </div>
+
+                <div class="modal-oportunidades-resumo">
+
+                    <strong id="quantidade-oportunidades-modal">
+                        0 oportunidades encontradas
+                    </strong>
+
+                    <span>
+                        Organizadas por facilidade de acesso e relevância.
+                    </span>
+
+                </div>
+
+                <div class="lista-oportunidades-modal" id="lista-oportunidades-modal" aria-live="polite"></div>
+
+                <footer class="modal-oportunidades-aviso">
+
+                    <span aria-hidden="true">ℹ️</span>
+
+                    <p>
+                        Consulte o site oficial da instituição antes
+                        de realizar uma inscrição.
+                    </p>
+
+                </footer>
+
+            </section>
+        </div>
+    </main>
+    <footer class="rodape-site">
+
+        <div class="conteudo-rodape">
+
+            <!-- MARCA -->
+            <div class="coluna-rodape coluna-marca">
+
+                <a href="../index.html" class="logo-rodape">
+                    <img src="../assets/logo.png" alt="Logo do Futuro Universitário">
+                </a>
+
+                <p>
+                    Uma plataforma criada para ajudar estudantes
+                    a encontrar cursos, universidades, bolsas,
+                    oportunidades e caminhos profissionais.
+                </p>
+
+                <div class="redes-rodape">
+
+                    <a href="https://www.instagram.com/laranjitos_/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram da equipe Laranjitos" title="Instagram" class="rede-rodape">
+                        <img src="../assets/insta.webp" alt="Instagram">
+                    </a>
+
+                    <a href="https://www.reddit.com/r/PassaporteU/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Comunidade do Futuro Universitário no Reddit" title="Reddit" class="rede-rodape">
+                        <img src="../assets/reddit.webp" alt="Reddit">
+                    </a>
+
+                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank"
+                        rel="noopener noreferrer" aria-label="Enviar e-mail para o Futuro Universitário" title="E-mail"
+                        class="rede-rodape">
+                        <img src="../assets/gmail.webp" alt="Gmail">
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- EXPLORAR -->
+            <div class="coluna-rodape">
+
+                <h3>Explorar</h3>
+
+                <a href="descobrir.html">
+                    Descobrir
+                </a>
+
+                <a href="universidades.html">
+                    Universidades
+                </a>
+
+                <a href="cursos-tecnicos.html">
+                    Cursos técnicos
+                </a>
+
+                <a href="bolsas.html">
+                    Bolsas
+                </a>
+
+            </div>
+
+            <!-- ORIENTAÇÃO -->
+            <div class="coluna-rodape">
+
+                <h3>Orientação</h3>
+
+                <a href="teste-vocacional.html">
+                    Teste vocacional
+                </a>
+
+                <a href="guia-profissional.html">
+                    Guia profissional
+                </a>
+
+                <a href="mapa-oportunidades.html">
+                    Oportunidades
+                </a>
+
+                <a href="calendario.html">
+                    Calendário
+                </a>
+
+            </div>
+
+            <!-- PROJETO -->
+            <div class="coluna-rodape">
+
+                <h3>Projeto</h3>
+
+                <a href="comunidade.html">
+                    Comunidade
+                </a>
+
+                <a href="contato.html">
+                    Contato
+                </a>
+
+                <a href="em-desenvolvimento.html">
+                    Entrar
+                </a>
+
+                <span class="versao-rodape">
+                    Versão 1.0
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="base-rodape">
+
+            <p>
+                © 2026 Futuro Universitário.
+                Todos os direitos reservados.
+            </p>
+
+            <p>
+                Conectando estudantes a novas oportunidades.
+            </p>
+
+        </div>
+
+    </footer>
+    <script src="../script.js"></script>
+    <script type="module" src="../auth-ui.js"></script>
+    <script type="module" src="../mapa-oportunidades-firestore.js"></script>
+
+</body>
+
+</html>

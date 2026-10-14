@@ -1,0 +1,2783 @@
+:root {
+    --admin-azul: #0b315d;
+    --admin-azul-escuro: #082748;
+    --admin-laranja: #ff9800;
+    --admin-fundo: #f3f7fb;
+    --admin-branco: #ffffff;
+    --admin-texto: #17365d;
+    --admin-texto-suave: #687d98;
+    --admin-borda: #dce6f1;
+    --admin-vermelho: #d73b3b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+button,
+a {
+    font: inherit;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.corpo-admin {
+    min-height: 100vh;
+    color: var(--admin-texto);
+    background:
+        radial-gradient(
+            circle at top left,
+            #fff3dc,
+            transparent 34%
+        ),
+        linear-gradient(
+            135deg,
+            #ffffff,
+            var(--admin-fundo)
+        );
+}
+
+.pagina-admin {
+    width: min(1180px, calc(100% - 32px));
+    min-height: 100vh;
+    margin: auto;
+    padding: 32px 0 70px;
+}
+
+.estado-admin {
+    width: min(560px, 100%);
+    margin: 100px auto 0;
+    padding: 48px 32px;
+    text-align: center;
+    background: var(--admin-branco);
+    border: 1px solid var(--admin-borda);
+    border-top: 4px solid var(--admin-laranja);
+    border-radius: 22px;
+    box-shadow: 0 22px 50px rgba(11, 49, 93, 0.12);
+}
+
+.estado-admin h1 {
+    margin: 18px 0 8px;
+    font-size: 1.65rem;
+}
+
+.estado-admin p {
+    margin: 0 0 25px;
+    color: var(--admin-texto-suave);
+}
+
+.carregamento-admin {
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    border: 4px solid #dce6f1;
+    border-top-color: var(--admin-laranja);
+    border-radius: 50%;
+    animation: girar-admin 0.8s linear infinite;
+}
+
+.icone-admin-negado {
+    display: inline-grid;
+    width: 62px;
+    height: 62px;
+    place-items: center;
+    font-size: 1.8rem;
+    background: #fff0f0;
+    border-radius: 18px;
+}
+
+.cabecalho-admin {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 18px 22px;
+    background: var(--admin-branco);
+    border: 1px solid var(--admin-borda);
+    border-radius: 20px;
+    box-shadow: 0 14px 35px rgba(11, 49, 93, 0.08);
+}
+
+.marca-admin {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    color: var(--admin-texto);
+    text-decoration: none;
+}
+
+.marca-admin img {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+}
+
+.marca-admin div {
+    display: flex;
+    flex-direction: column;
+}
+
+.marca-admin strong {
+    font-size: 0.95rem;
+}
+
+.marca-admin span {
+    color: var(--admin-texto-suave);
+    font-size: 0.76rem;
+}
+
+.acoes-cabecalho-admin {
+    display: flex;
+    gap: 10px;
+}
+
+.botao-admin-secundario,
+.botao-admin-sair {
+    display: inline-flex;
+    min-height: 42px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 18px;
+    border-radius: 11px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.82rem;
+}
+
+.botao-admin-secundario {
+    color: var(--admin-azul);
+    background: var(--admin-branco);
+    border: 1px solid var(--admin-borda);
+}
+
+.botao-admin-sair {
+    color: var(--admin-branco);
+    background: var(--admin-vermelho);
+    border: 1px solid var(--admin-vermelho);
+}
+
+.apresentacao-admin {
+    padding: 68px 0 34px;
+}
+
+.etiqueta-admin {
+    display: inline-block;
+    padding: 7px 12px;
+    color: #9a5800;
+    background: #fff3dc;
+    border: 1px solid #ffc96c;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.apresentacao-admin h1 {
+    margin: 16px 0 8px;
+    color: var(--admin-azul-escuro);
+    font-size: clamp(2rem, 5vw, 3.3rem);
+    line-height: 1.08;
+}
+
+.apresentacao-admin > p {
+    max-width: 680px;
+    margin: 0;
+    color: var(--admin-texto-suave);
+    line-height: 1.7;
+}
+
+.identificacao-admin {
+    margin-top: 17px !important;
+    color: var(--admin-azul) !important;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.grade-recursos-admin {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.card-recurso-admin {
+    display: flex;
+    min-height: 255px;
+    flex-direction: column;
+    gap: 18px;
+    padding: 25px;
+    background: var(--admin-branco);
+    border: 1px solid var(--admin-borda);
+    border-top: 3px solid var(--admin-laranja);
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(11, 49, 93, 0.08);
+}
+
+.icone-recurso-admin {
+    display: grid;
+    width: 52px;
+    height: 52px;
+    place-items: center;
+    background: #edf5fd;
+    border-radius: 15px;
+    font-size: 1.45rem;
+}
+
+.card-recurso-admin h2 {
+    margin: 0 0 7px;
+    font-size: 1.15rem;
+}
+
+.card-recurso-admin p {
+    margin: 0;
+    color: var(--admin-texto-suave);
+    font-size: 0.85rem;
+    line-height: 1.65;
+}
+
+.status-recurso-admin {
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 6px 10px;
+    color: #9a5800;
+    background: #fff3dc;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.recurso-futuro {
+    opacity: 0.72;
+}
+
+@keyframes girar-admin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 850px) {
+    .grade-recursos-admin {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 620px) {
+    .cabecalho-admin {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .acoes-cabecalho-admin {
+        flex-direction: column;
+    }
+
+    .pagina-admin {
+        width: min(100% - 20px, 1180px);
+        padding-top: 10px;
+    }
+}
+/* ==================================================
+   GERENCIADOR DO CALENDÁRIO
+================================================== */
+
+.botao-gerenciar-recurso-admin {
+    width: 100%;
+    min-height: 43px;
+    margin-top: auto;
+    padding: 0 18px;
+
+    color: #ffffff;
+    background: var(--admin-azul);
+
+    border: 1px solid var(--admin-azul);
+    border-radius: 11px;
+
+    font-weight: 700;
+    font-size: 0.78rem;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.botao-gerenciar-recurso-admin:hover {
+    background: var(--admin-azul-escuro);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 20px
+        rgba(11, 49, 93, 0.18);
+}
+
+
+.gerenciador-calendario-admin {
+    margin-top: 45px;
+    padding: 28px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--admin-borda);
+    border-top: 4px solid var(--admin-laranja);
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 45px
+        rgba(11, 49, 93, 0.1);
+}
+
+
+.cabecalho-gerenciador-admin {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 25px;
+
+    padding-bottom: 24px;
+
+    border-bottom:
+        1px solid var(--admin-borda);
+}
+
+.cabecalho-gerenciador-admin h2 {
+    margin: 15px 0 6px;
+
+    color: var(--admin-azul-escuro);
+
+    font-size: 1.75rem;
+}
+
+.cabecalho-gerenciador-admin p {
+    max-width: 620px;
+    margin: 0;
+
+    color: var(--admin-texto-suave);
+
+    font-size: 0.86rem;
+    line-height: 1.6;
+}
+
+
+/* ==================================================
+   MENSAGENS
+================================================== */
+
+.mensagem-calendario-admin {
+    margin: 22px 0 0;
+    padding: 13px 16px;
+
+    border: 1px solid transparent;
+    border-radius: 11px;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.mensagem-sucesso {
+    color: #176b3a;
+    background: #eaf9f0;
+    border-color: #9eddb6;
+}
+
+.mensagem-erro {
+    color: #a52828;
+    background: #fff0f0;
+    border-color: #f1aaaa;
+}
+
+
+/* ==================================================
+   CONTEÚDO DO GERENCIADOR
+================================================== */
+
+.conteudo-gerenciador-calendario {
+    display: grid;
+    grid-template-columns:
+        minmax(310px, 390px)
+        minmax(0, 1fr);
+
+    gap: 22px;
+
+    margin-top: 25px;
+}
+
+
+.painel-form-evento-admin,
+.painel-lista-eventos-admin {
+    padding: 22px;
+
+    background: #f9fbfd;
+
+    border: 1px solid var(--admin-borda);
+    border-radius: 17px;
+}
+
+
+.painel-form-evento-admin h3,
+.painel-lista-eventos-admin h3 {
+    margin: 0;
+
+    color: var(--admin-azul-escuro);
+
+    font-size: 1.05rem;
+}
+
+
+/* ==================================================
+   FORMULÁRIO
+================================================== */
+
+#form-evento-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+#form-evento-admin label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    color: var(--admin-texto);
+
+    font-size: 0.73rem;
+    font-weight: 600;
+}
+
+#form-evento-admin input,
+#form-evento-admin textarea,
+#form-evento-admin select,
+#pesquisa-eventos-admin {
+    width: 100%;
+    min-height: 43px;
+    padding: 10px 12px;
+
+    color: var(--admin-texto);
+    background: #ffffff;
+
+    border: 1px solid #cad8e7;
+    border-radius: 10px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 0.78rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#form-evento-admin textarea {
+    min-height: 105px;
+    resize: vertical;
+}
+
+#form-evento-admin input:focus,
+#form-evento-admin textarea:focus,
+#form-evento-admin select:focus,
+#pesquisa-eventos-admin:focus {
+    border-color: var(--admin-laranja);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(255, 152, 0, 0.13);
+}
+
+#form-evento-admin input:disabled {
+    color: #72849a;
+    background: #eaf0f6;
+    cursor: not-allowed;
+}
+
+.linha-form-admin {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.acoes-form-evento-admin {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 5px;
+}
+
+.botao-salvar-evento-admin {
+    min-height: 43px;
+    padding: 0 20px;
+
+    color: #ffffff;
+    background: var(--admin-laranja);
+
+    border: 1px solid var(--admin-laranja);
+    border-radius: 11px;
+
+    font-weight: 700;
+    font-size: 0.78rem;
+
+    cursor: pointer;
+}
+
+.botao-salvar-evento-admin:hover {
+    background: #e88900;
+}
+
+.botao-salvar-evento-admin:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+
+
+/* ==================================================
+   LISTA DE EVENTOS
+================================================== */
+
+.cabecalho-lista-eventos-admin {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+
+    margin-bottom: 18px;
+}
+
+.cabecalho-lista-eventos-admin p {
+    margin: 5px 0 0;
+
+    color: var(--admin-texto-suave);
+
+    font-size: 0.72rem;
+}
+
+#pesquisa-eventos-admin {
+    width: min(240px, 100%);
+}
+
+
+.lista-eventos-admin {
+    display: flex;
+    max-height: 750px;
+    flex-direction: column;
+    gap: 11px;
+
+    padding-right: 5px;
+
+    overflow-y: auto;
+}
+
+
+.item-evento-admin {
+    display: grid;
+    grid-template-columns:
+        88px
+        minmax(0, 1fr)
+        auto;
+
+    align-items: center;
+    gap: 14px;
+
+    padding: 14px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--admin-borda);
+    border-radius: 13px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.item-evento-admin:hover {
+    border-color: #b5c8dc;
+
+    box-shadow:
+        0 8px 18px
+        rgba(11, 49, 93, 0.07);
+}
+
+
+.data-item-evento-admin {
+    display: grid;
+    min-height: 53px;
+    place-items: center;
+
+    padding: 7px;
+
+    color: var(--admin-azul);
+    background: #edf5fd;
+
+    border-radius: 10px;
+
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+
+.conteudo-item-evento-admin {
+    min-width: 0;
+}
+
+.conteudo-item-evento-admin > span {
+    display: inline-block;
+
+    margin-bottom: 4px;
+    padding: 4px 7px;
+
+    color: #9a5800;
+    background: #fff3dc;
+
+    border-radius: 999px;
+
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.conteudo-item-evento-admin h3 {
+    margin: 0;
+
+    overflow: hidden;
+
+    font-size: 0.84rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.conteudo-item-evento-admin p {
+    margin: 4px 0 0;
+
+    color: var(--admin-texto-suave);
+
+    font-size: 0.7rem;
+}
+
+
+.acoes-item-evento-admin {
+    display: flex;
+    gap: 7px;
+}
+
+.acoes-item-evento-admin button {
+    min-height: 35px;
+    padding: 0 11px;
+
+    color: var(--admin-azul);
+    background: #ffffff;
+
+    border: 1px solid var(--admin-borda);
+    border-radius: 8px;
+
+    font-size: 0.68rem;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.acoes-item-evento-admin button:hover {
+    background: #edf5fd;
+}
+
+.acoes-item-evento-admin
+.botao-excluir-evento-admin {
+    color: var(--admin-vermelho);
+    border-color: #f1b6b6;
+}
+
+.acoes-item-evento-admin
+.botao-excluir-evento-admin:hover {
+    background: #fff0f0;
+}
+
+
+.lista-eventos-admin-vazia {
+    padding: 35px 20px;
+
+    color: var(--admin-texto-suave);
+    background: #ffffff;
+
+    border: 1px dashed var(--admin-borda);
+    border-radius: 12px;
+
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+
+/* ==================================================
+   RESPONSIVIDADE
+================================================== */
+
+@media (max-width: 950px) {
+    .conteudo-gerenciador-calendario {
+        grid-template-columns: 1fr;
+    }
+
+    .lista-eventos-admin {
+        max-height: none;
+    }
+}
+
+
+@media (max-width: 650px) {
+    .gerenciador-calendario-admin {
+        padding: 18px;
+    }
+
+    .cabecalho-gerenciador-admin,
+    .cabecalho-lista-eventos-admin {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    #pesquisa-eventos-admin {
+        width: 100%;
+    }
+
+    .linha-form-admin {
+        grid-template-columns: 1fr;
+    }
+
+    .item-evento-admin {
+        grid-template-columns:
+            72px
+            minmax(0, 1fr);
+    }
+
+    .acoes-item-evento-admin {
+        grid-column: 1 / -1;
+    }
+
+    .acoes-item-evento-admin button {
+        flex: 1;
+    }
+}
+/* ==================================================
+   GERENCIADOR DE UNIVERSIDADES
+================================================== */
+
+.gerenciador-universidades-admin {
+    scroll-margin-top: 20px;
+}
+
+.conteudo-gerenciador-universidades {
+    align-items: start;
+}
+
+
+/* ==================================================
+   FORMULÁRIO DE UNIVERSIDADES
+================================================== */
+
+#form-universidade-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#form-universidade-admin > label,
+.linha-curso-universidade-admin label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    color: var(--admin-texto);
+    font-size: 0.73rem;
+    font-weight: 600;
+}
+
+#form-universidade-admin
+input:not([type="checkbox"]),
+#form-universidade-admin textarea,
+#form-universidade-admin select,
+#pesquisa-universidades-admin {
+    width: 100%;
+    min-height: 43px;
+    padding: 10px 12px;
+
+    color: var(--admin-texto);
+    background: #ffffff;
+
+    border: 1px solid #cad8e7;
+    border-radius: 10px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 0.78rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#form-universidade-admin textarea {
+    min-height: 105px;
+    resize: vertical;
+}
+
+#form-universidade-admin
+input:not([type="checkbox"]):focus,
+#form-universidade-admin textarea:focus,
+#form-universidade-admin select:focus,
+#pesquisa-universidades-admin:focus {
+    border-color: var(--admin-laranja);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(255, 152, 0, 0.13);
+}
+
+#form-universidade-admin
+input:not([type="checkbox"]):disabled {
+    color: #72849a;
+    background: #eaf0f6;
+    cursor: not-allowed;
+}
+
+
+/* ==================================================
+   CHECKBOXES E OPÇÕES
+================================================== */
+
+.grupo-opcoes-universidade-admin {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+
+    margin: 0;
+    padding: 15px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--admin-borda);
+    border-radius: 12px;
+}
+
+.grupo-opcoes-universidade-admin legend {
+    padding: 0 7px;
+    color: var(--admin-azul-escuro);
+    font-size: 0.74rem;
+    font-weight: 700;
+}
+
+.grupo-opcoes-universidade-admin label {
+    display: inline-flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 7px;
+
+    color: var(--admin-texto);
+    font-size: 0.72rem;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.grupo-opcoes-universidade-admin
+input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    margin: 0;
+
+    accent-color: var(--admin-laranja);
+    cursor: pointer;
+}
+
+
+/* ==================================================
+   CURSOS DA UNIVERSIDADE
+================================================== */
+
+.secao-cursos-universidade-admin {
+    padding: 16px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--admin-borda);
+    border-radius: 13px;
+}
+
+.cabecalho-cursos-universidade-admin {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    margin-bottom: 14px;
+}
+
+.cabecalho-cursos-universidade-admin strong {
+    color: var(--admin-azul-escuro);
+    font-size: 0.82rem;
+}
+
+.cabecalho-cursos-universidade-admin p {
+    margin: 4px 0 0;
+    color: var(--admin-texto-suave);
+    font-size: 0.68rem;
+}
+
+#lista-cursos-universidade-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.linha-curso-universidade-admin {
+    display: grid;
+    grid-template-columns:
+        minmax(180px, 1fr)
+        minmax(130px, 0.55fr)
+        auto;
+
+    align-items: end;
+    gap: 9px;
+
+    padding: 12px;
+
+    background: #f7faff;
+
+    border: 1px solid var(--admin-borda);
+    border-radius: 11px;
+}
+
+.botao-remover-curso-admin {
+    min-height: 43px;
+    padding: 0 12px;
+
+    color: var(--admin-vermelho);
+    background: #ffffff;
+
+    border: 1px solid #f1b6b6;
+    border-radius: 9px;
+
+    font-size: 0.68rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.botao-remover-curso-admin:hover {
+    background: #fff0f0;
+    border-color: var(--admin-vermelho);
+}
+
+
+/* ==================================================
+   LISTA DE UNIVERSIDADES
+================================================== */
+
+#pesquisa-universidades-admin {
+    width: min(245px, 100%);
+}
+
+.lista-universidades-admin {
+    max-height: 900px;
+}
+
+.item-universidade-admin {
+    display: grid;
+    grid-template-columns:
+        64px
+        minmax(0, 1fr)
+        auto;
+
+    align-items: center;
+    gap: 14px;
+
+    padding: 14px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--admin-borda);
+    border-radius: 13px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.item-universidade-admin:hover {
+    border-color: #b5c8dc;
+
+    box-shadow:
+        0 8px 18px
+        rgba(11, 49, 93, 0.07);
+
+    transform: translateY(-1px);
+}
+
+.logo-item-universidade-admin {
+    display: grid;
+    width: 64px;
+    height: 64px;
+    place-items: center;
+
+    padding: 7px;
+
+    background: #edf5fd;
+
+    border: 1px solid var(--admin-borda);
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+.logo-item-universidade-admin img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.conteudo-item-universidade-admin {
+    min-width: 0;
+}
+
+.conteudo-item-universidade-admin > span {
+    display: inline-block;
+
+    margin-bottom: 5px;
+    padding: 4px 7px;
+
+    color: #9a5800;
+    background: #fff3dc;
+
+    border-radius: 999px;
+
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.conteudo-item-universidade-admin h3 {
+    margin: 0;
+
+    overflow: hidden;
+
+    color: var(--admin-azul-escuro);
+
+    font-size: 0.84rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.conteudo-item-universidade-admin p {
+    margin: 5px 0 0;
+
+    color: var(--admin-texto-suave);
+
+    font-size: 0.69rem;
+    line-height: 1.5;
+}
+
+
+/* ==================================================
+   RESPONSIVIDADE DAS UNIVERSIDADES
+================================================== */
+
+@media (max-width: 750px) {
+    .linha-curso-universidade-admin {
+        grid-template-columns: 1fr;
+        align-items: stretch;
+    }
+
+    .botao-remover-curso-admin {
+        width: 100%;
+    }
+
+    .cabecalho-cursos-universidade-admin {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .cabecalho-cursos-universidade-admin
+    .botao-admin-secundario {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 650px) {
+    #pesquisa-universidades-admin {
+        width: 100%;
+    }
+
+    .item-universidade-admin {
+        grid-template-columns:
+            58px
+            minmax(0, 1fr);
+    }
+
+    .logo-item-universidade-admin {
+        width: 58px;
+        height: 58px;
+    }
+
+    .item-universidade-admin
+    .acoes-item-evento-admin {
+        grid-column: 1 / -1;
+    }
+
+    .item-universidade-admin
+    .acoes-item-evento-admin button {
+        flex: 1;
+    }
+
+    .grupo-opcoes-universidade-admin {
+        flex-direction: column;
+    }
+}
+/* Corrige o estouro das linhas de cursos */
+
+.linha-curso-universidade-admin {
+    grid-template-columns:
+        minmax(0, 1.3fr)
+        minmax(0, 1fr);
+}
+
+.linha-curso-universidade-admin > label {
+    min-width: 0;
+}
+
+.linha-curso-universidade-admin
+.botao-remover-curso-admin {
+    grid-column: 1 / -1;
+
+    width: 100%;
+    min-height: 36px;
+}
+
+
+/* Celulares */
+
+@media (max-width: 750px) {
+    .linha-curso-universidade-admin {
+        grid-template-columns: 1fr;
+    }
+}
+/* Botão para cadastrar conteúdo */
+
+.acoes-gerenciador-admin {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.botao-novo-conteudo-admin {
+    display: inline-flex;
+    min-height: 42px;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 18px;
+
+    color: #ffffff;
+    background: var(--admin-laranja);
+
+    border: 1px solid var(--admin-laranja);
+    border-radius: 11px;
+
+    font-weight: 700;
+    font-size: 0.78rem;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.botao-novo-conteudo-admin:hover {
+    background: #e88900;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 18px
+        rgba(255, 152, 0, 0.22);
+}
+
+@media (max-width: 650px) {
+    .acoes-gerenciador-admin {
+        flex-direction: column;
+    }
+
+    .acoes-gerenciador-admin button {
+        width: 100%;
+    }
+}
+
+/* ==================================================
+   GERENCIADOR DE CURSOS TÉCNICOS
+================================================== */
+
+.gerenciador-cursos-admin {
+    scroll-margin-top: 20px;
+}
+
+.conteudo-gerenciador-cursos {
+    align-items: start;
+}
+
+
+/* ==================================================
+   FORMULÁRIO DE CURSOS
+================================================== */
+
+#form-curso-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+#form-curso-admin label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    min-width: 0;
+
+    color: var(--admin-texto);
+
+    font-size: 0.73rem;
+    font-weight: 600;
+}
+
+#form-curso-admin input,
+#form-curso-admin textarea,
+#form-curso-admin select,
+#pesquisa-cursos-admin {
+    width: 100%;
+    min-height: 43px;
+
+    padding: 10px 12px;
+
+    color: var(--admin-texto);
+    background: #ffffff;
+
+    border: 1px solid #cad8e7;
+    border-radius: 10px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 0.78rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+#form-curso-admin textarea {
+    min-height: 105px;
+
+    line-height: 1.6;
+
+    resize: vertical;
+}
+
+#form-curso-admin input:focus,
+#form-curso-admin textarea:focus,
+#form-curso-admin select:focus,
+#pesquisa-cursos-admin:focus {
+    border-color: var(--admin-laranja);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(255, 152, 0, 0.13);
+}
+
+#form-curso-admin input:disabled {
+    color: #72849a;
+    background: #eaf0f6;
+
+    cursor: not-allowed;
+}
+
+
+/* ==================================================
+   TÍTULOS INTERNOS
+================================================== */
+
+.subtitulo-form-curso-admin {
+    margin:
+        10px
+        0
+        0;
+
+    padding-bottom: 9px;
+
+    color: var(--admin-azul-escuro);
+
+    border-bottom:
+        1px solid
+        var(--admin-borda);
+
+    font-size: 0.86rem;
+    font-weight: 700;
+}
+
+
+/* ==================================================
+   INFORMAÇÕES RESUMIDAS DO CARD
+================================================== */
+
+.grupo-resumo-curso-admin {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    gap: 12px;
+
+    margin: 0;
+    padding: 15px;
+
+    background: #ffffff;
+
+    border:
+        1px solid
+        var(--admin-borda);
+
+    border-radius: 12px;
+}
+
+.grupo-resumo-curso-admin legend {
+    padding:
+        0
+        7px;
+
+    color:
+        var(--admin-azul-escuro);
+
+    font-size: 0.74rem;
+    font-weight: 700;
+}
+
+.grupo-resumo-curso-admin label {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 7px;
+
+    min-width: 0;
+
+    font-size: 0.7rem;
+
+    cursor: default;
+}
+
+
+/* ==================================================
+   TEXTO DE AJUDA
+================================================== */
+
+.ajuda-campo-admin {
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--admin-texto-suave);
+
+    font-size: 0.65rem;
+    font-weight: 400;
+    line-height: 1.55;
+}
+
+
+/* ==================================================
+   LISTA DE CURSOS
+================================================== */
+
+#pesquisa-cursos-admin {
+    width:
+        min(
+            240px,
+            100%
+        );
+}
+
+.lista-cursos-admin {
+    max-height: 850px;
+}
+
+.item-curso-admin {
+    grid-template-columns:
+        68px
+        minmax(0, 1fr)
+        auto;
+}
+
+.simbolo-item-curso-admin {
+    min-height: 58px;
+
+    color: #ffffff;
+    background: var(--admin-azul);
+
+    font-size: 1.25rem;
+}
+
+.item-curso-admin
+.conteudo-item-evento-admin h3 {
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.item-curso-admin
+.conteudo-item-evento-admin p {
+    overflow-wrap: anywhere;
+
+    line-height: 1.55;
+}
+
+
+/* ==================================================
+   BARRA DE ROLAGEM DA LISTA
+================================================== */
+
+.lista-cursos-admin::-webkit-scrollbar {
+    width: 7px;
+}
+
+.lista-cursos-admin::-webkit-scrollbar-track {
+    background: #edf3f8;
+
+    border-radius: 999px;
+}
+
+.lista-cursos-admin::-webkit-scrollbar-thumb {
+    background: #b9cadb;
+
+    border-radius: 999px;
+}
+
+.lista-cursos-admin::-webkit-scrollbar-thumb:hover {
+    background: #91a8bf;
+}
+
+
+/* ==================================================
+   RESPONSIVIDADE
+================================================== */
+
+@media (max-width: 950px) {
+
+    .grupo-resumo-curso-admin {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 750px) {
+
+    #form-curso-admin
+    .linha-form-admin {
+        grid-template-columns: 1fr;
+    }
+
+    #pesquisa-cursos-admin {
+        width: 100%;
+    }
+
+    .item-curso-admin {
+        grid-template-columns:
+            58px
+            minmax(0, 1fr);
+    }
+
+    .simbolo-item-curso-admin {
+        min-height: 54px;
+    }
+
+    .item-curso-admin
+    .acoes-item-evento-admin {
+        grid-column:
+            1 / -1;
+    }
+
+    .item-curso-admin
+    .acoes-item-evento-admin button {
+        flex: 1;
+    }
+}
+
+
+@media (max-width: 520px) {
+
+    .painel-form-curso-admin,
+    .painel-lista-cursos-admin {
+        padding: 17px;
+    }
+
+    .subtitulo-form-curso-admin {
+        font-size: 0.8rem;
+    }
+}
+/* ==================================================
+   HUB DE CONTEÚDOS
+================================================== */
+
+.hub-conteudos-admin {
+    scroll-margin-top: 20px;
+}
+
+.grade-conteudos-admin {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
+
+    gap: 16px;
+
+    margin-top: 25px;
+}
+
+.card-conteudo-admin {
+    display: flex;
+    min-width: 0;
+    min-height: 245px;
+    flex-direction: column;
+    gap: 16px;
+
+    padding: 21px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--admin-borda);
+    border-top:
+        3px solid
+        var(--admin-laranja);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 12px 28px
+        rgba(11, 49, 93, 0.07);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.card-conteudo-admin:not(.recurso-futuro):hover {
+    transform:
+        translateY(-3px);
+
+    border-color:
+        #b7cce0;
+
+    box-shadow:
+        0 17px 34px
+        rgba(11, 49, 93, 0.11);
+}
+
+.icone-conteudo-admin {
+    display: grid;
+
+    width: 44px;
+    height: 44px;
+
+    place-items: center;
+
+    background: #edf5fd;
+
+    border-radius: 12px;
+
+    font-size: 1.15rem;
+}
+
+.card-conteudo-admin h3 {
+    margin:
+        0
+        0
+        7px;
+
+    color:
+        var(--admin-azul-escuro);
+
+    font-size: 0.95rem;
+}
+
+.card-conteudo-admin p {
+    margin: 0;
+
+    color:
+        var(--admin-texto-suave);
+
+    font-size: 0.72rem;
+    line-height: 1.65;
+}
+
+.card-conteudo-admin
+.botao-gerenciar-recurso-admin {
+    width: 100%;
+
+    margin-top: auto;
+}
+
+.card-conteudo-admin
+.status-recurso-admin {
+    align-self: flex-start;
+
+    margin-top: auto;
+}
+
+.card-conteudo-admin.recurso-futuro {
+    min-height: 245px;
+
+    opacity: 0.78;
+}
+
+
+/* ==================================================
+   RESPONSIVIDADE DO HUB
+================================================== */
+
+@media (max-width: 1100px) {
+
+    .grade-conteudos-admin {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .grade-conteudos-admin {
+        grid-template-columns: 1fr;
+    }
+
+    .card-conteudo-admin {
+        min-height: 220px;
+    }
+
+    .card-conteudo-admin.recurso-futuro {
+        min-height: 220px;
+    }
+}
+/* ==================================================
+   GERENCIADOR DE BOLSAS
+================================================== */
+
+.gerenciador-bolsas-admin {
+    scroll-margin-top: 20px;
+}
+
+.painel-form-bolsa-admin,
+.painel-lista-bolsas-admin {
+    min-width: 0;
+}
+
+
+/* ==================================================
+   FORMULÁRIO DE BOLSAS
+================================================== */
+
+#form-bolsa-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+#form-bolsa-admin label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    min-width: 0;
+
+    color: var(--admin-texto);
+
+    font-size: 0.73rem;
+    font-weight: 600;
+}
+
+#form-bolsa-admin input,
+#form-bolsa-admin textarea,
+#form-bolsa-admin select,
+#pesquisa-bolsas-admin {
+    width: 100%;
+    min-width: 0;
+    min-height: 43px;
+
+    padding: 10px 12px;
+
+    color: var(--admin-texto);
+    background: #ffffff;
+
+    border: 1px solid #cad8e7;
+    border-radius: 10px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 0.78rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+#form-bolsa-admin textarea {
+    min-height: 105px;
+
+    line-height: 1.6;
+
+    resize: vertical;
+}
+
+#form-bolsa-admin input:focus,
+#form-bolsa-admin textarea:focus,
+#form-bolsa-admin select:focus,
+#pesquisa-bolsas-admin:focus {
+    border-color: var(--admin-laranja);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(255, 152, 0, 0.13);
+}
+
+#form-bolsa-admin input:disabled {
+    color: #72849a;
+    background: #eaf0f6;
+
+    cursor: not-allowed;
+}
+
+#form-bolsa-admin .linha-form-admin {
+    min-width: 0;
+}
+
+#form-bolsa-admin
+.linha-form-admin > label {
+    min-width: 0;
+}
+
+
+/* ==================================================
+   PESQUISA E LISTA DE BOLSAS
+================================================== */
+
+#pesquisa-bolsas-admin {
+    width:
+        min(
+            240px,
+            100%
+        );
+}
+
+.lista-bolsas-admin {
+    max-height: 850px;
+}
+
+.item-bolsa-admin {
+    grid-template-columns:
+        68px
+        minmax(0, 1fr)
+        auto;
+}
+
+.simbolo-item-bolsa-admin {
+    min-height: 58px;
+
+    color: #ffffff;
+    background: var(--admin-azul);
+
+    font-size: 1.25rem;
+}
+
+.item-bolsa-admin
+.conteudo-item-evento-admin h3 {
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.item-bolsa-admin
+.conteudo-item-evento-admin p {
+    overflow-wrap: anywhere;
+
+    line-height: 1.55;
+}
+
+
+/* ==================================================
+   BARRA DE ROLAGEM
+================================================== */
+
+.lista-bolsas-admin::-webkit-scrollbar {
+    width: 7px;
+}
+
+.lista-bolsas-admin::-webkit-scrollbar-track {
+    background: #edf3f8;
+
+    border-radius: 999px;
+}
+
+.lista-bolsas-admin::-webkit-scrollbar-thumb {
+    background: #b9cadb;
+
+    border-radius: 999px;
+}
+
+.lista-bolsas-admin::-webkit-scrollbar-thumb:hover {
+    background: #91a8bf;
+}
+
+
+/* ==================================================
+   RESPONSIVIDADE
+================================================== */
+
+@media (max-width: 750px) {
+
+    #form-bolsa-admin
+    .linha-form-admin {
+        grid-template-columns: 1fr;
+    }
+
+    #pesquisa-bolsas-admin {
+        width: 100%;
+    }
+
+    .item-bolsa-admin {
+        grid-template-columns:
+            58px
+            minmax(0, 1fr);
+    }
+
+    .simbolo-item-bolsa-admin {
+        min-height: 54px;
+    }
+
+    .item-bolsa-admin
+    .acoes-item-evento-admin {
+        grid-column:
+            1 / -1;
+    }
+
+    .item-bolsa-admin
+    .acoes-item-evento-admin button {
+        flex: 1;
+    }
+}
+
+
+@media (max-width: 520px) {
+
+    .painel-form-bolsa-admin,
+    .painel-lista-bolsas-admin {
+        padding: 17px;
+    }
+}
+
+/* ==================================================
+   GERENCIADOR DE PROFISSÕES
+================================================== */
+
+.gerenciador-profissoes-admin {
+    scroll-margin-top: 20px;
+}
+
+.painel-form-profissao-admin,
+.painel-lista-profissoes-admin {
+    min-width: 0;
+}
+
+
+/* ==================================================
+   FORMULÁRIO DE PROFISSÕES
+================================================== */
+
+#form-profissao-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+#form-profissao-admin label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    min-width: 0;
+
+    color: var(--admin-texto);
+
+    font-size: 0.73rem;
+    font-weight: 600;
+}
+
+#form-profissao-admin input,
+#form-profissao-admin textarea,
+#form-profissao-admin select,
+#pesquisa-profissoes-admin {
+    width: 100%;
+    min-width: 0;
+    min-height: 43px;
+
+    padding: 10px 12px;
+
+    color: var(--admin-texto);
+    background: #ffffff;
+
+    border: 1px solid #cad8e7;
+    border-radius: 10px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 0.78rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+#form-profissao-admin textarea {
+    min-height: 105px;
+
+    line-height: 1.6;
+
+    resize: vertical;
+}
+
+#form-profissao-admin input:focus,
+#form-profissao-admin textarea:focus,
+#form-profissao-admin select:focus,
+#pesquisa-profissoes-admin:focus {
+    border-color: var(--admin-laranja);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(255, 152, 0, 0.13);
+}
+
+#form-profissao-admin input:disabled {
+    color: #72849a;
+    background: #eaf0f6;
+
+    cursor: not-allowed;
+}
+
+#form-profissao-admin .linha-form-admin {
+    min-width: 0;
+}
+
+#form-profissao-admin
+.linha-form-admin > label {
+    min-width: 0;
+}
+
+
+/* ==================================================
+   PESQUISA E LISTA DE PROFISSÕES
+================================================== */
+
+#pesquisa-profissoes-admin {
+    width:
+        min(
+            240px,
+            100%
+        );
+}
+
+.lista-profissoes-admin {
+    max-height: 850px;
+}
+
+.item-profissao-admin {
+    grid-template-columns:
+        68px
+        minmax(0, 1fr)
+        auto;
+}
+
+.simbolo-item-profissao-admin {
+    min-height: 58px;
+
+    color: #ffffff;
+    background: var(--admin-azul);
+
+    font-size: 1.25rem;
+}
+
+.item-profissao-admin
+.conteudo-item-evento-admin h3 {
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.item-profissao-admin
+.conteudo-item-evento-admin p {
+    overflow-wrap: anywhere;
+
+    line-height: 1.55;
+}
+
+
+/* ==================================================
+   BARRA DE ROLAGEM
+================================================== */
+
+.lista-profissoes-admin::-webkit-scrollbar {
+    width: 7px;
+}
+
+.lista-profissoes-admin::-webkit-scrollbar-track {
+    background: #edf3f8;
+
+    border-radius: 999px;
+}
+
+.lista-profissoes-admin::-webkit-scrollbar-thumb {
+    background: #b9cadb;
+
+    border-radius: 999px;
+}
+
+.lista-profissoes-admin::-webkit-scrollbar-thumb:hover {
+    background: #91a8bf;
+}
+
+
+/* ==================================================
+   RESPONSIVIDADE
+================================================== */
+
+@media (max-width: 750px) {
+
+    #form-profissao-admin
+    .linha-form-admin {
+        grid-template-columns: 1fr;
+    }
+
+    #pesquisa-profissoes-admin {
+        width: 100%;
+    }
+
+    .item-profissao-admin {
+        grid-template-columns:
+            58px
+            minmax(0, 1fr);
+    }
+
+    .simbolo-item-profissao-admin {
+        min-height: 54px;
+    }
+
+    .item-profissao-admin
+    .acoes-item-evento-admin {
+        grid-column:
+            1 / -1;
+    }
+
+    .item-profissao-admin
+    .acoes-item-evento-admin button {
+        flex: 1;
+    }
+}
+
+
+@media (max-width: 520px) {
+
+    .painel-form-profissao-admin,
+    .painel-lista-profissoes-admin {
+        padding: 17px;
+    }
+}
+/* ==================================================
+   GERENCIADOR DE OPORTUNIDADES
+================================================== */
+
+.gerenciador-oportunidades-admin {
+    scroll-margin-top: 20px;
+}
+
+
+/* ==================================================
+   REGIÕES
+================================================== */
+
+.conteudo-regioes-oportunidades-admin,
+.conteudo-oportunidades-regiao-admin {
+    display: grid;
+    grid-template-columns:
+        minmax(320px, 0.85fr)
+        minmax(0, 1.55fr);
+    align-items: start;
+    gap: 18px;
+
+    margin-top: 22px;
+}
+
+.painel-form-regiao-admin,
+.painel-lista-regioes-admin,
+.painel-form-oportunidade-admin,
+.painel-lista-oportunidades-admin {
+    min-width: 0;
+}
+
+
+/* ==================================================
+   FORMULÁRIOS
+================================================== */
+
+#form-regiao-oportunidades-admin,
+#form-oportunidade-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+#form-regiao-oportunidades-admin label,
+#form-oportunidade-admin label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    min-width: 0;
+
+    color: var(--admin-texto);
+
+    font-size: 0.73rem;
+    font-weight: 600;
+}
+
+#form-regiao-oportunidades-admin input,
+#form-regiao-oportunidades-admin textarea,
+#form-regiao-oportunidades-admin select,
+#form-oportunidade-admin input,
+#form-oportunidade-admin textarea,
+#form-oportunidade-admin select,
+#pesquisa-regioes-admin,
+#pesquisa-oportunidades-admin {
+    width: 100%;
+    min-width: 0;
+    min-height: 43px;
+
+    padding: 10px 12px;
+
+    color: var(--admin-texto);
+    background: #ffffff;
+
+    border: 1px solid #cad8e7;
+    border-radius: 10px;
+    outline: none;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 0.78rem;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+#form-regiao-oportunidades-admin textarea,
+#form-oportunidade-admin textarea {
+    min-height: 105px;
+
+    line-height: 1.6;
+
+    resize: vertical;
+}
+
+#form-regiao-oportunidades-admin input:focus,
+#form-regiao-oportunidades-admin textarea:focus,
+#form-regiao-oportunidades-admin select:focus,
+#form-oportunidade-admin input:focus,
+#form-oportunidade-admin textarea:focus,
+#form-oportunidade-admin select:focus,
+#pesquisa-regioes-admin:focus,
+#pesquisa-oportunidades-admin:focus {
+    border-color: var(--admin-laranja);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(255, 152, 0, 0.13);
+}
+
+#form-regiao-oportunidades-admin input:disabled,
+#form-oportunidade-admin input:disabled {
+    color: #72849a;
+    background: #eaf0f6;
+
+    cursor: not-allowed;
+}
+
+#form-regiao-oportunidades-admin .linha-form-admin,
+#form-oportunidade-admin .linha-form-admin {
+    min-width: 0;
+}
+
+#form-regiao-oportunidades-admin
+.linha-form-admin > label,
+#form-oportunidade-admin
+.linha-form-admin > label {
+    min-width: 0;
+}
+
+
+/* ==================================================
+   NÚMEROS DA REGIÃO
+================================================== */
+
+.grade-numeros-regiao-admin {
+    display: grid;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+    gap: 12px;
+
+    padding: 14px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--admin-borda);
+    border-radius: 12px;
+}
+
+
+/* ==================================================
+   TIPOS DA OPORTUNIDADE
+================================================== */
+
+.tipos-oportunidade-admin {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+
+    margin: 0;
+    padding: 15px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--admin-borda);
+    border-radius: 12px;
+}
+
+.tipos-oportunidade-admin legend {
+    padding: 0 7px;
+
+    color: var(--admin-azul-escuro);
+
+    font-size: 0.74rem;
+    font-weight: 700;
+}
+
+#form-oportunidade-admin
+.tipos-oportunidade-admin label {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 9px;
+
+    padding: 8px 10px;
+
+    background: var(--admin-fundo);
+
+    border: 1px solid transparent;
+    border-radius: 9px;
+
+    font-size: 0.72rem;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+#form-oportunidade-admin
+.tipos-oportunidade-admin label:hover {
+    background: #ffffff;
+    border-color: #cad8e7;
+}
+
+#form-oportunidade-admin
+.tipos-oportunidade-admin input {
+    width: 17px;
+    min-width: 17px;
+    height: 17px;
+    min-height: 17px;
+    margin: 0;
+    padding: 0;
+
+    accent-color: var(--admin-laranja);
+}
+
+
+/* ==================================================
+   PESQUISAS E LISTAS
+================================================== */
+
+#pesquisa-regioes-admin,
+#pesquisa-oportunidades-admin {
+    width: min(230px, 100%);
+}
+
+.lista-regioes-admin,
+.lista-oportunidades-admin {
+    max-height: 820px;
+}
+
+.lista-regioes-admin::-webkit-scrollbar,
+.lista-oportunidades-admin::-webkit-scrollbar {
+    width: 7px;
+}
+
+.lista-regioes-admin::-webkit-scrollbar-track,
+.lista-oportunidades-admin::-webkit-scrollbar-track {
+    background: #edf3f8;
+
+    border-radius: 999px;
+}
+
+.lista-regioes-admin::-webkit-scrollbar-thumb,
+.lista-oportunidades-admin::-webkit-scrollbar-thumb {
+    background: #b9cadb;
+
+    border-radius: 999px;
+}
+
+.lista-regioes-admin::-webkit-scrollbar-thumb:hover,
+.lista-oportunidades-admin::-webkit-scrollbar-thumb:hover {
+    background: #91a8bf;
+}
+
+
+/* ==================================================
+   CARDS DAS REGIÕES E OPORTUNIDADES
+================================================== */
+
+.item-regiao-oportunidades-admin,
+.item-oportunidade-admin {
+    grid-template-columns:
+        64px
+        minmax(0, 1fr)
+        auto;
+}
+
+.simbolo-item-regiao-admin,
+.simbolo-item-oportunidade-admin {
+    min-height: 56px;
+
+    color: #ffffff;
+    background: var(--admin-azul);
+
+    font-size: 1.2rem;
+}
+
+.item-regiao-oportunidades-admin
+.conteudo-item-evento-admin h3,
+.item-oportunidade-admin
+.conteudo-item-evento-admin h3 {
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.item-regiao-oportunidades-admin
+.conteudo-item-evento-admin p,
+.item-oportunidade-admin
+.conteudo-item-evento-admin p {
+    overflow-wrap: anywhere;
+
+    line-height: 1.5;
+}
+
+.item-regiao-oportunidades-admin.regiao-selecionada-admin {
+    border-color: var(--admin-laranja);
+
+    box-shadow:
+        0 0 0 2px
+        rgba(255, 152, 0, 0.12);
+}
+
+.acoes-item-evento-admin
+.botao-gerenciar-regiao-admin {
+    color: #ffffff;
+    background: var(--admin-azul);
+
+    border-color: var(--admin-azul);
+}
+
+.acoes-item-evento-admin
+.botao-gerenciar-regiao-admin:hover {
+    color: #ffffff;
+    background: var(--admin-azul-escuro);
+}
+
+
+/* ==================================================
+   PAINEL DA REGIÃO SELECIONADA
+================================================== */
+
+.painel-oportunidades-regiao-admin {
+    margin-top: 28px;
+    padding: 24px;
+
+    background: rgba(255, 255, 255, 0.72);
+
+    border: 1px solid var(--admin-borda);
+    border-top: 3px solid var(--admin-laranja);
+    border-radius: 17px;
+
+    box-shadow:
+        0 14px 30px
+        rgba(11, 49, 93, 0.06);
+
+    scroll-margin-top: 20px;
+}
+
+.cabecalho-oportunidades-regiao-admin {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid var(--admin-borda);
+}
+
+.cabecalho-oportunidades-regiao-admin h3 {
+    margin: 10px 0 5px;
+
+    color: var(--admin-azul-escuro);
+
+    font-size: 1.2rem;
+}
+
+.cabecalho-oportunidades-regiao-admin p {
+    margin: 0;
+
+    color: var(--admin-texto-suave);
+
+    font-size: 0.76rem;
+    line-height: 1.6;
+}
+
+
+/* ==================================================
+   RESPONSIVIDADE
+================================================== */
+
+@media (max-width: 980px) {
+
+    .conteudo-regioes-oportunidades-admin,
+    .conteudo-oportunidades-regiao-admin {
+        grid-template-columns: 1fr;
+    }
+
+    .lista-regioes-admin,
+    .lista-oportunidades-admin {
+        max-height: 650px;
+    }
+}
+
+
+@media (max-width: 750px) {
+
+    #form-regiao-oportunidades-admin
+    .linha-form-admin,
+    #form-oportunidade-admin
+    .linha-form-admin {
+        grid-template-columns: 1fr;
+    }
+
+    #pesquisa-regioes-admin,
+    #pesquisa-oportunidades-admin {
+        width: 100%;
+    }
+
+    .item-regiao-oportunidades-admin,
+    .item-oportunidade-admin {
+        grid-template-columns:
+            56px
+            minmax(0, 1fr);
+    }
+
+    .simbolo-item-regiao-admin,
+    .simbolo-item-oportunidade-admin {
+        min-height: 52px;
+    }
+
+    .item-regiao-oportunidades-admin
+    .acoes-item-evento-admin,
+    .item-oportunidade-admin
+    .acoes-item-evento-admin {
+        grid-column: 1 / -1;
+    }
+
+    .item-regiao-oportunidades-admin
+    .acoes-item-evento-admin button,
+    .item-oportunidade-admin
+    .acoes-item-evento-admin button {
+        flex: 1;
+    }
+
+    .cabecalho-oportunidades-regiao-admin {
+        flex-direction: column;
+    }
+
+    .cabecalho-oportunidades-regiao-admin
+    .acoes-gerenciador-admin {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 520px) {
+
+    .painel-form-regiao-admin,
+    .painel-lista-regioes-admin,
+    .painel-form-oportunidade-admin,
+    .painel-lista-oportunidades-admin {
+        padding: 17px;
+    }
+
+    .painel-oportunidades-regiao-admin {
+        padding: 17px;
+    }
+
+    .grade-numeros-regiao-admin {
+        grid-template-columns: 1fr;
+    }
+}
+/* ==================================================
+   AJUSTES PARA CELULAR — PAINEL ADMINISTRATIVO
+================================================== */
+
+@media (max-width: 750px) {
+    .pagina-admin {
+        width: calc(100% - 28px);
+        padding-bottom: 50px;
+    }
+
+    .cabecalho-admin {
+        gap: 13px;
+        padding: 16px;
+    }
+
+    .acoes-cabecalho-admin {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .acoes-cabecalho-admin > * {
+        min-width: 0;
+        text-align: center;
+    }
+
+    .apresentacao-admin {
+        padding: 36px 2px 26px;
+    }
+
+    .apresentacao-admin h1 {
+        font-size: clamp(1.85rem, 6vw, 2.4rem);
+    }
+
+    .grade-recursos-admin {
+        gap: 12px;
+    }
+
+    .card-recurso-admin {
+        min-height: 0;
+        gap: 12px;
+        padding: 19px;
+    }
+
+    .icone-recurso-admin {
+        width: 46px;
+        height: 46px;
+    }
+
+    .gerenciador-calendario-admin {
+        margin-top: 28px;
+        padding: 18px;
+    }
+
+    .cabecalho-gerenciador-admin {
+        gap: 15px;
+        padding-bottom: 18px;
+    }
+
+    .cabecalho-gerenciador-admin h2 {
+        font-size: clamp(1.35rem, 5vw, 1.65rem);
+    }
+
+    .conteudo-gerenciador-calendario,
+    .conteudo-regioes-oportunidades-admin,
+    .conteudo-oportunidades-regiao-admin {
+        min-width: 0;
+        gap: 14px;
+        margin-top: 18px;
+    }
+
+    .painel-form-evento-admin,
+    .painel-lista-eventos-admin,
+    .painel-oportunidades-regiao-admin {
+        min-width: 0;
+        padding: 17px;
+    }
+
+    .lista-eventos-admin,
+    .lista-cursos-admin,
+    .lista-bolsas-admin,
+    .lista-profissoes-admin,
+    .lista-regioes-admin,
+    .lista-oportunidades-admin {
+        max-width: 100%;
+        padding-right: 2px;
+    }
+
+    .item-evento-admin,
+    .item-curso-admin,
+    .item-bolsa-admin,
+    .item-profissao-admin,
+    .item-regiao-oportunidades-admin,
+    .item-oportunidade-admin {
+        min-width: 0;
+    }
+
+    .conteudo-item-evento-admin {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+}
+
+@media (max-width: 520px) {
+    .pagina-admin {
+        width: calc(100% - 20px);
+    }
+
+    .cabecalho-admin {
+        padding: 14px;
+        border-radius: 16px;
+    }
+
+    .marca-admin img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .botao-admin-secundario,
+    .botao-admin-sair,
+    .botao-novo-conteudo-admin {
+        min-height: 44px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .apresentacao-admin {
+        padding-top: 28px;
+    }
+
+    .apresentacao-admin > p {
+        line-height: 1.6;
+    }
+
+    .gerenciador-calendario-admin {
+        padding: 13px;
+        border-radius: 17px;
+    }
+
+    .acoes-gerenciador-admin {
+        width: 100%;
+        justify-content: stretch;
+    }
+
+    .acoes-gerenciador-admin > * {
+        flex: 1 1 135px;
+        text-align: center;
+    }
+
+    .painel-form-evento-admin,
+    .painel-lista-eventos-admin,
+    .painel-oportunidades-regiao-admin {
+        padding: 13px;
+        border-radius: 13px;
+    }
+
+    .grade-conteudos-admin {
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .card-conteudo-admin,
+    .card-conteudo-admin.recurso-futuro {
+        min-height: 0;
+        gap: 12px;
+        padding: 17px;
+    }
+
+    .corpo-admin input:not([type="checkbox"]),
+    .corpo-admin select,
+    .corpo-admin textarea {
+        max-width: 100%;
+        font-size: 16px !important;
+    }
+
+    .acoes-item-evento-admin button {
+        min-height: 40px;
+    }
+}

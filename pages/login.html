@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Entre ou crie sua conta no Futuro Universitário."
+    >
+
+    <title>Entrar | Futuro Universitário</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="corpo-login">
+
+    <header>
+
+        <a href="../index.html" class="logo">
+            <img
+                src="../assets/logo.png"
+                alt="Logo do Futuro Universitário"
+            >
+        </a>
+
+        <nav>
+
+            <a href="../index.html">
+                Início
+            </a>
+
+            <a href="descobrir.html">
+                Descobrir
+            </a>
+
+            <a href="mapa-oportunidades.html">
+                Oportunidades
+            </a>
+
+            <a href="calendario.html">
+                Calendário
+            </a>
+
+            <a href="comunidade.html">
+                Comunidade
+            </a>
+
+            <a href="contato.html">
+                Contato
+            </a>
+
+            <a href="desenvolvedores.html">
+                Desenvolvedores
+            </a>
+
+        </nav>
+
+        <a
+            href="login.html"
+            class="btn-login"
+            aria-current="page"
+        >
+            Entrar
+        </a>
+
+    </header>
+
+    <main class="pagina-login">
+
+        <div class="login-container">
+
+            <!-- APRESENTAÇÃO -->
+
+            <section class="login-apresentacao">
+
+                <span class="etiqueta-login">
+                    Sua jornada continua aqui
+                </span>
+
+                <h1>
+                    Organize seu futuro em um só lugar.
+                </h1>
+
+                <p>
+                    Entre na sua conta para guardar oportunidades,
+                    acessar seus favoritos e continuar explorando
+                    caminhos para sua formação.
+                </p>
+
+                <div class="vantagens-login">
+
+                    <div class="vantagem-login">
+                        <span aria-hidden="true">♥</span>
+
+                        <div>
+                            <strong>Salve seus favoritos</strong>
+
+                            <p>
+                                Guarde universidades, cursos,
+                                bolsas e oportunidades.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="vantagem-login">
+                        <span aria-hidden="true">☁</span>
+
+                        <div>
+                            <strong>Acesse de qualquer dispositivo</strong>
+
+                            <p>
+                                Suas informações ficarão vinculadas
+                                à sua conta.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="vantagem-login">
+                        <span aria-hidden="true">✦</span>
+
+                        <div>
+                            <strong>Tenha uma experiência personalizada</strong>
+
+                            <p>
+                                Encontre com mais facilidade aquilo
+                                que combina com seus objetivos.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ÁREA DE AUTENTICAÇÃO -->
+
+            <section
+                class="login-card"
+                aria-labelledby="titulo-area-login"
+            >
+
+                <div
+                    id="conteudo-autenticacao"
+                    class="conteudo-autenticacao"
+                >
+
+                    <div class="cabecalho-login-card">
+
+                        <span class="icone-login" aria-hidden="true">
+                            🎓
+                        </span>
+
+                        <div>
+                            <h2 id="titulo-area-login">
+                                Bem-vindo
+                            </h2>
+
+                            <p>
+                                Entre ou crie sua conta gratuitamente.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- ABAS -->
+
+                    <div
+                        class="abas-autenticacao"
+                        role="tablist"
+                        aria-label="Escolher entre entrar e criar conta"
+                    >
+
+                        <button
+                            type="button"
+                            id="aba-entrar"
+                            class="aba-autenticacao ativo"
+                            role="tab"
+                            aria-selected="true"
+                            aria-controls="painel-entrar"
+                            data-aba-auth="entrar"
+                        >
+                            Entrar
+                        </button>
+
+                        <button
+                            type="button"
+                            id="aba-cadastrar"
+                            class="aba-autenticacao"
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="painel-cadastrar"
+                            data-aba-auth="cadastrar"
+                        >
+                            Criar conta
+                        </button>
+
+                    </div>
+
+                    <!-- MENSAGENS -->
+
+                    <div
+                        id="mensagem-autenticacao"
+                        class="mensagem-autenticacao"
+                        role="status"
+                        aria-live="polite"
+                        hidden
+                    ></div>
+
+                    <!-- FORMULÁRIO DE LOGIN -->
+
+                    <div
+                        id="painel-entrar"
+                        class="painel-autenticacao ativo"
+                        role="tabpanel"
+                        aria-labelledby="aba-entrar"
+                    >
+
+                        <form id="form-entrar">
+
+                            <div class="grupo-campo-auth">
+
+                                <label for="email-entrar">
+                                    E-mail
+                                </label>
+
+                                <div class="campo-auth">
+
+                                    <span aria-hidden="true">
+                                        @
+                                    </span>
+
+                                    <input
+                                        type="email"
+                                        id="email-entrar"
+                                        name="email"
+                                        placeholder="seuemail@exemplo.com"
+                                        autocomplete="email"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+                            <div class="grupo-campo-auth">
+
+                                <label for="senha-entrar">
+                                    Senha
+                                </label>
+
+                                <div class="campo-auth campo-senha-auth">
+
+                                    <span aria-hidden="true">
+                                        🔒
+                                    </span>
+
+                                    <input
+                                        type="password"
+                                        id="senha-entrar"
+                                        name="senha"
+                                        placeholder="Digite sua senha"
+                                        autocomplete="current-password"
+                                        required
+                                    >
+
+                                    <button
+                                        type="button"
+                                        class="btn-mostrar-senha"
+                                        data-campo-senha="senha-entrar"
+                                        aria-label="Mostrar senha"
+                                    >
+                                        Mostrar
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                            <div class="opcoes-login">
+
+                                <label class="lembrar-login">
+
+                                    <input
+                                        type="checkbox"
+                                        id="manter-conectado"
+                                        checked
+                                    >
+
+                                    <span>
+                                        Manter conectado
+                                    </span>
+
+                                </label>
+
+                                <button
+                                    type="button"
+                                    id="btn-esqueci-senha"
+                                    class="btn-link-auth"
+                                >
+                                    Esqueci minha senha
+                                </button>
+
+                            </div>
+
+                            <button
+                                type="submit"
+                                id="btn-entrar-conta"
+                                class="btn-principal-auth"
+                            >
+                                <span>Entrar na conta</span>
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                    <!-- FORMULÁRIO DE CADASTRO -->
+
+                    <div
+                        id="painel-cadastrar"
+                        class="painel-autenticacao"
+                        role="tabpanel"
+                        aria-labelledby="aba-cadastrar"
+                        hidden
+                    >
+
+                        <form id="form-cadastrar">
+
+                            <div class="grupo-campo-auth">
+
+                                <label for="nome-cadastrar">
+                                    Nome
+                                </label>
+
+                                <div class="campo-auth">
+
+                                    <span aria-hidden="true">
+                                        👤
+                                    </span>
+
+                                    <input
+                                        type="text"
+                                        id="nome-cadastrar"
+                                        name="nome"
+                                        placeholder="Como podemos chamar você?"
+                                        autocomplete="name"
+                                        minlength="2"
+                                        maxlength="60"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+                            <div class="grupo-campo-auth">
+
+                                <label for="email-cadastrar">
+                                    E-mail
+                                </label>
+
+                                <div class="campo-auth">
+
+                                    <span aria-hidden="true">
+                                        @
+                                    </span>
+
+                                    <input
+                                        type="email"
+                                        id="email-cadastrar"
+                                        name="email"
+                                        placeholder="seuemail@exemplo.com"
+                                        autocomplete="email"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+                            <div class="grupo-campo-auth">
+
+                                <label for="senha-cadastrar">
+                                    Senha
+                                </label>
+
+                                <div class="campo-auth campo-senha-auth">
+
+                                    <span aria-hidden="true">
+                                        🔒
+                                    </span>
+
+                                    <input
+                                        type="password"
+                                        id="senha-cadastrar"
+                                        name="senha"
+                                        placeholder="Crie uma senha"
+                                        autocomplete="new-password"
+                                        minlength="8"
+                                        required
+                                    >
+
+                                    <button
+                                        type="button"
+                                        class="btn-mostrar-senha"
+                                        data-campo-senha="senha-cadastrar"
+                                        aria-label="Mostrar senha"
+                                    >
+                                        Mostrar
+                                    </button>
+
+                                </div>
+
+                                <small>
+                                    Utilize pelo menos 8 caracteres.
+                                </small>
+
+                            </div>
+
+                            <div class="grupo-campo-auth">
+
+                                <label for="confirmar-senha-cadastrar">
+                                    Confirme sua senha
+                                </label>
+
+                                <div class="campo-auth campo-senha-auth">
+
+                                    <span aria-hidden="true">
+                                        🔒
+                                    </span>
+
+                                    <input
+                                        type="password"
+                                        id="confirmar-senha-cadastrar"
+                                        name="confirmarSenha"
+                                        placeholder="Digite a senha novamente"
+                                        autocomplete="new-password"
+                                        minlength="8"
+                                        required
+                                    >
+
+                                    <button
+                                        type="button"
+                                        class="btn-mostrar-senha"
+                                        data-campo-senha="confirmar-senha-cadastrar"
+                                        aria-label="Mostrar senha"
+                                    >
+                                        Mostrar
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                            <button
+                                type="submit"
+                                id="btn-criar-conta"
+                                class="btn-principal-auth"
+                            >
+                                <span>Criar minha conta</span>
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                    <!-- RECUPERAÇÃO DE SENHA -->
+
+                    <div
+                        id="painel-recuperar-senha"
+                        class="painel-autenticacao"
+                        hidden
+                    >
+
+                        <div class="cabecalho-recuperacao">
+
+                            <button
+                                type="button"
+                                id="btn-voltar-login"
+                                class="btn-voltar-auth"
+                            >
+                                ← Voltar
+                            </button>
+
+                            <h3>
+                                Recuperar senha
+                            </h3>
+
+                            <p>
+                                Informe seu e-mail e enviaremos
+                                as instruções de recuperação.
+                            </p>
+
+                        </div>
+
+                        <form id="form-recuperar-senha">
+
+                            <div class="grupo-campo-auth">
+
+                                <label for="email-recuperacao">
+                                    E-mail
+                                </label>
+
+                                <div class="campo-auth">
+
+                                    <span aria-hidden="true">
+                                        @
+                                    </span>
+
+                                    <input
+                                        type="email"
+                                        id="email-recuperacao"
+                                        name="emailRecuperacao"
+                                        placeholder="seuemail@exemplo.com"
+                                        autocomplete="email"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+                            <button
+                                type="submit"
+                                id="btn-enviar-recuperacao"
+                                class="btn-principal-auth"
+                            >
+                                <span>Enviar instruções</span>
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                    <!-- GOOGLE -->
+
+                    <div
+                        id="opcoes-login-social"
+                        class="opcoes-login-social"
+                    >
+
+                        <div class="separador-auth">
+                            <span>ou continue com</span>
+                        </div>
+
+                        <button
+                            type="button"
+                            id="btn-entrar-google"
+                            class="btn-google-auth"
+                        >
+                            <span
+                                class="icone-google-auth"
+                                aria-hidden="true"
+                            >
+                                G
+                            </span>
+
+                            <span>
+                                Entrar com Google
+                            </span>
+                        </button>
+
+                    </div>
+
+                    <p class="aviso-seguranca-auth">
+                        🔒 Sua autenticação é protegida pelo Firebase.
+                    </p>
+
+                </div>
+
+                <!-- CONTA JÁ CONECTADA -->
+
+                <div
+                    id="painel-usuario-conectado"
+                    class="painel-usuario-conectado"
+                    hidden
+                >
+
+                    <div
+                        id="avatar-usuario-auth"
+                        class="avatar-usuario-auth"
+                        aria-hidden="true"
+                    >
+                        U
+                    </div>
+
+                    <span class="etiqueta-conta-conectada">
+                        Conta conectada
+                    </span>
+
+                    <h2 id="nome-usuario-auth">
+                        Usuário
+                    </h2>
+
+                    <p id="email-usuario-auth">
+                        usuario@exemplo.com
+                    </p>
+
+                    <a
+                        href="../index.html"
+                        class="btn-principal-auth"
+                    >
+                        Continuar explorando
+                    </a>
+
+                    <button
+                        type="button"
+                        id="btn-sair-conta"
+                        class="btn-sair-auth"
+                    >
+                        Sair da conta
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer class="rodape-site">
+
+        <div class="conteudo-rodape">
+
+            <div class="coluna-rodape coluna-marca">
+
+                <a href="../index.html" class="logo-rodape">
+
+                    <img
+                        src="../assets/logo.png"
+                        alt="Logo do Futuro Universitário"
+                    >
+
+                </a>
+
+                <p>
+                    Uma plataforma criada para ajudar estudantes
+                    a encontrar cursos, universidades, bolsas,
+                    oportunidades e caminhos profissionais.
+                </p>
+
+                <div class="redes-rodape">
+
+                    <a
+                        href="https://www.instagram.com/laranjitos_/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram da equipe Laranjitos"
+                        title="Instagram"
+                        class="rede-rodape"
+                    >
+                        <img
+                            src="../assets/insta.webp"
+                            alt="Instagram"
+                        >
+                    </a>
+
+                    <a
+                        href="https://www.reddit.com/r/PassaporteU/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Comunidade do Futuro Universitário no Reddit"
+                        title="Reddit"
+                        class="rede-rodape"
+                    >
+                        <img
+                            src="../assets/reddit.webp"
+                            alt="Reddit"
+                        >
+                    </a>
+
+                    <a
+                        href="https://mail.google.com/mail/u/0/#inbox?compose=new"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Enviar e-mail para o Futuro Universitário"
+                        title="E-mail"
+                        class="rede-rodape"
+                    >
+                        <img
+                            src="../assets/gmail.webp"
+                            alt="Gmail"
+                        >
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="coluna-rodape">
+
+                <h3>Explorar</h3>
+
+                <a href="descobrir.html">
+                    Descobrir
+                </a>
+
+                <a href="universidades.html">
+                    Universidades
+                </a>
+
+                <a href="cursos-tecnicos.html">
+                    Cursos técnicos
+                </a>
+
+                <a href="bolsas.html">
+                    Bolsas
+                </a>
+
+            </div>
+
+            <div class="coluna-rodape">
+
+                <h3>Orientação</h3>
+
+                <a href="teste-vocacional.html">
+                    Teste vocacional
+                </a>
+
+                <a href="guia-profissional.html">
+                    Guia profissional
+                </a>
+
+                <a href="mapa-oportunidades.html">
+                    Oportunidades
+                </a>
+
+                <a href="calendario.html">
+                    Calendário
+                </a>
+
+            </div>
+
+            <div class="coluna-rodape">
+
+                <h3>Projeto</h3>
+
+                <a href="comunidade.html">
+                    Comunidade
+                </a>
+
+                <a href="contato.html">
+                    Contato
+                </a>
+
+                <a href="login.html">
+                    Entrar
+                </a>
+
+                <span class="versao-rodape">
+                    Versão 1.0
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="base-rodape">
+
+            <p>
+                © 2026 Futuro Universitário.
+                Todos os direitos reservados.
+            </p>
+
+            <p>
+                Conectando estudantes a novas oportunidades.
+            </p>
+
+        </div>
+
+    </footer>
+    <script src="../script.js"></script>
+    <script type="module" src="../login.js"></script>
+</body>
+
+</html>

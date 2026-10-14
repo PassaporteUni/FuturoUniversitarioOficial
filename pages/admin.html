@@ -1,0 +1,2267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Painel administrativo do Futuro Universitário.">
+
+    <title>
+        Painel administrativo | Futuro Universitário
+    </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../admin.css">
+</head>
+
+<body class="corpo-admin">
+
+    <main class="pagina-admin">
+
+        <section id="admin-carregando" class="estado-admin">
+            <span class="carregamento-admin" aria-hidden="true"></span>
+
+            <h1>
+                Verificando acesso
+            </h1>
+
+            <p>
+                Aguarde enquanto confirmamos sua conta.
+            </p>
+        </section>
+
+
+        <section id="admin-negado" class="estado-admin" hidden>
+            <span class="icone-admin-negado" aria-hidden="true">
+                🔒
+            </span>
+
+            <h1>
+                Acesso não autorizado
+            </h1>
+
+            <p id="mensagem-admin-negado">
+                Esta conta não possui permissão administrativa.
+            </p>
+
+            <a href="../index.html" class="botao-admin-secundario">
+                Voltar ao site
+            </a>
+        </section>
+
+
+        <section id="admin-conteudo" class="conteudo-admin" hidden>
+            <header class="cabecalho-admin">
+
+                <a href="../index.html" class="marca-admin">
+                    <img src="../assets/logo.png" alt="Futuro Universitário">
+
+                    <div>
+                        <strong>
+                            Futuro Universitário
+                        </strong>
+
+                        <span>
+                            Administração
+                        </span>
+                    </div>
+                </a>
+
+
+                <div class="acoes-cabecalho-admin">
+
+                    <a href="../index.html" class="botao-admin-secundario">
+                        ← Voltar ao site
+                    </a>
+
+                    <button id="btn-sair-admin" type="button" class="botao-admin-sair">
+                        Sair
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <section class="apresentacao-admin">
+
+                <span class="etiqueta-admin">
+                    Acesso autorizado
+                </span>
+
+                <h1>
+                    Painel administrativo
+                </h1>
+
+                <p>
+                    Gerencie os conteúdos exibidos no
+                    Futuro Universitário sem precisar
+                    alterar o código do site.
+                </p>
+
+                <p id="identificacao-admin" class="identificacao-admin"></p>
+
+            </section>
+
+
+            <section class="grade-recursos-admin">
+
+                <article class="card-recurso-admin">
+
+                    <span class="icone-recurso-admin" aria-hidden="true">
+                        📅
+                    </span>
+
+                    <div>
+                        <h2>
+                            Calendário
+                        </h2>
+
+                        <p>
+                            Cadastre, edite e exclua eventos,
+                            inscrições e datas importantes.
+                        </p>
+                    </div>
+
+                    <button id="btn-gerenciar-calendario" type="button" class="botao-gerenciar-recurso-admin">
+                        Gerenciar calendário
+                    </button>
+
+                </article>
+
+
+                <article class="card-recurso-admin">
+
+                    <span class="icone-recurso-admin" aria-hidden="true">
+                        🎓
+                    </span>
+
+                    <div>
+                        <h2>
+                            Universidades
+                        </h2>
+
+                        <p>
+                            Cadastre, edite e exclua instituições,
+                            cursos, localidades e formas de ingresso.
+                        </p>
+                    </div>
+
+                    <button id="btn-gerenciar-universidades" type="button" class="botao-gerenciar-recurso-admin">
+                        Gerenciar universidades
+                    </button>
+
+                </article>
+
+
+                <article class="card-recurso-admin">
+
+                    <span class="icone-recurso-admin" aria-hidden="true">
+                        📚
+                    </span>
+
+                    <div>
+
+                        <h2>
+                            Outros conteúdos
+                        </h2>
+
+                        <p>
+                            Gerencie cursos técnicos, bolsas,
+                            profissões e oportunidades.
+                        </p>
+
+                    </div>
+
+                    <button id="btn-gerenciar-conteudos" type="button" class="botao-gerenciar-recurso-admin">
+                        Gerenciar conteúdos
+                    </button>
+
+                </article>
+
+                </article>
+
+            </section>
+
+        </section>
+        <section id="hub-conteudos-admin" class="gerenciador-calendario-admin hub-conteudos-admin" hidden>
+
+            <div class="cabecalho-gerenciador-admin">
+
+                <div>
+
+                    <span class="etiqueta-admin">
+                        Conteúdos
+                    </span>
+
+                    <h2>
+                        Gerenciar conteúdos
+                    </h2>
+
+                    <p>
+                        Escolha qual área do site você deseja administrar.
+                    </p>
+
+                </div>
+
+
+                <button id="btn-fechar-hub-conteudos" type="button" class="botao-admin-secundario">
+                    Voltar ao painel
+                </button>
+
+            </div>
+
+
+            <section class="grade-conteudos-admin">
+
+                <article class="card-conteudo-admin">
+
+                    <span class="icone-conteudo-admin" aria-hidden="true">
+                        🛠️
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Cursos técnicos
+                        </h3>
+
+                        <p>
+                            Cadastre, edite e exclua cursos,
+                            instituições e processos seletivos.
+                        </p>
+
+                    </div>
+
+                    <button id="btn-gerenciar-cursos" type="button" class="botao-gerenciar-recurso-admin">
+                        Gerenciar cursos técnicos
+                    </button>
+
+                </article>
+
+
+                <article class="card-conteudo-admin">
+
+                    <span class="icone-conteudo-admin" aria-hidden="true">
+                        🎓
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Bolsas de estudo
+                        </h3>
+
+                        <p>
+                            Cadastre, edite e exclua bolsas,
+                            auxílios, requisitos e prazos.
+                        </p>
+
+                    </div>
+
+                    <button id="btn-gerenciar-bolsas" type="button" class="botao-gerenciar-recurso-admin">
+                        Gerenciar bolsas
+                    </button>
+
+                </article>
+
+                <article class="card-conteudo-admin">
+
+                    <span class="icone-conteudo-admin" aria-hidden="true">
+                        💼
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Profissões
+                        </h3>
+
+                        <p>
+                            Cadastre, edite e exclua profissões,
+                            salários, formações e habilidades.
+                        </p>
+
+                    </div>
+
+                    <button id="btn-gerenciar-profissoes" type="button" class="botao-gerenciar-recurso-admin">
+
+                        Gerenciar profissões
+
+                    </button>
+
+                </article>
+
+                <article class="card-conteudo-admin">
+
+                    <span class="icone-conteudo-admin" aria-hidden="true">
+                        📍
+                    </span>
+
+                    <div>
+                        <h3>
+                            Oportunidades
+                        </h3>
+
+                        <p>
+                            Cadastre, edite e exclua regiões,
+                            instituições, programas e formas de ingresso.
+                        </p>
+                    </div>
+
+                    <button id="btn-gerenciar-oportunidades" type="button" class="botao-gerenciar-recurso-admin">
+
+                        Gerenciar oportunidades
+
+                    </button>
+
+                </article>
+
+            </section>
+
+        </section>
+        <section id="gerenciador-calendario-admin" class="gerenciador-calendario-admin" hidden>
+
+            <div class="cabecalho-gerenciador-admin">
+
+                <div>
+                    <span class="etiqueta-admin">
+                        Calendário
+                    </span>
+
+                    <h2>
+                        Gerenciar eventos
+                    </h2>
+
+                    <p>
+                        As alterações serão aplicadas
+                        automaticamente no calendário do site.
+                    </p>
+                </div>
+
+                <button id="btn-fechar-gerenciador-calendario" type="button" class="botao-admin-secundario">
+                    Voltar ao painel
+                </button>
+
+            </div>
+
+
+            <div id="mensagem-calendario-admin" class="mensagem-calendario-admin" role="status" aria-live="polite"
+                hidden></div>
+
+
+            <div class="conteudo-gerenciador-calendario">
+
+                <section class="painel-form-evento-admin">
+
+                    <h3 id="titulo-form-evento-admin">
+                        Cadastrar evento
+                    </h3>
+
+                    <form id="form-evento-admin">
+
+                        <label>
+                            Identificador do evento
+
+                            <input id="evento-admin-id" type="text" placeholder="exemplo: enem-prova-2027" required>
+                        </label>
+
+
+                        <label>
+                            Título
+
+                            <input id="evento-admin-titulo" type="text" required>
+                        </label>
+
+
+                        <label>
+                            Descrição
+
+                            <textarea id="evento-admin-descricao" rows="4" required></textarea>
+                        </label>
+
+
+                        <div class="linha-form-admin">
+
+                            <label>
+                                Data
+
+                                <input id="evento-admin-data" type="date" required>
+                            </label>
+
+
+                            <label>
+                                Categoria
+
+                                <select id="evento-admin-categoria" required>
+                                    <option value="vestibular">
+                                        Vestibular
+                                    </option>
+
+                                    <option value="enem">
+                                        ENEM
+                                    </option>
+
+                                    <option value="bolsa">
+                                        Bolsa
+                                    </option>
+
+                                    <option value="curso">
+                                        Curso técnico
+                                    </option>
+
+                                    <option value="evento">
+                                        Evento
+                                    </option>
+                                </select>
+                            </label>
+
+                        </div>
+
+
+                        <label>
+                            Instituição
+
+                            <input id="evento-admin-instituicao" type="text" required>
+                        </label>
+
+
+                        <label>
+                            Identificador do processo
+
+                            <input id="evento-admin-processo-id" type="text" placeholder="Opcional">
+                        </label>
+
+
+                        <div class="linha-form-admin">
+
+                            <label>
+                                Início das inscrições
+
+                                <input id="evento-admin-periodo-inicio" type="date">
+                            </label>
+
+
+                            <label>
+                                Fim das inscrições
+
+                                <input id="evento-admin-periodo-fim" type="date">
+                            </label>
+
+                        </div>
+
+
+                        <label>
+                            Inscrições abertas até
+
+                            <input id="evento-admin-aberto-ate" type="date">
+                        </label>
+
+
+                        <label>
+                            Link oficial
+
+                            <input id="evento-admin-url-oficial" type="url" placeholder="https://...">
+                        </label>
+
+
+                        <div class="acoes-form-evento-admin">
+
+                            <button id="btn-salvar-evento-admin" type="submit" class="botao-salvar-evento-admin">
+                                Salvar evento
+                            </button>
+
+                            <button id="btn-cancelar-edicao-evento" type="button" class="botao-admin-secundario" hidden>
+                                Cancelar edição
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+
+                <section class="painel-lista-eventos-admin">
+
+                    <div class="cabecalho-lista-eventos-admin">
+
+                        <div>
+                            <h3>
+                                Eventos cadastrados
+                            </h3>
+
+                            <p id="contador-eventos-admin">
+                                Carregando eventos...
+                            </p>
+                        </div>
+
+                        <input id="pesquisa-eventos-admin" type="search" placeholder="Pesquisar evento..."
+                            aria-label="Pesquisar evento">
+
+                    </div>
+
+
+                    <div id="lista-eventos-admin" class="lista-eventos-admin"></div>
+
+                </section>
+
+            </div>
+
+        </section>
+        <section id="gerenciador-universidades-admin"
+            class="gerenciador-calendario-admin gerenciador-universidades-admin" hidden>
+
+            <div class="cabecalho-gerenciador-admin">
+
+                <div>
+                    <span class="etiqueta-admin">
+                        Universidades
+                    </span>
+
+                    <h2>
+                        Gerenciar instituições
+                    </h2>
+
+                    <p>
+                        As alterações serão aplicadas automaticamente
+                        na página de universidades do site.
+                    </p>
+                </div>
+                <div class="acoes-gerenciador-admin">
+
+                    <button id="btn-nova-universidade-admin" type="button" class="botao-novo-conteudo-admin">
+                        + Nova universidade
+                    </button>
+
+                    <button id="btn-fechar-gerenciador-universidades" type="button" class="botao-admin-secundario">
+                        Voltar ao painel
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div id="mensagem-universidades-admin" class="mensagem-calendario-admin" role="status" aria-live="polite"
+                hidden></div>
+
+
+            <div class="conteudo-gerenciador-calendario conteudo-gerenciador-universidades">
+
+                <section class="painel-form-evento-admin painel-form-universidade-admin">
+
+                    <h3 id="titulo-form-universidade-admin">
+                        Cadastrar universidade
+                    </h3>
+
+                    <form id="form-universidade-admin">
+
+                        <label>
+                            Identificador
+
+                            <input id="universidade-admin-id" type="text" placeholder="exemplo: ufrj" required>
+                        </label>
+
+
+                        <label>
+                            Nome completo
+
+                            <input id="universidade-admin-nome" type="text" required>
+                        </label>
+
+
+                        <div class="linha-form-admin">
+
+                            <label>
+                                Sigla
+
+                                <input id="universidade-admin-sigla" type="text" placeholder="UFRJ" required>
+                            </label>
+
+                            <label>
+                                Logo
+
+                                <input id="universidade-admin-logo" type="text" placeholder="../assets/UFRJ.png"
+                                    required>
+                            </label>
+
+                        </div>
+
+
+                        <div class="linha-form-admin">
+
+                            <label>
+                                Tipo
+
+                                <select id="universidade-admin-tipo" required>
+                                    <option value="publica">
+                                        Pública
+                                    </option>
+
+                                    <option value="privada">
+                                        Privada
+                                    </option>
+                                </select>
+                            </label>
+
+
+                            <label>
+                                Categoria
+
+                                <select id="universidade-admin-categoria" required>
+                                    <option value="federal">
+                                        Federal
+                                    </option>
+
+                                    <option value="estadual">
+                                        Estadual
+                                    </option>
+
+                                    <option value="comunitaria">
+                                        Comunitária
+                                    </option>
+
+                                    <option value="privada">
+                                        Privada
+                                    </option>
+                                </select>
+                            </label>
+
+                        </div>
+
+
+                        <label>
+                            Rótulo especial da categoria
+
+                            <input id="universidade-admin-rotulo-categoria" type="text"
+                                placeholder="Exemplo: Instituto Federal — opcional">
+                        </label>
+
+
+                        <div class="linha-form-admin">
+
+                            <label>
+                                Estado
+
+                                <input id="universidade-admin-estado" type="text" value="Rio de Janeiro" required>
+                            </label>
+
+                            <label>
+                                UF
+
+                                <input id="universidade-admin-uf" type="text" value="RJ" maxlength="2" required>
+                            </label>
+
+                        </div>
+
+
+                        <label>
+                            Cidades
+
+                            <textarea id="universidade-admin-cidades" rows="5" placeholder="Uma cidade por linha"
+                                required></textarea>
+                        </label>
+
+
+                        <fieldset class="grupo-opcoes-universidade-admin">
+
+                            <legend>
+                                Modalidades
+                            </legend>
+
+                            <label>
+                                <input id="universidade-admin-modalidade-presencial" type="checkbox" value="presencial">
+
+                                Presencial
+                            </label>
+
+                            <label>
+                                <input id="universidade-admin-modalidade-ead" type="checkbox" value="ead">
+
+                                Ensino a distância
+                            </label>
+
+                        </fieldset>
+
+
+                        <label>
+                            Formas de ingresso
+
+                            <textarea id="universidade-admin-ingresso" rows="4"
+                                placeholder="Uma forma de ingresso por linha" required></textarea>
+                        </label>
+
+
+                        <fieldset class="grupo-opcoes-universidade-admin">
+
+                            <legend>
+                                Áreas disponíveis
+                            </legend>
+
+                            <label>
+                                <input type="checkbox" class="campo-area-universidade-admin" value="tecnologia">
+                                Tecnologia
+                            </label>
+
+                            <label>
+                                <input type="checkbox" class="campo-area-universidade-admin" value="engenharia">
+                                Engenharia
+                            </label>
+
+                            <label>
+                                <input type="checkbox" class="campo-area-universidade-admin" value="saude">
+                                Saúde
+                            </label>
+
+                            <label>
+                                <input type="checkbox" class="campo-area-universidade-admin" value="humanas">
+                                Humanas
+                            </label>
+
+                            <label>
+                                <input type="checkbox" class="campo-area-universidade-admin" value="administracao">
+                                Administração
+                            </label>
+
+                            <label>
+                                <input type="checkbox" class="campo-area-universidade-admin" value="design">
+                                Design
+                            </label>
+
+                        </fieldset>
+
+
+                        <div class="secao-cursos-universidade-admin">
+
+                            <div class="cabecalho-cursos-universidade-admin">
+
+                                <div>
+                                    <strong>
+                                        Cursos
+                                    </strong>
+
+                                    <p>
+                                        Adicione os cursos oferecidos e suas áreas.
+                                    </p>
+                                </div>
+
+                                <button id="btn-adicionar-curso-admin" type="button" class="botao-admin-secundario">
+                                    + Adicionar curso
+                                </button>
+
+                            </div>
+
+                            <div id="lista-cursos-universidade-admin"></div>
+
+                        </div>
+
+
+                        <label>
+                            Descrição
+
+                            <textarea id="universidade-admin-descricao" rows="5" required></textarea>
+                        </label>
+
+
+                        <label>
+                            Site de ingresso
+
+                            <input id="universidade-admin-site" type="url" placeholder="https://..." required>
+                        </label>
+
+
+                        <label>
+                            Página de cursos
+
+                            <input id="universidade-admin-pagina-cursos" type="url" placeholder="https://..." required>
+                        </label>
+
+
+                        <fieldset class="grupo-opcoes-universidade-admin">
+
+                            <legend>
+                                Recursos oferecidos
+                            </legend>
+
+                            <label>
+                                <input id="universidade-admin-possui-bolsa" type="checkbox">
+
+                                Possui bolsas
+                            </label>
+
+                            <label>
+                                <input id="universidade-admin-possui-assistencia" type="checkbox">
+
+                                Possui assistência estudantil
+                            </label>
+
+                        </fieldset>
+
+
+                        <div class="acoes-form-evento-admin">
+
+                            <button id="btn-salvar-universidade-admin" type="submit" class="botao-salvar-evento-admin">
+                                Salvar universidade
+                            </button>
+
+                            <button id="btn-cancelar-edicao-universidade" type="button" class="botao-admin-secundario"
+                                hidden>
+                                Cancelar edição
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+
+                <section class="painel-lista-eventos-admin painel-lista-universidades-admin">
+
+                    <div class="cabecalho-lista-eventos-admin">
+
+                        <div>
+                            <h3>
+                                Universidades cadastradas
+                            </h3>
+
+                            <p id="contador-universidades-admin">
+                                Carregando universidades...
+                            </p>
+                        </div>
+
+                        <input id="pesquisa-universidades-admin" type="search" placeholder="Pesquisar instituição..."
+                            aria-label="Pesquisar universidade">
+
+                    </div>
+
+
+                    <div id="lista-universidades-admin" class="lista-eventos-admin lista-universidades-admin"></div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+        <section id="gerenciador-cursos-admin" class="gerenciador-calendario-admin gerenciador-cursos-admin" hidden>
+
+            <div class="cabecalho-gerenciador-admin">
+
+                <div>
+
+                    <span class="etiqueta-admin">
+                        Cursos técnicos
+                    </span>
+
+                    <h2>
+                        Gerenciar cursos técnicos
+                    </h2>
+
+                    <p>
+                        As alterações serão aplicadas automaticamente
+                        na página de cursos técnicos do site.
+                    </p>
+
+                </div>
+
+
+                <div class="acoes-gerenciador-admin">
+
+                    <button id="btn-novo-curso-admin" type="button" class="botao-novo-conteudo-admin">
+                        + Novo curso
+                    </button>
+
+                    <button id="btn-fechar-gerenciador-cursos" type="button" class="botao-admin-secundario">
+                        Voltar ao painel
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div id="mensagem-cursos-admin" class="mensagem-calendario-admin" role="status" aria-live="polite" hidden>
+            </div>
+
+
+            <div class="conteudo-gerenciador-calendario conteudo-gerenciador-cursos">
+
+                <section class="painel-form-evento-admin painel-form-curso-admin">
+
+                    <h3 id="titulo-form-curso-admin">
+                        Cadastrar curso técnico
+                    </h3>
+
+
+                    <form id="form-curso-admin">
+
+                        <label>
+                            Identificador
+
+                            <input id="curso-admin-id" type="text" placeholder="exemplo: desenvolvimento-sistemas"
+                                required>
+                        </label>
+
+
+                        <label>
+                            Nome do curso
+
+                            <input id="curso-admin-nome" type="text" placeholder="Desenvolvimento de Sistemas" required>
+                        </label>
+
+
+                        <div class="linha-form-admin">
+
+                            <label>
+                                Símbolo ou emoji
+
+                                <input id="curso-admin-simbolo" type="text" placeholder="💻" required>
+                            </label>
+
+
+                            <label>
+                                Área
+
+                                <select id="curso-admin-area" required>
+
+                                    <option value="tecnologia">
+                                        Tecnologia
+                                    </option>
+
+                                    <option value="administracao">
+                                        Administração
+                                    </option>
+
+                                    <option value="saude">
+                                        Saúde
+                                    </option>
+
+                                    <option value="industria">
+                                        Indústria
+                                    </option>
+
+                                </select>
+                            </label>
+
+                        </div>
+
+
+                        <div class="linha-form-admin">
+
+                            <label>
+                                Modalidade do filtro
+
+                                <select id="curso-admin-modalidade" required>
+
+                                    <option value="presencial">
+                                        Presencial
+                                    </option>
+
+                                    <option value="online">
+                                        Online
+                                    </option>
+
+                                    <option value="hibrido">
+                                        Híbrido
+                                    </option>
+
+                                </select>
+                            </label>
+
+
+                            <label>
+                                Duração em meses
+
+                                <input id="curso-admin-duracao-meses" type="number" min="1" step="1" placeholder="18"
+                                    required>
+                            </label>
+
+                        </div>
+
+
+                        <label>
+                            Instituição exibida no card
+
+                            <input id="curso-admin-instituicao-resumo" type="text" placeholder="Firjan SENAI • Maracanã"
+                                required>
+                        </label>
+
+
+                        <label>
+                            Descrição resumida
+
+                            <textarea id="curso-admin-descricao-resumo" rows="4" required></textarea>
+                        </label>
+
+
+                        <fieldset class="grupo-opcoes-universidade-admin grupo-resumo-curso-admin">
+
+                            <legend>
+                                Informações exibidas no card
+                            </legend>
+
+                            <label>
+                                Duração resumida
+
+                                <input id="curso-admin-info-duracao" type="text" placeholder="3 semestres" required>
+                            </label>
+
+                            <label>
+                                Modalidade exibida
+
+                                <input id="curso-admin-info-modalidade" type="text" placeholder="Presencial" required>
+                            </label>
+
+                            <label>
+                                Nível
+
+                                <input id="curso-admin-info-nivel" type="text" value="Técnico" required>
+                            </label>
+
+                        </fieldset>
+
+
+                        <h4 class="subtitulo-form-curso-admin">
+                            Informações do modal
+                        </h4>
+
+
+                        <label>
+                            Instituição completa
+
+                            <input id="curso-admin-detalhe-instituicao" type="text" required>
+                        </label>
+
+
+                        <label>
+                            Local
+
+                            <input id="curso-admin-detalhe-local" type="text"
+                                placeholder="Maracanã, Rio de Janeiro — RJ" required>
+                        </label>
+
+
+                        <div class="linha-form-admin">
+
+                            <label>
+                                Carga horária ou duração
+
+                                <input id="curso-admin-detalhe-duracao" type="text" placeholder="1.200 horas" required>
+                            </label>
+
+
+                            <label>
+                                Modalidade
+
+                                <input id="curso-admin-detalhe-modalidade" type="text" placeholder="Presencial"
+                                    required>
+                            </label>
+
+                        </div>
+
+
+                        <label>
+                            Turno
+
+                            <input id="curso-admin-detalhe-turno" type="text" placeholder="Noturno" required>
+                        </label>
+
+
+                        <h4 class="subtitulo-form-curso-admin">
+                            Processo seletivo
+                        </h4>
+
+
+                        <label>
+                            Título do processo
+
+                            <input id="curso-admin-processo-titulo" type="text" placeholder="Turma 2027.1" required>
+                        </label>
+
+
+                        <div class="linha-form-admin">
+
+                            <label>
+                                Status exibido
+
+                                <input id="curso-admin-processo-status" type="text" placeholder="Inscrições abertas"
+                                    required>
+                            </label>
+
+
+                            <label>
+                                Cor do status
+
+                                <select id="curso-admin-processo-status-classe" required>
+
+                                    <option value="status-aberto">
+                                        Aberto
+                                    </option>
+
+                                    <option value="status-em-breve">
+                                        Em breve
+                                    </option>
+
+                                    <option value="status-encerrado">
+                                        Encerrado
+                                    </option>
+
+                                </select>
+                            </label>
+
+                        </div>
+
+
+                        <label>
+                            Aviso do processo
+
+                            <textarea id="curso-admin-processo-aviso" rows="3" required></textarea>
+                        </label>
+
+
+                        <label>
+                            Dados do processo
+
+                            <textarea id="curso-admin-processo-dados" rows="7"
+                                placeholder="Edital | Publicado&#10;Inscrições | 10/01 a 20/02/2027&#10;Seleção | Prova presencial&#10;Data | 15/03/2027&#10;Vagas | 40&#10;Taxa | Gratuito"
+                                required></textarea>
+
+                            <small class="ajuda-campo-admin">
+                                Digite uma informação por linha, separando
+                                o título e o valor com |
+                            </small>
+                        </label>
+
+
+                        <label>
+                            Texto sobre a oferta
+
+                            <textarea id="curso-admin-texto-oferta" rows="4" required></textarea>
+                        </label>
+
+
+                        <label>
+                            Informação de verificação
+
+                            <input id="curso-admin-verificacao" type="text"
+                                placeholder="Informações verificadas em setembro de 2026." required>
+                        </label>
+
+
+                        <h4 class="subtitulo-form-curso-admin">
+                            Links oficiais
+                        </h4>
+
+
+                        <label>
+                            Link do processo seletivo
+
+                            <input id="curso-admin-processo-link" type="url" placeholder="https://...">
+                        </label>
+
+
+                        <label>
+                            Texto do botão do processo
+
+                            <input id="curso-admin-processo-texto" type="text" value="Fonte oficial do processo">
+                        </label>
+
+
+                        <label>
+                            Link da instituição
+
+                            <input id="curso-admin-instituicao-link" type="url" placeholder="https://...">
+                        </label>
+
+
+                        <label>
+                            Texto do botão da instituição
+
+                            <input id="curso-admin-instituicao-texto" type="text" value="Site da instituição">
+                        </label>
+
+
+                        <div class="acoes-form-evento-admin">
+
+                            <button id="btn-salvar-curso-admin" type="submit" class="botao-salvar-evento-admin">
+                                Salvar curso
+                            </button>
+
+                            <button id="btn-cancelar-edicao-curso" type="button" class="botao-admin-secundario" hidden>
+                                Cancelar edição
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+
+                <section class="painel-lista-eventos-admin painel-lista-cursos-admin">
+
+                    <div class="cabecalho-lista-eventos-admin">
+
+                        <div>
+
+                            <h3>
+                                Cursos cadastrados
+                            </h3>
+
+                            <p id="contador-cursos-admin">
+                                Carregando cursos...
+                            </p>
+
+                        </div>
+
+
+                        <input id="pesquisa-cursos-admin" type="search" placeholder="Pesquisar curso..."
+                            aria-label="Pesquisar curso técnico">
+
+                    </div>
+
+
+                    <div id="lista-cursos-admin" class="lista-eventos-admin lista-cursos-admin"></div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+        <section id="gerenciador-bolsas-admin"
+            class="gerenciador-calendario-admin gerenciador-cursos-admin gerenciador-bolsas-admin" hidden>
+
+            <div class="cabecalho-gerenciador-admin">
+
+                <div>
+
+                    <span class="etiqueta-admin">
+                        Bolsas de estudo
+                    </span>
+
+                    <h2>
+                        Gerenciar bolsas de estudo
+                    </h2>
+
+                    <p>
+                        As alterações serão aplicadas automaticamente
+                        na página de bolsas do site.
+                    </p>
+
+                </div>
+
+
+                <div class="acoes-gerenciador-admin">
+
+                    <button id="btn-nova-bolsa-admin" type="button" class="botao-novo-conteudo-admin">
+                        + Nova bolsa
+                    </button>
+
+                    <button id="btn-fechar-gerenciador-bolsas" type="button" class="botao-admin-secundario">
+                        Voltar aos conteúdos
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div id="mensagem-bolsas-admin" class="mensagem-calendario-admin" role="status" aria-live="polite" hidden>
+            </div>
+
+
+            <div class="conteudo-gerenciador-calendario conteudo-gerenciador-cursos">
+
+                <section class="painel-form-evento-admin painel-form-curso-admin painel-form-bolsa-admin">
+
+                    <h3 id="titulo-form-bolsa-admin">
+                        Cadastrar bolsa
+                    </h3>
+
+
+                    <form id="form-bolsa-admin">
+
+                        <label>
+                            Identificador
+
+                            <input id="bolsa-admin-id" type="text" placeholder="exemplo: prouni-integral" required>
+                        </label>
+
+
+                        <label>
+                            Nome da bolsa
+
+                            <input id="bolsa-admin-titulo" type="text" placeholder="ProUni — Bolsa Integral" required>
+                        </label>
+
+
+                        <div class="linha-form-admin">
+
+                            <label>
+                                Símbolo ou emoji
+
+                                <input id="bolsa-admin-simbolo" type="text" placeholder="🎓" required>
+                            </label>
+
+
+                            <label>
+                                Ordem de relevância
+
+                                <input id="bolsa-admin-ordem" type="number" min="1" step="1" placeholder="1" required>
+                            </label>
+
+                        </div>
+
+
+                        <div class="linha-form-admin">
+
+                            <label>
+                                Tipo usado no filtro
+
+                                <select id="bolsa-admin-tipo" required>
+
+                                    <option value="integral">
+                                        Bolsa integral
+                                    </option>
+
+                                    <option value="parcial">
+                                        Bolsa parcial
+                                    </option>
+
+                                    <option value="financiamento">
+                                        Financiamento
+                                    </option>
+
+                                    <option value="auxilio">
+                                        Auxílio / incentivo
+                                    </option>
+
+                                </select>
+                            </label>
+
+
+                            <label>
+                                Tipo exibido no card
+
+                                <input id="bolsa-admin-tipo-texto" type="text" placeholder="Bolsa integral" required>
+                            </label>
+
+                        </div>
+
+
+                        <label>
+                            Nível de ensino
+
+                            <select id="bolsa-admin-nivel" required>
+
+                                <option value="ensino-medio">
+                                    Ensino médio
+                                </option>
+
+                                <option value="graduacao">
+                                    Graduação
+                                </option>
+
+                                <option value="tecnico">
+                                    Curso técnico
+                                </option>
+
+                            </select>
+                        </label>
+
+
+                        <label>
+                            Instituição ou programa responsável
+
+                            <input id="bolsa-admin-instituicao" type="text" placeholder="Ministério da Educação • MEC"
+                                required>
+                        </label>
+
+
+                        <label>
+                            Descrição
+
+                            <textarea id="bolsa-admin-descricao" rows="4"
+                                placeholder="Explique como funciona a bolsa ou auxílio." required></textarea>
+                        </label>
+
+
+                        <label>
+                            Informações exibidas no card
+
+                            <textarea id="bolsa-admin-informacoes" rows="5"
+                                placeholder="100% da mensalidade&#10;Graduação&#10;Renda de até 1,5 salário mínimo por pessoa"
+                                required></textarea>
+
+                            <small class="ajuda-campo-admin">
+                                Digite uma informação por linha.
+                                Cada linha será exibida em uma etiqueta no card.
+                            </small>
+                        </label>
+
+
+                        <h4 class="subtitulo-form-curso-admin">
+                            Prazo
+                        </h4>
+
+
+                        <label>
+                            Texto exibido no prazo
+
+                            <textarea id="bolsa-admin-prazo-texto" rows="3"
+                                placeholder="Inscrições disponíveis até 31/01/2027." required></textarea>
+                        </label>
+
+
+                        <label>
+                            Valor usado para ordenar o prazo
+
+                            <input id="bolsa-admin-prazo-ordem" type="number" min="0" step="1" placeholder="20270131"
+                                required>
+
+                            <small class="ajuda-campo-admin">
+                                Para uma data, use o formato AAAAMMDD.
+                                Exemplo: 31/01/2027 vira 20270131.
+                                Caso não exista prazo fixo, use 99999999.
+                            </small>
+                        </label>
+
+
+                        <h4 class="subtitulo-form-curso-admin">
+                            Link
+                        </h4>
+
+
+                        <label>
+                            Página oficial
+
+                            <input id="bolsa-admin-url" type="url" placeholder="https://...">
+                        </label>
+
+
+                        <label>
+                            Texto do link
+
+                            <input id="bolsa-admin-texto-link" type="text" value="Acessar página oficial →" required>
+                        </label>
+
+
+                        <div class="acoes-form-evento-admin">
+
+                            <button id="btn-salvar-bolsa-admin" type="submit" class="botao-salvar-evento-admin">
+                                Salvar bolsa
+                            </button>
+
+                            <button id="btn-cancelar-edicao-bolsa" type="button" class="botao-admin-secundario" hidden>
+                                Cancelar edição
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+
+                <section class="painel-lista-eventos-admin painel-lista-cursos-admin painel-lista-bolsas-admin">
+
+                    <div class="cabecalho-lista-eventos-admin">
+
+                        <div>
+
+                            <h3>
+                                Bolsas cadastradas
+                            </h3>
+
+                            <p id="contador-bolsas-admin">
+                                Carregando bolsas...
+                            </p>
+
+                        </div>
+
+
+                        <input id="pesquisa-bolsas-admin" type="search" placeholder="Pesquisar bolsa..."
+                            aria-label="Pesquisar bolsa de estudo">
+
+                    </div>
+
+
+                    <div id="lista-bolsas-admin" class="lista-eventos-admin lista-cursos-admin lista-bolsas-admin">
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+        <section id="gerenciador-profissoes-admin"
+            class="gerenciador-calendario-admin gerenciador-cursos-admin gerenciador-bolsas-admin gerenciador-profissoes-admin"
+            hidden>
+
+            <div class="cabecalho-gerenciador-admin">
+
+                <div>
+
+                    <span class="etiqueta-admin">
+                        Guia profissional
+                    </span>
+
+                    <h2>
+                        Gerenciar profissões
+                    </h2>
+
+                    <p>
+                        As alterações serão aplicadas automaticamente
+                        na página do Guia Profissional.
+                    </p>
+
+                </div>
+
+
+                <div class="acoes-gerenciador-admin">
+
+                    <button id="btn-nova-profissao-admin" type="button" class="botao-novo-conteudo-admin">
+
+                        + Nova profissão
+
+                    </button>
+
+                    <button id="btn-fechar-gerenciador-profissoes" type="button" class="botao-admin-secundario">
+
+                        Voltar aos conteúdos
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div id="mensagem-profissoes-admin" class="mensagem-calendario-admin" role="status" aria-live="polite"
+                hidden>
+            </div>
+
+
+            <div class="conteudo-gerenciador-calendario conteudo-gerenciador-cursos">
+
+                <section
+                    class="painel-form-evento-admin painel-form-curso-admin painel-form-bolsa-admin painel-form-profissao-admin">
+
+                    <h3 id="titulo-form-profissao-admin">
+                        Cadastrar profissão
+                    </h3>
+
+
+                    <form id="form-profissao-admin">
+
+                        <label>
+                            Identificador
+
+                            <input id="profissao-admin-id" type="text" placeholder="exemplo: desenvolvedor-software"
+                                required>
+                        </label>
+
+
+                        <label>
+                            Nome da profissão
+
+                            <input id="profissao-admin-nome" type="text" placeholder="Desenvolvedor de Software"
+                                required>
+                        </label>
+
+
+                        <div class="linha-form-admin">
+
+                            <label>
+                                Símbolo ou emoji
+
+                                <input id="profissao-admin-simbolo" type="text" placeholder="💻" required>
+                            </label>
+
+
+                            <label>
+                                Ordem de relevância
+
+                                <input id="profissao-admin-ordem" type="number" min="1" step="1" placeholder="1"
+                                    required>
+                            </label>
+
+                        </div>
+
+
+                        <div class="linha-form-admin">
+
+                            <label>
+                                Área usada no filtro
+
+                                <select id="profissao-admin-area" required>
+
+                                    <option value="tecnologia">
+                                        Tecnologia
+                                    </option>
+
+                                    <option value="engenharia">
+                                        Engenharia
+                                    </option>
+
+                                    <option value="saude">
+                                        Saúde
+                                    </option>
+
+                                    <option value="humanas">
+                                        Humanas
+                                    </option>
+
+                                    <option value="administracao">
+                                        Administração
+                                    </option>
+
+                                    <option value="design">
+                                        Design
+                                    </option>
+
+                                </select>
+                            </label>
+
+
+                            <label>
+                                Área exibida no card
+
+                                <input id="profissao-admin-area-texto" type="text" placeholder="Tecnologia" required>
+                            </label>
+
+                        </div>
+
+
+                        <h4 class="subtitulo-form-curso-admin">
+                            Salário
+                        </h4>
+
+
+                        <div class="linha-form-admin">
+
+                            <label>
+                                Valor usado para ordenar
+
+                                <input id="profissao-admin-salario" type="number" min="0" step="100" placeholder="12000"
+                                    required>
+
+                                <small class="ajuda-campo-admin">
+                                    Digite somente o maior valor da faixa.
+                                    Exemplo: para R$ 5 mil a R$ 12 mil, use 12000.
+                                </small>
+                            </label>
+
+
+                            <label>
+                                Faixa usada no filtro
+
+                                <select id="profissao-admin-faixa-salario" required>
+
+                                    <option value="ate-3000">
+                                        Até R$ 3 mil
+                                    </option>
+
+                                    <option value="3000-6000">
+                                        De R$ 3 mil a R$ 6 mil
+                                    </option>
+
+                                    <option value="6000-10000">
+                                        De R$ 6 mil a R$ 10 mil
+                                    </option>
+
+                                    <option value="acima-10000">
+                                        Acima de R$ 10 mil
+                                    </option>
+
+                                </select>
+                            </label>
+
+                        </div>
+
+
+                        <label>
+                            Salário exibido no card
+
+                            <input id="profissao-admin-salario-texto" type="text" placeholder="R$ 5 mil a R$ 12 mil"
+                                required>
+                        </label>
+
+
+                        <h4 class="subtitulo-form-curso-admin">
+                            Formação
+                        </h4>
+
+
+                        <div class="linha-form-admin">
+
+                            <label>
+                                Formação recomendada
+
+                                <input id="profissao-admin-formacao" type="text" placeholder="Ciência da Computação"
+                                    required>
+                            </label>
+
+
+                            <label>
+                                Duração média
+
+                                <input id="profissao-admin-duracao" type="text" placeholder="4 anos" required>
+                            </label>
+
+                        </div>
+
+
+                        <label>
+                            Descrição
+
+                            <textarea id="profissao-admin-descricao" rows="4"
+                                placeholder="Explique resumidamente o que esse profissional faz." required></textarea>
+                        </label>
+
+
+                        <label>
+                            Habilidades importantes
+
+                            <textarea id="profissao-admin-habilidades" rows="5"
+                                placeholder="Programação&#10;Lógica&#10;JavaScript&#10;Trabalho em equipe"
+                                required></textarea>
+
+                            <small class="ajuda-campo-admin">
+                                Digite uma habilidade por linha.
+                                Cada linha será exibida em uma etiqueta no card.
+                            </small>
+                        </label>
+
+
+                        <h4 class="subtitulo-form-curso-admin">
+                            Link
+                        </h4>
+
+
+                        <label>
+                            Página com mais informações
+
+                            <input id="profissao-admin-url" type="url" placeholder="https://...">
+
+                            <small class="ajuda-campo-admin">
+                                Este campo pode ficar vazio enquanto não existir
+                                uma página específica para a profissão.
+                            </small>
+                        </label>
+
+
+                        <label>
+                            Texto do link
+
+                            <input id="profissao-admin-texto-link" type="text" value="Saiba mais →" required>
+                        </label>
+
+
+                        <div class="acoes-form-evento-admin">
+
+                            <button id="btn-salvar-profissao-admin" type="submit" class="botao-salvar-evento-admin">
+
+                                Salvar profissão
+
+                            </button>
+
+                            <button id="btn-cancelar-edicao-profissao" type="button" class="botao-admin-secundario"
+                                hidden>
+
+                                Cancelar edição
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+
+                <section
+                    class="painel-lista-eventos-admin painel-lista-cursos-admin painel-lista-bolsas-admin painel-lista-profissoes-admin">
+
+                    <div class="cabecalho-lista-eventos-admin">
+
+                        <div>
+
+                            <h3>
+                                Profissões cadastradas
+                            </h3>
+
+                            <p id="contador-profissoes-admin">
+                                Carregando profissões...
+                            </p>
+
+                        </div>
+
+
+                        <input id="pesquisa-profissoes-admin" type="search" placeholder="Pesquisar profissão..."
+                            aria-label="Pesquisar profissão">
+
+                    </div>
+
+
+                    <div id="lista-profissoes-admin"
+                        class="lista-eventos-admin lista-cursos-admin lista-bolsas-admin lista-profissoes-admin">
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+        <section id="gerenciador-oportunidades-admin"
+            class="gerenciador-calendario-admin gerenciador-oportunidades-admin" hidden>
+
+            <div class="cabecalho-gerenciador-admin">
+
+                <div>
+                    <span class="etiqueta-admin">
+                        Mapa de oportunidades
+                    </span>
+
+                    <h2>
+                        Gerenciar oportunidades
+                    </h2>
+
+                    <p>
+                        Gerencie as regiões e as oportunidades exibidas
+                        no Mapa de Oportunidades.
+                    </p>
+                </div>
+
+                <div class="acoes-gerenciador-admin">
+
+                    <button id="btn-nova-regiao-admin" type="button" class="botao-novo-conteudo-admin">
+
+                        + Nova região
+
+                    </button>
+
+                    <button id="btn-fechar-gerenciador-oportunidades" type="button" class="botao-admin-secundario">
+
+                        Voltar aos conteúdos
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div id="mensagem-oportunidades-admin" class="mensagem-calendario-admin" role="status" aria-live="polite"
+                hidden>
+            </div>
+
+
+            <div class="conteudo-regioes-oportunidades-admin">
+
+                <!-- FORMULÁRIO DA REGIÃO -->
+
+                <section class="painel-form-evento-admin painel-form-regiao-admin">
+
+                    <h3 id="titulo-form-regiao-admin">
+                        Cadastrar região
+                    </h3>
+
+                    <form id="form-regiao-oportunidades-admin">
+
+                        <label>
+                            Identificador
+
+                            <input id="regiao-admin-id" type="text" placeholder="exemplo: zona-norte" required>
+                        </label>
+
+
+                        <label>
+                            Nome da região
+
+                            <input id="regiao-admin-nome" type="text" placeholder="Zona Norte" required>
+                        </label>
+
+
+                        <div class="linha-form-admin">
+
+                            <label>
+                                Símbolo ou emoji
+
+                                <input id="regiao-admin-icone" type="text" placeholder="📍" required>
+                            </label>
+
+                            <label>
+                                Ordem de exibição
+
+                                <input id="regiao-admin-ordem" type="number" min="1" step="1" placeholder="1" required>
+                            </label>
+
+                        </div>
+
+
+                        <label>
+                            Resumo exibido no card
+
+                            <input id="regiao-admin-resumo" type="text" placeholder="Tijuca, Méier, Madureira e região"
+                                required>
+                        </label>
+
+
+                        <label>
+                            Descrição da região
+
+                            <textarea id="regiao-admin-descricao" rows="4"
+                                placeholder="Descreva resumidamente as oportunidades da região." required></textarea>
+                        </label>
+
+
+                        <h4 class="subtitulo-form-curso-admin">
+                            Números exibidos
+                        </h4>
+
+                        <div class="grade-numeros-regiao-admin">
+
+                            <label>
+                                Universidades
+
+                                <input id="regiao-admin-universidades" type="number" min="0" step="1" value="0"
+                                    required>
+                            </label>
+
+                            <label>
+                                Cursos técnicos
+
+                                <input id="regiao-admin-cursos" type="number" min="0" step="1" value="0" required>
+                            </label>
+
+                            <label>
+                                Bolsas
+
+                                <input id="regiao-admin-bolsas" type="number" min="0" step="1" value="0" required>
+                            </label>
+
+                            <label>
+                                Instituições
+
+                                <input id="regiao-admin-instituicoes" type="number" min="0" step="1" value="0" required>
+                            </label>
+
+                        </div>
+
+
+                        <label>
+                            Áreas em destaque
+
+                            <textarea id="regiao-admin-areas" rows="5" placeholder="Tecnologia&#10;Saúde&#10;Engenharia"
+                                required></textarea>
+
+                            <small class="ajuda-campo-admin">
+                                Digite uma área por linha.
+                            </small>
+                        </label>
+
+
+                        <label>
+                            Regiões, bairros e termos de pesquisa
+
+                            <textarea id="regiao-admin-termos" rows="6"
+                                placeholder="Zona Norte&#10;Tijuca&#10;Méier&#10;Madureira" required></textarea>
+
+                            <small class="ajuda-campo-admin">
+                                Digite um termo por linha. Eles serão usados
+                                pela pesquisa do mapa.
+                            </small>
+                        </label>
+
+
+                        <div class="acoes-form-evento-admin">
+
+                            <button id="btn-salvar-regiao-admin" type="submit" class="botao-salvar-evento-admin">
+
+                                Salvar região
+
+                            </button>
+
+                            <button id="btn-cancelar-edicao-regiao" type="button" class="botao-admin-secundario" hidden>
+
+                                Cancelar edição
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+
+                <!-- LISTA DE REGIÕES -->
+
+                <section class="painel-lista-eventos-admin painel-lista-regioes-admin">
+
+                    <div class="cabecalho-lista-eventos-admin">
+
+                        <div>
+                            <h3>
+                                Regiões cadastradas
+                            </h3>
+
+                            <p id="contador-regioes-admin">
+                                Carregando regiões...
+                            </p>
+                        </div>
+
+                        <input id="pesquisa-regioes-admin" type="search" placeholder="Pesquisar região..."
+                            aria-label="Pesquisar região">
+
+                    </div>
+
+                    <div id="lista-regioes-admin" class="lista-eventos-admin lista-regioes-admin">
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <!-- OPORTUNIDADES DA REGIÃO SELECIONADA -->
+
+            <section id="painel-oportunidades-regiao-admin" class="painel-oportunidades-regiao-admin" hidden>
+
+                <div class="cabecalho-oportunidades-regiao-admin">
+
+                    <div>
+                        <span class="etiqueta-admin">
+                            Região selecionada
+                        </span>
+
+                        <h3 id="nome-regiao-selecionada-admin">
+                            Oportunidades da região
+                        </h3>
+
+                        <p>
+                            Cadastre as instituições, programas,
+                            cursos e auxílios disponíveis nessa região.
+                        </p>
+                    </div>
+
+                    <div class="acoes-gerenciador-admin">
+
+                        <button id="btn-nova-oportunidade-admin" type="button" class="botao-novo-conteudo-admin">
+
+                            + Nova oportunidade
+
+                        </button>
+
+                        <button id="btn-fechar-oportunidades-regiao" type="button" class="botao-admin-secundario">
+
+                            Fechar região
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="conteudo-oportunidades-regiao-admin">
+
+                    <!-- FORMULÁRIO DA OPORTUNIDADE -->
+
+                    <section class="painel-form-evento-admin painel-form-oportunidade-admin">
+
+                        <h3 id="titulo-form-oportunidade-admin">
+                            Cadastrar oportunidade
+                        </h3>
+
+                        <form id="form-oportunidade-admin">
+
+                            <label>
+                                Identificador
+
+                                <input id="oportunidade-admin-id" type="text"
+                                    placeholder="exemplo: universidade-estadual" required>
+                            </label>
+
+
+                            <label>
+                                Nome da oportunidade
+
+                                <input id="oportunidade-admin-nome" type="text"
+                                    placeholder="Nome da instituição ou programa" required>
+                            </label>
+
+
+                            <div class="linha-form-admin">
+
+                                <label>
+                                    Categoria
+
+                                    <input id="oportunidade-admin-categoria" type="text"
+                                        placeholder="Universidade pública" required>
+                                </label>
+
+                                <label>
+                                    Ordem de relevância
+
+                                    <input id="oportunidade-admin-ordem" type="number" min="1" step="1" placeholder="1"
+                                        required>
+                                </label>
+
+                            </div>
+
+
+                            <fieldset class="tipos-oportunidade-admin">
+
+                                <legend>
+                                    Tipos usados nos filtros
+                                </legend>
+
+                                <label>
+                                    <input type="checkbox" name="oportunidade-admin-tipo" value="superior">
+
+                                    Ensino superior
+                                </label>
+
+                                <label>
+                                    <input type="checkbox" name="oportunidade-admin-tipo" value="tecnico">
+
+                                    Curso técnico
+                                </label>
+
+                                <label>
+                                    <input type="checkbox" name="oportunidade-admin-tipo" value="bolsa">
+
+                                    Bolsa ou auxílio
+                                </label>
+
+                            </fieldset>
+
+
+                            <label>
+                                Localização
+
+                                <input id="oportunidade-admin-localizacao" type="text"
+                                    placeholder="Bairro, município ou campus" required>
+                            </label>
+
+
+                            <label>
+                                Como entrar
+
+                                <textarea id="oportunidade-admin-ingresso" rows="4"
+                                    placeholder="Explique o processo de ingresso." required></textarea>
+                            </label>
+
+
+                            <label>
+                                Principais cursos
+
+                                <textarea id="oportunidade-admin-cursos" rows="4"
+                                    placeholder="Informe os principais cursos disponíveis." required></textarea>
+                            </label>
+
+
+                            <label>
+                                Bolsas, auxílios e gratuidade
+
+                                <textarea id="oportunidade-admin-apoio" rows="4"
+                                    placeholder="Explique os auxílios ou benefícios disponíveis." required></textarea>
+                            </label>
+
+
+                            <h4 class="subtitulo-form-curso-admin">
+                                Links oficiais
+                            </h4>
+
+
+                            <label>
+                                Site da instituição
+
+                                <input id="oportunidade-admin-site" type="url" placeholder="https://...">
+                            </label>
+
+
+                            <label>
+                                Página de ingresso ou inscrição
+
+                                <input id="oportunidade-admin-inscricao" type="url" placeholder="https://...">
+                            </label>
+
+
+                            <div class="acoes-form-evento-admin">
+
+                                <button id="btn-salvar-oportunidade-admin" type="submit"
+                                    class="botao-salvar-evento-admin">
+
+                                    Salvar oportunidade
+
+                                </button>
+
+                                <button id="btn-cancelar-edicao-oportunidade" type="button"
+                                    class="botao-admin-secundario" hidden>
+
+                                    Cancelar edição
+
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </section>
+
+
+                    <!-- LISTA DE OPORTUNIDADES -->
+
+                    <section class="painel-lista-eventos-admin painel-lista-oportunidades-admin">
+
+                        <div class="cabecalho-lista-eventos-admin">
+
+                            <div>
+                                <h3>
+                                    Oportunidades cadastradas
+                                </h3>
+
+                                <p id="contador-oportunidades-admin">
+                                    Selecione uma região.
+                                </p>
+                            </div>
+
+                            <input id="pesquisa-oportunidades-admin" type="search"
+                                placeholder="Pesquisar oportunidade..." aria-label="Pesquisar oportunidade">
+
+                        </div>
+
+                        <div id="lista-oportunidades-admin" class="lista-eventos-admin lista-oportunidades-admin">
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </section>
+
+        </section>
+    </main>
+    <script type="module" src="../admin.js"></script>
+    <script type="module" src="../admin-universidades.js"></script>
+    <script type="module" src="../admin-cursos.js"></script>
+    <script type="module" src="../admin-bolsas.js"></script>
+    <script type="module" src="../admin-profissoes.js"></script>
+
+</body>
+
+</html>
